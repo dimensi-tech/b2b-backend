@@ -1,0 +1,102 @@
+<%= form_with(model: identity, local: true) do |form| %>
+  <% if identity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(identity.errors.count, "error") %> prohibited this identity from being saved:</h2>
+
+      <ul>
+        <% identity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nik %>
+    <%= form.text_field :nik %>
+  </div>
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_place %>
+    <%= form.text_field :birth_place %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hamlet %>
+    <%= form.text_field :hamlet %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighbourhood %>
+    <%= form.text_field :neighbourhood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :urban_village %>
+    <%= form.text_field :urban_village %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_district %>
+    <%= form.text_field :sub_district %>
+  </div>
+
+  <div class="field">
+    <%= form.label :district %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= form.label :province_id %>
+    <%= form.number_field :province_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.number_field :city_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :religion %>
+    <%= form.text_field :religion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :martial_status %>
+    <%= form.text_field :martial_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job %>
+    <%= form.text_field :job %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
