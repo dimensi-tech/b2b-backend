@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_124934) do
+ActiveRecord::Schema.define(version: 2019_10_21_132008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "identities", force: :cascade do |t|
+    t.string "nik"
+    t.string "full_name"
+    t.string "birth_place"
+    t.date "birth_date"
+    t.string "gender"
+    t.string "address"
+    t.string "rw"
+    t.string "rt"
+    t.string "urban_village"
+    t.string "sub_district"
+    t.string "district"
+    t.integer "province_id"
+    t.integer "city_id"
+    t.string "religion"
+    t.string "martial_status"
+    t.string "job"
+    t.string "nationality"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
