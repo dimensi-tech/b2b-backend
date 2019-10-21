@@ -85,6 +85,13 @@ ActiveRecord::Schema.define(version: 2019_10_22_132454) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
