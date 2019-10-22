@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :merchants
   resources :passports
   resources :packages
   resources :products
