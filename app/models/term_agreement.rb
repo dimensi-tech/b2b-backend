@@ -1,0 +1,2 @@
+class TermAgreement < ApplicationRecord
+end
