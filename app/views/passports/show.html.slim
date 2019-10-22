@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Full name:
+  = @passport.full_name
+p
+  strong Birth place:
+  = @passport.birth_place
+p
+  strong Mother name:
+  = @passport.mother_name
+p
+  strong Father name:
+  = @passport.father_name
+p
+  strong Number:
+  = @passport.number
+p
+  strong Expired date:
+  = @passport.expired_date
+p
+  strong Birth date:
+  = @passport.birth_date
+p
+  strong Identity:
+  = @passport.identity_id
+
+=> link_to 'Edit', edit_passport_path(@passport)
+'|
+=< link_to 'Back', passports_path
