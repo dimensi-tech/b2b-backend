@@ -1,0 +1,27 @@
+<%= form_with(model: term_agreement, local: true) do |form| %>
+  <% if term_agreement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(term_agreement.errors.count, "error") %> prohibited this term_agreement from being saved:</h2>
+
+      <ul>
+        <% term_agreement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

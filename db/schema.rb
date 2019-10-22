@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_141441) do
+ActiveRecord::Schema.define(version: 2019_10_22_131710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,34 @@ ActiveRecord::Schema.define(version: 2019_10_21_141441) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "passports", force: :cascade do |t|
+    t.string "full_name"
+    t.string "birth_place"
+    t.string "mother_name"
+    t.string "father_name"
+    t.string "number"
+    t.date "expired_date"
+    t.date "birth_date"
+    t.integer "identity_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "code"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "identity_id"
+    t.integer "passport_id"
+    t.string "avatar"
+    t.string "telephone_number"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,6 +86,13 @@ ActiveRecord::Schema.define(version: 2019_10_21_141441) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "term_agreements", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
