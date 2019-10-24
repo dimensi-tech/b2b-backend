@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_132454) do
+ActiveRecord::Schema.define(version: 2019_10_22_141436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "districts", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "province_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "identities", force: :cascade do |t|
     t.string "nik"
@@ -85,6 +93,13 @@ ActiveRecord::Schema.define(version: 2019_10_22_132454) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -95,9 +110,25 @@ ActiveRecord::Schema.define(version: 2019_10_22_132454) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "sub_districts", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "district_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "term_agreements", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+  
+  create_table "urban_villages", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "sub_district_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
