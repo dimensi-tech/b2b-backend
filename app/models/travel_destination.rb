@@ -1,0 +1,2 @@
+class TravelDestination < ApplicationRecord
+end

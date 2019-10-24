@@ -1,0 +1,23 @@
+h1 Listing travel_destinations
+
+table
+  thead
+    tr
+      th Country
+      th Destination
+      th
+      th
+      th
+
+  tbody
+    - @travel_destinations.each do |travel_destination|
+      tr
+        td = travel_destination.country_id
+        td = travel_destination.destination
+        td = link_to 'Show', travel_destination
+        td = link_to 'Edit', edit_travel_destination_path(travel_destination)
+        td = link_to 'Destroy', travel_destination, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Travel destination', new_travel_destination_path
