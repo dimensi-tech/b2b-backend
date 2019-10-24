@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Country:
+  = @travel_destination.country_id
+p
+  strong Destination:
+  = @travel_destination.destination
+
+=> link_to 'Edit', edit_travel_destination_path(@travel_destination)
+'|
+=< link_to 'Back', travel_destinations_path
