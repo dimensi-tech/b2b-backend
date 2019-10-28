@@ -1,15 +1,24 @@
-= form_for @country do |f|
-  - if @country.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@country.errors.count, "error")} prohibited this country from being saved:"
-      ul
-        - @country.errors.full_messages.each do |message|
-          li = message
+.card-body
+  = form_for @country do |f|
+    - if @country.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@country.errors.count, "error")} prohibited this country from being saved:"
+          ul
+            - @country.errors.full_messages.each do |message|
+              li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :code
-    = f.text_field :code
-  .actions = f.submit
+    .form-group.row.mb-4
+      = f.label :name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :code, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :code, class: 'form-control'
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit 'Create Country', class: 'btn btn-primary'

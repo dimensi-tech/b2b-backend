@@ -1,23 +1,57 @@
-h1 Listing countries
-
-table
-  thead
-    tr
-      th Name
-      th Code
-      th
-      th
-      th
-
-  tbody
-    - @countries.each do |country|
-      tr
-        td = country.name
-        td = country.code
-        td = link_to 'Show', country
-        td = link_to 'Edit', edit_country_path(country)
-        td = link_to 'Destroy', country, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Country', new_country_path
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Countries
+    p.section-lead List of countries.
+    .row
+      .col
+        .card
+          .card-header.d-flex.justify-content-between
+            h4 Table Countries
+            = link_to 'Buat data baru', new_country_path, class: 'btn btn-info'
+          - if @countries.present?
+            .card-body
+              .table-responsive
+                table.table.table-bordered.table-md
+                  tr
+                    th Name
+                    th Code
+                  - @countries.each do |country|
+                    tr
+                      td = country.name
+                      td = country.code
+            .card-footer.text-right
+              nav.d-inline-block
+                ul.pagination.mb-0
+                  li.page-item.disabled
+                    a.page-link href="#" tabindex="-1"
+                      i.fas.fa-chevron-left
+                  li.page-item.active
+                    a.page-link href="#"
+                      | 1
+                      span.sr-only (current)
+                  li.page-item
+                    a.page-link href="#"  2
+                  li.page-item
+                    a.page-link href="#"  3
+                  li.page-item
+                    a.page-link href="#"
+                      i.fas.fa-chevron-right
+          - else
+            .card-body
+              .empty-state[data-height="400"]
+                .empty-state-icon
+                  i.fas.fa-question
+                h2
+                  | Data tidak ditemukan
+                p.lead
+                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
+                = link_to new_country_path, class: 'btn btn-primary mt-4' do
+                  | Buat data baru

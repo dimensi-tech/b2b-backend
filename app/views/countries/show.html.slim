@@ -1,12 +1,40 @@
-p#notice = notice
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    - if notice
+      .alert.alert-success.alert-dismissible.show.fade
+        .alert-body
+          button.close data-dismiss="alert"
+            span &times;
+          = notice
 
-p
-  strong Name:
-  = @country.name
-p
-  strong Code:
-  = @country.code
-
-=> link_to 'Edit', edit_country_path(@country)
-'|
-=< link_to 'Back', countries_path
+    h2.section-title = @country.name
+    p.section-lead
+      = "Data ID : #{@country.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 Details
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Nama
+                  p = @country.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Kode
+                  p = @country.code
+  .buttons
+    = link_to 'Edit', edit_country_path(@country), class: 'btn btn-warning'
+    = link_to 'Back', edit_country_path(@country), class: 'btn'

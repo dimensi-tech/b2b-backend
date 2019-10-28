@@ -59,4 +59,5 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add
+gem 'jquery-ui-rails'
 gem 'rolify', '5.2.0' # user roles
