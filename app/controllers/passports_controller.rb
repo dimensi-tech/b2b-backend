@@ -4,7 +4,7 @@ class PassportsController < ApplicationController
   before_action :set_passport, only: %i[show edit update destroy]
 
   def index
-    @passports = Passport.all
+    @passports = Passport.all.page(params[:page]).per(15)
   end
 
   def show; end

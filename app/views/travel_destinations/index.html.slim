@@ -1,23 +1,45 @@
-h1 Listing travel_destinations
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Travel Destinations
+    p.section-lead List of travel destinations.
+    .row
+      .col
+        .card
+          .card-header.d-flex.justify-content-between
+            h4 Table Travel Destinations
+            = link_to 'Buat data baru', new_travel_destination_path, class: 'btn btn-info'
+          - if @travel_destinations.present?
+            .card-body
+              .table-responsive
+                table.table.table-bordered.table-md
+                  tr
+                    th Country Id
+                    th Destination
+                    
+                  - @travel_destinations.each do |travel_destination|
+                    tr
+                      td = travel_destination.country_id
+                      td = travel_destination.destination
 
-table
-  thead
-    tr
-      th Country
-      th Destination
-      th
-      th
-      th
-
-  tbody
-    - @travel_destinations.each do |travel_destination|
-      tr
-        td = travel_destination.country_id
-        td = travel_destination.destination
-        td = link_to 'Show', travel_destination
-        td = link_to 'Edit', edit_travel_destination_path(travel_destination)
-        td = link_to 'Destroy', travel_destination, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Travel destination', new_travel_destination_path
+            .card-footer.text-right
+              nav.d-inline-block
+                = paginate @travel_destinations
+          - else
+            .card-body
+              .empty-state[data-height="400"]
+                .empty-state-icon
+                  i.fas.fa-question
+                h2
+                  | Data tidak ditemukan
+                p.lead
+                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
+                = link_to new_travel_destination_path, class: 'btn btn-primary mt-4' do
+                  | Buat data baru

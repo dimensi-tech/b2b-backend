@@ -4,7 +4,7 @@ class IdentitiesController < ApplicationController
   # GET /identities
   # GET /identities.json
   def index
-    @identities = Identity.all
+    @identities = Identity.all.page(params[:page]).per(15)
   end
 
   # GET /identities/1
