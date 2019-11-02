@@ -67,3 +67,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'jquery-ui-rails'
 gem 'rolify', '5.2.0' # user roles
 gem 'devise', '4.7.1' # user authentication
+gem 'kaminari', '1.1.1' # Pagination
+

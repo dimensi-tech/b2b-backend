@@ -8,28 +8,34 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Countries
-    p.section-lead List of countries.
+    h2.section-title Profiles
+    p.section-lead List of profiles.
     .row
       .col
         .card
           .card-header.d-flex.justify-content-between
-            h4 Table Countries
-            = link_to 'Buat data baru', new_country_path, class: 'btn btn-info'
-          - if @countries.present?
+            h4 Table Profiles
+            = link_to 'Buat data baru', new_profile_path, class: 'btn btn-info'
+          - if @profiles.present?
             .card-body
               .table-responsive
                 table.table.table-bordered.table-md
                   tr
-                    th Name
-                    th Code
-                  - @countries.each do |country|
+                    th User Id
+                    th Identity Id
+                    th Passport Id
+                    th Avatar
+
+                  - @profiles.each do |profile|
                     tr
-                      td = country.name
-                      td = country.code
+                      td = profile.user_id
+                      td = profile.identity_id
+                      td = profile.passport_id
+                      td = profile.avatar
+
             .card-footer.text-right
               nav.d-inline-block
-                = paginate @countries
+                = paginate @profiles
           - else
             .card-body
               .empty-state[data-height="400"]
@@ -39,5 +45,5 @@ section.section
                   | Data tidak ditemukan
                 p.lead
                   | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
-                = link_to new_country_path, class: 'btn btn-primary mt-4' do
+                = link_to new_profile_path, class: 'btn btn-primary mt-4' do
                   | Buat data baru

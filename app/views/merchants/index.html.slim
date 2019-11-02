@@ -1,23 +1,45 @@
-h1 Listing merchants
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Merchants
+    p.section-lead List of merchants.
+    .row
+      .col
+        .card
+          .card-header.d-flex.justify-content-between
+            h4 Table Merchants
+            = link_to 'Buat data baru', new_merchant_path, class: 'btn btn-info'
+          - if @merchants.present?
+            .card-body
+              .table-responsive
+                table.table.table-bordered.table-md
+                  tr
+                    th Nama
+                    th Deskripsi
+                    
+                  - @merchants.each do |merchant|
+                    tr
+                      td = merchant.name
+                      td = merchant.description
 
-table
-  thead
-    tr
-      th Name
-      th Description
-      th
-      th
-      th
-
-  tbody
-    - @merchants.each do |merchant|
-      tr
-        td = merchant.name
-        td = merchant.description
-        td = link_to 'Show', merchant
-        td = link_to 'Edit', edit_merchant_path(merchant)
-        td = link_to 'Destroy', merchant, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Merchant', new_merchant_path
+            .card-footer.text-right
+              nav.d-inline-block
+                = paginate @merchants
+          - else
+            .card-body
+              .empty-state[data-height="400"]
+                .empty-state-icon
+                  i.fas.fa-question
+                h2
+                  | Data tidak ditemukan
+                p.lead
+                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
+                = link_to new_merchant_path, class: 'btn btn-primary mt-4' do
+                  | Buat data baru

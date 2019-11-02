@@ -4,7 +4,7 @@ class TravelDestinationsController < ApplicationController
   # GET /travel_destinations
   # GET /travel_destinations.json
   def index
-    @travel_destinations = TravelDestination.all
+    @travel_destinations = TravelDestination.all.page(params[:page]).per(15)
   end
 
   # GET /travel_destinations/1

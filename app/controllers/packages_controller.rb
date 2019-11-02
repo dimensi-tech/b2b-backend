@@ -4,7 +4,7 @@ class PackagesController < ApplicationController
   before_action :set_package, only: %i[show edit update destroy]
 
   def index
-    @packages = Package.all
+    @packages = Package.all.page(params[:page]).per(15)
   end
 
   def show; end

@@ -4,7 +4,7 @@ class MerchantsController < ApplicationController
   before_action :set_merchant, only: %i[show edit update destroy]
 
   def index
-    @merchants = Merchant.all
+    @merchants = Merchant.all.page(params[:page]).per(15)
   end
 
   def show; end

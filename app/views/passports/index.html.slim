@@ -1,35 +1,45 @@
-h1 Listing passports
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Passports
+    p.section-lead List of passports.
+    .row
+      .col
+        .card
+          .card-header.d-flex.justify-content-between
+            h4 Table Passports
+            = link_to 'Buat data baru', new_passport_path, class: 'btn btn-info'
+          - if @passports.present?
+            .card-body
+              .table-responsive
+                table.table.table-bordered.table-md
+                  tr
+                    th Nama Lengkap
+                    th No Passport
+                    
+                  - @passports.each do |passport|
+                    tr
+                      td = passport.full_name
+                      td = passport.number
 
-table
-  thead
-    tr
-      th Full name
-      th Birth place
-      th Mother name
-      th Father name
-      th Number
-      th Expired date
-      th Birth date
-      th Identity
-      th
-      th
-      th
-
-  tbody
-    - @passports.each do |passport|
-      tr
-        td = passport.full_name
-        td = passport.birth_place
-        td = passport.mother_name
-        td = passport.father_name
-        td = passport.number
-        td = passport.expired_date
-        td = passport.birth_date
-        td = passport.identity_id
-        td = link_to 'Show', passport
-        td = link_to 'Edit', edit_passport_path(passport)
-        td = link_to 'Destroy', passport, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Passport', new_passport_path
+            .card-footer.text-right
+              nav.d-inline-block
+                = paginate @passports
+          - else
+            .card-body
+              .empty-state[data-height="400"]
+                .empty-state-icon
+                  i.fas.fa-question
+                h2
+                  | Data tidak ditemukan
+                p.lead
+                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
+                = link_to new_passport_path, class: 'btn btn-primary mt-4' do
+                  | Buat data baru
