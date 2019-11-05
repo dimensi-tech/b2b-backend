@@ -68,4 +68,6 @@ gem 'jquery-ui-rails'
 gem 'rolify', '5.2.0' # user roles
 gem 'devise', '4.7.1' # user authentication
 gem 'kaminari', '1.1.1' # Pagination
+gem 'ransack', '2.3.0' # Ransack
+
 

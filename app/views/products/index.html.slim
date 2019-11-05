@@ -1,3 +1,4 @@
+= render 'filter'
 section.section
   .section-header
     h1 Master Data
@@ -8,7 +9,7 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Products
+    h2.section-title Products  
     p.section-lead List of products.
     .row
       .col
@@ -21,11 +22,13 @@ section.section
               .table-responsive
                 table.table.table-bordered.table-md
                   tr
+                    th Code
                     th Nama Produk
                     th Deskripsi
                     
                   - @products.each do |product|
                     tr
+                      td = product.code
                       td = product.name
                       td = product.description
 
