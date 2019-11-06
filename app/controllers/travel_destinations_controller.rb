@@ -4,7 +4,8 @@ class TravelDestinationsController < ApplicationController
   # GET /travel_destinations
   # GET /travel_destinations.json
   def index
-    @travel_destinations = TravelDestination.all.page(params[:page]).per(15)
+    @search = TravelDestination.ransack(params[:q])
+    @travel_destinations = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   # GET /travel_destinations/1

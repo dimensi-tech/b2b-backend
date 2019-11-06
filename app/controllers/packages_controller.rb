@@ -4,7 +4,8 @@ class PackagesController < ApplicationController
   before_action :set_package, only: %i[show edit update destroy]
 
   def index
-    @packages = Package.all.page(params[:page]).per(15)
+    @search = Package.ransack(params[:q])
+    @packages = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   def show; end

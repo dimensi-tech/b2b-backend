@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all.page(params[:page]).per(15)
+    @search = Product.ransack(params[:q])
+    @products = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   def show; end

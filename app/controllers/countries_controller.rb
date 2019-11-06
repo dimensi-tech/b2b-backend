@@ -4,7 +4,8 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
-    @countries = Country.all.page(params[:page]).per(15)
+    @search = Country.ransack(params[:q])
+    @countries = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   # GET /countries/1

@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all.page(params[:page]).per(15)
+    @search = Profile.ransack(params[:q])
+    @profiles = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   # GET /profiles/1

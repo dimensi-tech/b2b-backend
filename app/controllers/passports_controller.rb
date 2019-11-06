@@ -4,7 +4,8 @@ class PassportsController < ApplicationController
   before_action :set_passport, only: %i[show edit update destroy]
 
   def index
-    @passports = Passport.all.page(params[:page]).per(15)
+    @search = Passport.ransack(params[:q])
+    @passports = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   def show; end
