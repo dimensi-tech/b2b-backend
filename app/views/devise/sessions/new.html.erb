@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="d-flex flex-wrap align-items-stretch" style="margin-top: 0;">
+    <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
+      <div class="p-4 m-3">
+        <%= image_tag 'admin.png', alt: 'logo', width: 80, class: 'shadow-light rounded-circle mb-5 mt-2' %>
+        <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">B2B Admin</span></h4>
+        <p class="text-muted">Before you get started, you must login</p>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'needs-validation' }) do |f| %>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <%= f.email_field :email, class: 'form-control', tabindex: '1', autocomplete: 'email', required: true, autofocus: true %>
+            <div class="invalid-feedback">
+              Please fill in your email
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="d-block">
+              <label for="password" class="control-label">Password</label>
+            </div>
+            <%= f.password_field :password, class: 'form-control', tabindex: '2', autocomplete: 'current_password', required: true %>
+            <div class="invalid-feedback">
+              Please fill in your password
+            </div>
+          </div>
+
+          <div class="form-group text-right">
+            <%#= link_to 'Forgot Password?', new_password_path(resource_name), class: 'float-left mt-3' %>
+            <%= f.button :submit, "Log in", class: 'btn btn-primary btn-lg btn-icon icon-right', tabindex: '4' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<%= asset_path('login-background.jpg') %>">
+    </div>
+  </div>
+</section>

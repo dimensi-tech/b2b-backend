@@ -14,14 +14,18 @@
 
   <body>
     <div id="app">
-      <div class="main-wrapper">
-        <%= render 'shared/header' %>
-        <%= render 'shared/sidebar' %>
-        <div class="main-content">
-          <%= yield %>
+      <% if current_user.present? %>
+        <div class="main-wrapper">
+          <%= render 'shared/header' %>
+          <%= render 'shared/sidebar' %>
+          <div class="main-content">
+            <%= yield %>
+          </div>
+          <%= render 'shared/footer' %>
         </div>
-        <%= render 'shared/footer' %>
-      </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
     </div>
 
     <!-- General JS Scripts -->
