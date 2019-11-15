@@ -1,15 +1,24 @@
-= form_for @travel_destination do |f|
-  - if @travel_destination.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@travel_destination.errors.count, "error")} prohibited this travel_destination from being saved:"
-      ul
-        - @travel_destination.errors.full_messages.each do |message|
-          li = message
+.card-body
+  = form_for @travel_destination do |f|
+    - if @travel_destination.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@travel_destination.errors.count, "error")} prohibited this travel destination from being saved:"
+          ul
+            - @travel_destination.errors.full_messages.each do |message|
+              li = message
 
-  .field
-    = f.label :country_id
-    = f.number_field :country_id
-  .field
-    = f.label :destination
-    = f.text_field :destination
-  .actions = f.submit
+    .form-group.row.mb-4
+      = f.label :country_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :country_id, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :destination, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :destination, class: 'form-control'
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit 'Create Travel Destination', class: 'btn btn-primary'

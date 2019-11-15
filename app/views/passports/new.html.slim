@@ -1,5 +1,20 @@
-h1 New passport
-
-== render 'form'
-
-= link_to 'Back', passports_path
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Create New Passport
+    p.section-lead On this page you can create a new passport and fill in all fields.
+    .row
+      .col
+        .card
+          .card-header
+            h4 Input Data Passport
+          == render 'form'
+  .buttons
+    = link_to 'Back', passports_path, class: 'btn'

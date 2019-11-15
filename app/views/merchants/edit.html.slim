@@ -1,8 +1,22 @@
-h1 Editing merchant
-
-== render 'form'
-
-=> link_to 'Show', @merchant
-'|
-=< link_to 'Back', merchants_path
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Editing Merchant
+    p.section-lead On this page you can edit a merchant.
+    .row
+      .col
+        .card
+          .card-header
+            h4 Edit Data Merchant
+          == render 'form'
+  .buttons
+    = link_to 'Show', @merchant, class: 'btn btn-info'
+    = link_to 'Back', merchants_path, class: 'btn'
 

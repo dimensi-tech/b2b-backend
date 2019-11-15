@@ -1,0 +1,84 @@
+.card-body
+  = form_for @identity do |f|
+    - if @identity.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@identity.errors.count, "error")} prohibited this identity from being saved:"
+          ul
+            - @identity.errors.full_messages.each do |message|
+              li = message
+
+    .form-group.row.mb-4
+      = f.label :nik, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :nik, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :full_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :full_name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :birth_place, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :birth_place, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :birth_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.date_select :birth_date, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :gender, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :gender, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :address, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :address, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :rt, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :rt, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :rw, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :rw, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :urban_village, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :urban_village, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :sub_district, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :sub_district, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :district, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :district, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :province_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :province_id, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :city_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :city_id, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :religion, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :religion, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :martial_status, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :martial_status, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :job, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :job, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :nationality, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :nationality, class: 'form-control'
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit 'Create Identity', class: 'btn btn-primary'

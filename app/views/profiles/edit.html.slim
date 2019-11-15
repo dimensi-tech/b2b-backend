@@ -8,14 +8,14 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Editing Product
-    p.section-lead On this page you can edit a product.
+    h2.section-title Editing Profile
+    p.section-lead On this page you can edit a profile.
     .row
       .col
         .card
           .card-header
-            h4 Edit Data Product
+            h4 Edit Data Profile
           == render 'form'
   .buttons
-    = link_to 'Show', @product, class: 'btn btn-info'
-    = link_to 'Back', products_path, class: 'btn'
+    = link_to 'Show', @profile, class: 'btn btn-info'
+    = link_to 'Back', profiles_path, class: 'btn'

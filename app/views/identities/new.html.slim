@@ -8,14 +8,13 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Editing Product
-    p.section-lead On this page you can edit a product.
+    h2.section-title Create New Identitiy
+    p.section-lead On this page you can create a new country and fill in all fields.
     .row
       .col
         .card
           .card-header
-            h4 Edit Data Product
+            h4 Input Data Identitiy
           == render 'form'
   .buttons
-    = link_to 'Show', @product, class: 'btn btn-info'
-    = link_to 'Back', products_path, class: 'btn'
+    = link_to 'Back', identities_path, class: 'btn'

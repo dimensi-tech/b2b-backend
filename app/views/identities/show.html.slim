@@ -1,0 +1,124 @@
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    - if notice
+      .alert.alert-success.alert-dismissible.show.fade
+        .alert-body
+          button.close data-dismiss="alert"
+            span &times;
+          = notice
+
+    h2.section-title = @identity.nik
+    p.section-lead
+      = "Data ID : #{@identity.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 Details
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 NIK
+                  p = @identity.nik
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Full name
+                  p = @identity.full_name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Birth place
+                  p = @identity.birth_place
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Gender
+                  p = @identity.gender
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Address
+                  p = @identity.address
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 RT
+                  p = @identity.rt
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 RW
+                  p = @identity.rw
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Urban village
+                  p = @identity.urban_village
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Sub district
+                  p = @identity.sub_district
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 District
+                  p = @identity.district
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Province id
+                  p = @identity.province_id
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 City id
+                  p = @identity.city_id
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Religion
+                  p = @identity.religion
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Martial status
+                  p = @identity.martial_status
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Job
+                  p = @identity.job
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Nationality
+                  p = @identity.nationality
+  .buttons
+    = link_to 'Edit', edit_identity_path(@identity), class: 'btn btn-warning'
+    = link_to 'Back', identities_path(@identity), class: 'btn'
