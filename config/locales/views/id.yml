@@ -1,0 +1,10 @@
+id:
+  empty_messages:
+    not_found: Data tidak ditemukan
+    instruction: Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
+    create: Buat data baru
+  buttons:
+    submit: Simpan
+    back: Kembali
+    filter: Filter
+    reset: Reset

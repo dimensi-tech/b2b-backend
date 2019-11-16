@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_140532) do
+ActiveRecord::Schema.define(version: 2019_11_07_140235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2019_10_28_140532) do
     t.string "name"
     t.string "code"
     t.integer "province_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.integer "package_id"
+    t.string "name"
+    t.text "description"
+    t.string "icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,6 +68,15 @@ ActiveRecord::Schema.define(version: 2019_10_28_140532) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "package_details", force: :cascade do |t|
+    t.integer "package_id"
+    t.string "day"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "packages", force: :cascade do |t|
     t.integer "product_id"
     t.string "name"
@@ -66,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_10_28_140532) do
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "min_person"
+    t.integer "max_person"
   end
 
   create_table "passports", force: :cascade do |t|
@@ -83,10 +103,10 @@ ActiveRecord::Schema.define(version: 2019_10_28_140532) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "code"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   create_table "profiles", force: :cascade do |t|

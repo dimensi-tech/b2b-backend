@@ -1,0 +1,17 @@
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title = t('.page_header')
+    .row
+      .col
+        .card
+          .card-header
+            h4 = t('.sub_page_header')
+          = render 'form'

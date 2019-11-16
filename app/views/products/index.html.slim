@@ -1,7 +1,7 @@
 = render 'filter'
 section.section
   .section-header
-    h1 Master Data
+    h1 Master Data Product
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -9,40 +9,17 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Products  
-    p.section-lead List of products.
+    h2.section-title = t('.page_header')
     .row
       .col
         .card
           .card-header.d-flex.justify-content-between
-            h4 Table Products
-            = link_to 'Buat data baru', new_product_path, class: 'btn btn-info'
-          - if @products.present?
-            .card-body
-              .table-responsive
-                table.table.table-bordered.table-md
-                  tr
-                    th Code
-                    th Nama Produk
-                    th Deskripsi
-                    
-                  - @products.each do |product|
-                    tr
-                      td = product.code
-                      td = product.name
-                      td = product.description
-
-            .card-footer.text-right
-              nav.d-inline-block
-                = paginate @products
-          - else
-            .card-body
-              .empty-state[data-height="400"]
-                .empty-state-icon
-                  i.fas.fa-question
-                h2
-                  | Data tidak ditemukan
-                p.lead
-                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
-                = link_to new_product_path, class: 'btn btn-primary mt-4' do
-                  | Buat data baru
+            .col-md-12.mg-bottom-25
+              .d-flex.justify-content-between.align-items-center
+                = search_form_for @search do |f|
+                  .input-group.input-group-alternative
+                    .input-group-prepend
+                      .input-group-text @
+                    = f.search_field :name_cont, class: 'form-control'
+                = link_to 'Tambah Produk', new_product_path, class: 'btn btn-info'
+          = render 'products'
