@@ -13,9 +13,9 @@ section.section
             span &times;
           = notice
 
-    h2.section-title = @package.name
+    h2.section-title = @profile.user_id
     p.section-lead
-      = "Data ID : #{@package.id}"
+      = "Data ID : #{@profile.id}"
     .row
       .col-12
         .card
@@ -27,26 +27,38 @@ section.section
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Product
-                  p = @package.product_id
+                  h6 User
+                  p = @profile.user_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Name
-                  p = @package.name
+                  h6 Identity
+                  p = @profile.identity_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Description
-                  p = @package.description
+                  h6 Passport
+                  p = @profile.passport_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Price
-                  p = @package.price
+                  h6 Avatar
+                  p = @profile.avatar
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Telephone number
+                  p = @profile.telephone_number
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Phone number
+                  p = @profile.phone_number
   .buttons
-    = link_to 'Edit', edit_package_path(@package), class: 'btn btn-warning'
-    = link_to 'Back', packages_path(@package), class: 'btn'
+    = link_to 'Edit', edit_profile_path(@profile), class: 'btn btn-warning'
+    = link_to 'Back', profiles_path(@profile), class: 'btn'

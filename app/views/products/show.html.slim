@@ -1,22 +1,46 @@
-.box
-  .box-header.with-border
-    .row
-      .col-12.col-lg-12
-        .card
-          .card-body
-            .row
-              .col-md-4
-                = image_tag @product.image.url
-              .col-md-8
-                .h2.mb-4 = @product.name
-                .d-flex
-                  d-flex.flex-column.w-50
-                    .col.p-0.mb-3
-                      h5.mb-1
-                      b = 'Produk'
-                      .text-muted-dark = @product.name
-                    .col.p-0.mb-3
-                      h5.mb-1
-                        b = 'Desksripsi'
-                      .text-muted-dark = @product.description
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    - if notice
+      .alert.alert-success.alert-dismissible.show.fade
+        .alert-body
+          button.close data-dismiss="alert"
+            span &times;
+          = notice
 
+    h2.section-title = @product.name
+    p.section-lead
+      = "Data ID : #{@product.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 Details
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Nama
+                  p = @product.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Kode
+                  p = @product.code
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Description
+                  p = @product.description
+  .buttons
+    = link_to 'Edit', edit_product_path(@product), class: 'btn btn-warning'
+    = link_to 'Back', products_path(@product), class: 'btn'

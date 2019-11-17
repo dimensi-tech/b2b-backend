@@ -1,5 +1,21 @@
-h1 Editing Identity
-= render 'form', identity: @identity
-= link_to 'Show', @identity
-| \
-= link_to 'Back', identities_path
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Editing Identity
+    p.section-lead On this page you can edit a identity.
+    .row
+      .col
+        .card
+          .card-header
+            h4 Edit Data Identity
+          == render 'form'
+  .buttons
+    = link_to 'Show', @identity, class: 'btn btn-info'
+    = link_to 'Back', identities_path, class: 'btn'

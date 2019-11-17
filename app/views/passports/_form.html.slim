@@ -1,33 +1,48 @@
-= form_for @passport do |f|
-  - if @passport.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@passport.errors.count, "error")} prohibited this passport from being saved:"
-      ul
-        - @passport.errors.full_messages.each do |message|
-          li = message
+.card-body
+  = form_for @passport do |f|
+    - if @passport.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@passport.errors.count, "error")} prohibited this passport from being saved:"
+          ul
+            - @passport.errors.full_messages.each do |message|
+              li = message
 
-  .field
-    = f.label :full_name
-    = f.text_field :full_name
-  .field
-    = f.label :birth_place
-    = f.text_field :birth_place
-  .field
-    = f.label :mother_name
-    = f.text_field :mother_name
-  .field
-    = f.label :father_name
-    = f.text_field :father_name
-  .field
-    = f.label :number
-    = f.text_field :number
-  .field
-    = f.label :expired_date
-    = f.date_select :expired_date
-  .field
-    = f.label :birth_date
-    = f.date_select :birth_date
-  .field
-    = f.label :identity_id
-    = f.number_field :identity_id
-  .actions = f.submit
+    .form-group.row.mb-4
+      = f.label :full_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :full_name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :birth_place, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :birth_place, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :mother_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :mother_name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :father_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :father_name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :number, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :number, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :expired_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.date_select :expired_date, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :birth_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.date_select :birth_date, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :identity_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :identity_id, class: 'form-control'
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit 'Create Passport', class: 'btn btn-primary'

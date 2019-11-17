@@ -1,8 +1,22 @@
-h1 Editing travel_destination
-
-== render 'form'
-
-=> link_to 'Show', @travel_destination
-'|
-=< link_to 'Back', travel_destinations_path
+section.section
+  .section-header
+    h1 Master Data
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title Editing Travel Destination
+    p.section-lead On this page you can edit a travel destination.
+    .row
+      .col
+        .card
+          .card-header
+            h4 Edit Data Travel Destination
+          == render 'form'
+  .buttons
+    = link_to 'Show', @travel_destination, class: 'btn btn-info'
+    = link_to 'Back', travel_destinations_path, class: 'btn'
 
