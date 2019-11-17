@@ -29,9 +29,6 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
-gem 'simple_form', '4.1.0'  # simple form on all form
-gem 'slim-rails', '3.2.0' # slim lang
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,7 +48,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
+\
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -64,10 +61,15 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add
-gem 'jquery-ui-rails'
-gem 'rolify', '5.2.0' # user roles
+gem 'carrierwave', '~> 2.0'
+gem 'ckeditor', '5.0.0' # text editor
+gem 'cocoon' # nested form
 gem 'devise', '4.7.1' # user authentication
+gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
+gem 'jquery-ui-rails' # jquery ui
 gem 'kaminari', '1.1.1' # Pagination
+gem 'rails-i18n', '~> 6.0.0' # Translations
 gem 'ransack', '2.3.0' # Ransack
-
-
+gem 'rolify', '5.2.0' # user roles
+gem 'simple_form', '4.1.0' # simple form on all form
+gem 'slim-rails', '3.2.0' # slim language

@@ -1,0 +1,31 @@
+id:
+  products:
+    products:
+      name: Nama
+      description: Deskripsi
+    index:
+      page_header: Kelola Produk
+      create: Buat Produk Baru
+    new:
+      page_header: Buat Produk Baru
+      sub_page_header: Input Data Produk
+    edit:
+      page_header: Ubah Produk
+      sub_page_header: Ubah Data Produk
+    show:
+      page_header: Detail Produk
+      name: Nama
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+      description: Deskripsi
+    create:
+      notice: Produk baru berhasil dibuat.
+    update:
+      notice: Produk berhasil diubah.
+    destroy:
+      notice: Produk berhasil dihapus.
+  simple_form:
+    labels:
+      product:
+        name: Nama
+        description: Deskripsi

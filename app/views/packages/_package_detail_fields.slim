@@ -1,0 +1,15 @@
+.nested-fields
+  .form-group.row.mb-4
+    = f.label :day, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.text_field :day, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :image, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.file_field :image, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :description, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.text_area :description, class: 'form-control'
+  hr
+  = link_to_remove_association 'Hapus Detail Paket', f, class: 'btn btn-danger'

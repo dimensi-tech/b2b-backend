@@ -1,0 +1,9 @@
+.card-body
+  .empty-state[data-height="400"]
+    .empty-state-icon
+      i.fas.fa-question
+    h2
+      = t('empty_messages.not_found')
+    p.lead
+      = t('empty_messages.instruction')
+    = link_to t('empty_messages.create'), path, class: 'btn btn-primary mt-4'

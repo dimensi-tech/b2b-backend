@@ -20,7 +20,7 @@ button.btn.btn-icon.btn-3.btn-primary type="button" data-target="#filter" data-t
               .col-md-12
                 .form-group
                   label class='form-control-label' = 'Code'
-                  = f.search_field :code_cont, class: 'form-control form-control-alternative'
+                  = f.search_field :description_cont, class: 'form-control form-control-alternative'
           .modal-footer
-            = link_to 'Reset', products_path, class: 'btn btn-danger'
-            = f.submit 'Filter', class: 'btn btn-primary'
+            = link_to t('buttons.reset'), products_path, class: 'btn btn-danger'
+            = f.submit t('buttons.filter'), class: 'btn btn-primary'
