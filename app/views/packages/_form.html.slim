@@ -18,7 +18,18 @@
     = f.label :description, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.text_area :description, class: 'form-control'
-    
+  .form-group.row.mb-4
+    = f.label :min_person, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :min_person, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :max_person, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :max_person, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :available_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.text_field :available_date, class: 'form-control'
   .form-group.row.mb-4
     = f.label :price, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
