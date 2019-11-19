@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_151145) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "min_person"
     t.integer "max_person"
-    t.string "available_date"
+    t.string "available_date", default: [], array: true
     t.string "duration_trip"
   end
 
