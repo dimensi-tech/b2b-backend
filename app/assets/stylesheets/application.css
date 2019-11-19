@@ -2,4 +2,5 @@
  *= require packages/components
  *= require packages/style
  *= require packages/custom
+ *= require packages/select2.min
  */
