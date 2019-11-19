@@ -55,6 +55,7 @@ class PackagesController < ApplicationController
     params.require(:package).permit(
       :product_id, :name, :description, :price, :min_person, :max_person,
       :duration_trip, available_date: [],
-      package_details: %i[_destroy id day description image])
+      package_details_attributes: %i[_destroy id day description image]
+    )
   end
 end

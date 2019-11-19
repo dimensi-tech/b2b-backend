@@ -10,11 +10,11 @@ class Package < ApplicationRecord
 
     pluck(:available_date).uniq.each do |available_dates|
       available_dates.each do |available_date|
-        results << available_dates
+        results << available_date
       end
     end
 
     results = results.reject { |i| i.empty? }
-    results.first.uniq
+    results.uniq
   end
 end
