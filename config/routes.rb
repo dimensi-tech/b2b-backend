@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :countries
   resources :facilities
   resources :merchants
+  resources :icons
   resources :identities
   resources :packages
   resources :passports

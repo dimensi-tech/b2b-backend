@@ -1,7 +1,7 @@
 => render 'filter'
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -9,38 +9,18 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Travel Destinations
-    p.section-lead List of travel destinations.
+    h2.section-title = t('.body_title')
     .row
       .col
         .card
           .card-header.d-flex.justify-content-between
-            h4 Table Travel Destinations
-            = link_to 'Buat data baru', new_travel_destination_path, class: 'btn btn-info'
-          - if @travel_destinations.present?
-            .card-body
-              .table-responsive
-                table.table.table-bordered.table-md
-                  tr
-                    th Country Id
-                    th Destination
-                    
-                  - @travel_destinations.each do |travel_destination|
-                    tr
-                      td = travel_destination.country_id
-                      td = travel_destination.destination
-
-            .card-footer.text-right
-              nav.d-inline-block
-                = paginate @travel_destinations
-          - else
-            .card-body
-              .empty-state[data-height="400"]
-                .empty-state-icon
-                  i.fas.fa-question
-                h2
-                  | Data tidak ditemukan
-                p.lead
-                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
-                = link_to new_travel_destination_path, class: 'btn btn-primary mt-4' do
-                  | Buat data baru
+            .col-md-12.mg-bottom-25
+              .d-flex.justify-content-between.align-items-center
+                = search_form_for @search do |f|
+                  .input-group.input-group-alternative
+                    .input-group-prepend
+                      .input-group-text @
+                    = f.search_field :destination_cont, class: 'form-control'
+                = link_to t('.create'), new_travel_destination_path, class: 'btn btn-info'
+          = render 'travel_destinations'
+            

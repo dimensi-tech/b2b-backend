@@ -1,6 +1,6 @@
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -20,21 +20,21 @@ section.section
       .col-12
         .card
           .card-header
-            h4 Details
+            h4 = t('.details')
           .card-body
             .list-unstyled.list-unstyled-border.mt-4
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Nama
+                  h6 = t('.name')
                   p = @merchant.name
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Description
+                  h6 = t('.description')
                   p = @merchant.description
   .buttons
-    = link_to 'Edit', edit_merchant_path(@merchant), class: 'btn btn-warning'
-    = link_to 'Back', merchants_path(@merchant), class: 'btn'
+    = link_to t('buttons.edit'), edit_merchant_path(@merchant), class: 'btn btn-warning'
+    = link_to t('buttons.back'), merchants_path(@merchant), class: 'btn'

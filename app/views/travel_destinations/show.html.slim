@@ -1,6 +1,6 @@
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -13,28 +13,28 @@ section.section
             span &times;
           = notice
 
-    h2.section-title = @travel_destination.country_id
+    h2.section-title = @travel_destination.destination
     p.section-lead
       = "Data ID : #{@travel_destination.id}"
     .row
       .col-12
         .card
           .card-header
-            h4 Details
+            h4 = t('.details')
           .card-body
             .list-unstyled.list-unstyled-border.mt-4
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Country
+                  h6 = t('.country_id')
                   p = @travel_destination.country_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Destination
+                  h6 = t('.destination')
                   p = @travel_destination.destination
   .buttons
-    = link_to 'Edit', edit_travel_destination_path(@travel_destination), class: 'btn btn-warning'
-    = link_to 'Back', travel_destinations_path(@travel_destination), class: 'btn'
+    = link_to t('buttons.edit'), edit_travel_destination_path(@travel_destination), class: 'btn btn-warning'
+    = link_to t('buttons.back'), travel_destinations_path(@travel_destination), class: 'btn'

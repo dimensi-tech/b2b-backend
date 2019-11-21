@@ -1,0 +1,61 @@
+id:
+  profiles:
+    profiles:
+      user_id: Id User
+      identity_id: Id Identitas
+      passport_id: Id Passport
+      avatar: Avatar
+      telephone_number: Nomor Telepon
+      phone_number: Nomor Ponsel
+    filter: 
+      filter_header: Filter
+      user_id: Id User
+      identity_id: Id Identitas
+      passport_id: Id Passport
+      avatar: Avatar
+      telephone_number: Nomor Telepon
+      phone_number: Nomor Ponsel
+    form:
+      user_id: Id User
+      identity_id: Id Identitas
+      passport_id: Id Passport
+      avatar: Avatar
+      telephone_number: Nomor Telepon
+      phone_number: Nomor Ponsel
+    index:
+      page_header: Master Data Profil
+      body_title: Kelola Profil
+      create: Tambah Profil
+    new:
+      page_header: Master Data Profil
+      body_title: Entry Profil Baru
+      card_header: Input Data Profil
+    edit:
+      page_header: Master Data Profil
+      body_title: Ubah Profil
+      card_header: Ubah Data Profil
+    show:
+      page_header: Detail Profil
+      user_id: Id User
+      identity_id: Id Identitas
+      passport_id: Id Passport
+      avatar: Avatar
+      telephone_number: Nomor Telepon
+      phone_number: Nomor Ponsel      
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Profil baru berhasil dibuat.
+    update:
+      notice: Profil berhasil diubah.
+    destroy:
+      notice: Profil berhasil dihapus.
+  simple_form:
+    labels:
+      profile:
+        id_user: Id User
+        identity_id: Id Identitas
+        passport_id: Id Passport
+        avatar: Avatar
+        telephone_number: Nomor Telepon
+        phone_number: Nomor Ponsel

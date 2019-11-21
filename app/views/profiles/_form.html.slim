@@ -1,5 +1,5 @@
-.card-body
-  = form_for @profile do |f|
+.card-body  
+  = simple_form_for @profile do |f|
     - if @profile.errors.any?
       .alert.alert-danger.alert-has-icon
         .alert-icon
@@ -11,30 +11,31 @@
               li = message
 
     .form-group.row.mb-4
-      = f.label :user_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :user_id, t('.user_id'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.number_field :user_id, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :identity_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :identity_id, t('.identity_id'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.number_field :identity_id, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :passport_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :passport_id, t('.passport_id'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.number_field :passport_id, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :avatar, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :avatar, t('.avatar'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :avatar, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :telephone_number, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :telephone_number, t('.telephone_number'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :telephone_number, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :phone_number, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :phone_number, t('.phone_number'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :phone_number, class: 'form-control'
     .form-group.row.mb-4
       label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
       .col-sm-12.col-md-7
-        = f.submit 'Create Profile', class: 'btn btn-primary'
+        = f.submit t('buttons.submit'), class: 'btn btn-primary'
+      = link_to t('buttons.back'), countries_path, class: 'btn btn-secondary'

@@ -11,51 +11,47 @@
               li = message
 
     .form-group.row.mb-4
-      = f.label :nik, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :nik, t('.nik'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :nik, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :full_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :full_name, t('.full_name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :full_name, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :birth_place, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :birth_place, t('.birth_place'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :birth_place, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :birth_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :birth_date, t('.birth_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.date_select :birth_date, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :gender, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :gender, t('.gender'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :gender, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :address, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :address, t('.address'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :address, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :rt, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :rt, t('.rt'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :rt, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :rw, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :rw, t('.rw'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :rw, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :urban_village, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :urban_village, t('.urban_village'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :urban_village, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :sub_district, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
-      .col-sm-12.col-md-7
-        = f.text_field :sub_district, class: 'form-control'
-    .form-group.row.mb-4
-      = f.label :district, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :district, t('.district'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :district, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :province_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :province_id, t('.province_id'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.number_field :province_id, class: 'form-control'
     .form-group.row.mb-4
@@ -63,22 +59,23 @@
       .col-sm-12.col-md-7
         = f.text_field :city_id, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :religion, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :religion, t('.religion'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :religion, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :martial_status, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :martial_status, t('.martial_status'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :martial_status, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :job, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :job, t('.job'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :job, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :nationality, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :nationality, t('.nationality'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :nationality, class: 'form-control'
     .form-group.row.mb-4
       label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
       .col-sm-12.col-md-7
-        = f.submit 'Create Identity', class: 'btn btn-primary'
+        = f.submit t('buttons.submit'), class: 'btn btn-primary'
+      = link_to t('buttons.back'), identities_path, class: 'btn btn-secondary'

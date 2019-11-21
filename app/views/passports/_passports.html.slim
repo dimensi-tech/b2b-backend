@@ -1,0 +1,28 @@
+- if @passports.present?
+  .card-body
+    .table-responsive
+      table.table.table-bordered.table-md
+        tr
+          th = t('.full_name')
+          th = t('.birth_place')
+          th = t('.mother_name')
+          th = t('.father_name')
+          th = t('.number')
+          th = t('.expired_date')
+          th = t('.birth_date')
+          th = t('.identity_id')
+        - @passports.each do |passport|
+          tr
+            td = passport.full_name
+            td = passport.birth_place
+            td = passport.mother_name
+            td = passport.father_name
+            td = passport.number
+            td = passport.expired_date
+            td = passport.birth_date
+            td = passport.identity_id
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @passports
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_passport_path }

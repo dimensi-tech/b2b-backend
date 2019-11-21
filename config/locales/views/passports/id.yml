@@ -1,0 +1,72 @@
+id:
+  passports:
+    passports: 
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      mother_name: Nama Ibu
+      father_name: Nama Ayah
+      number: Nomor Paspor
+      expired_date: Tanggal Kadaluarsa
+      birth_date: Tanggal Lahir
+      identity_id: Id Identitas
+    filter: 
+      filter_header: Filter
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      mother_name: Nama Ibu
+      father_name: Nama Ayah
+      number: Nomor Paspor
+      expired_date: Tanggal Kadaluarsa
+      birth_date: Tanggal Lahir
+      identity_id: Id Identitas
+    form:
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      mother_name: Nama Ibu
+      father_name: Nama Ayah
+      number: Nomor Paspor
+      expired_date: Tanggal Kadaluarsa
+      birth_date: Tanggal Lahir
+      identity_id: Id Identitas
+    index:
+      page_header: Master Data Paspor
+      body_title: Kelola Paspor
+      create: Tambah Paspor
+    new:
+      page_header: Master Data Paspor
+      body_title: Entry Paspor Baru
+      card_header: Input Data Paspor
+    edit:
+      page_header: Master Data Paspor
+      body_title: Ubah Paspor
+      card_header: Ubah Data Paspor
+    show:
+      page_header: Detail Paspor
+      details: Detail
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      mother_name: Nama Ibu
+      father_name: Nama Ayah
+      number: Nomor Paspor
+      expired_date: Tanggal Kadaluarsa
+      birth_date: Tanggal Lahir
+      identity_id: Id Identitas
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Paspor baru berhasil dibuat.
+    update:
+      notice: Paspor berhasil diubah.
+    destroy:
+      notice: Paspor berhasil dihapus.
+  simple_form:
+    labels:
+      passport:
+        full_name: Nama Lengkap
+        birth_place: Tempat Lahir
+        mother_name: Nama Ibu
+        father_name: Nama Ayah
+        number: Nomor Paspor
+        expired_date: Tanggal Kadaluarsa
+        birth_date: Tanggal Lahir
+        identity_id: Id Identitas

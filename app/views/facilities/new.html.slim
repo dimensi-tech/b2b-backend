@@ -1,14 +1,17 @@
 section.section
   .section-header
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
       .breadcrumb-item
         a href="#"  Components
-      .breadcrumb-item Table\
-  h2.section-title Entry Fasilitas
-  .card
-    .card-header 
-     h4 = 'Input Data'
-    .card-body
-      == render 'form'
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title = t('.body_title')
+    .row
+      .col
+        .card
+          .card-header 
+            h4 = t('.card_header')
+          == render 'form'

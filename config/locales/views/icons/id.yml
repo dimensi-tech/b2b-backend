@@ -1,0 +1,42 @@
+id:
+  icons:
+    icons:
+      code: Kode
+      description: Deskripsi
+    filter: 
+      filter_header: Filter
+      code: Kode
+      description: Deskripsi
+    form:
+      code: Kode
+      description: Deskripsi
+    index:
+      page_header: Kelola Ikon
+      body_title: Daftar Ikon
+      create: Tambah Ikon
+    new:
+      page_header: Tambah Ikon
+      body_title: Entry Negara Baru
+      card_header: Input Data Ikon
+    edit:
+      page_header: Kelola Ikon
+      body_title: Ubah Ikon
+      card_header: Ubah Data Ikon
+    show:
+      page_header: Detail Ikon
+      details: Detail
+      code: Kode
+      description: Deskripsi
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Ikon baru berhasil dibuat.
+    update:
+      notice: Ikon berhasil diubah.
+    destroy:
+      notice: Ikon berhasil dihapus.
+  simple_form:
+    labels:
+      icon:
+        code: Kode
+        description: Deskripsi

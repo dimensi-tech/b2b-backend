@@ -1,7 +1,7 @@
 = render 'filter'
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -9,41 +9,18 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Packages
+    h2.section-title = t('.body_title')
     p.section-lead List of packages.
     .row
       .col
         .card
           .card-header.d-flex.justify-content-between
-            h4 Table Packages
-            = link_to 'Buat data baru', new_package_path, class: 'btn btn-info'
-          - if @packages.present?
-            .card-body
-              .table-responsive
-                table.table.table-bordered.table-md
-                  tr
-                    th Nama
-                    th Deskripsi
-                    th Harga
-                    
-                  - @packages.each do |package|
-                    tr
-                      td = package.name
-                      td = package.description
-                      td = package.price
-
-
-            .card-footer.text-right
-              nav.d-inline-block
-                = paginate @packages
-          - else
-            .card-body
-              .empty-state[data-height="400"]
-                .empty-state-icon
-                  i.fas.fa-question
-                h2
-                  | Data tidak ditemukan
-                p.lead
-                  | Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
-                = link_to new_package_path, class: 'btn btn-primary mt-4' do
-                  | Buat data baru
+            .col-md-12.mg-bottom-25
+              .d-flex.justify-content-between.align-items-center
+                = search_form_for @search do |f|
+                  .input-group.input-group-alternative
+                    .input-group-prepend
+                      .input-group-text @
+                    = f.search_field :name_cont, class: 'form-control'
+                = link_to t('.create'), new_package_path, class: 'btn btn-info'
+          = render 'packages'

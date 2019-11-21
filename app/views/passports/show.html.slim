@@ -1,6 +1,6 @@
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -20,57 +20,57 @@ section.section
       .col-12
         .card
           .card-header
-            h4 Details
+            h4 = t('.details')
           .card-body
             .list-unstyled.list-unstyled-border.mt-4
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Full name
+                  h6 = t('.full_name')
                   p = @passport.full_name
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Birth place
+                  h6 = t('.birth_place')
                   p = @passport.birth_place
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Mother name
+                  h6 = t('.mother_name')
                   p = @passport.mother_name
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Father name
+                  h6 = t('.father_name')
                   p = @passport.father_name
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Number
+                  h6 = t('.number')
                   p = @passport.number
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Expired date
+                  h6 = t('.expired_date')
                   p = @passport.expired_date
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Birth date
+                  h6 = t('.birth_date')
                   p = @passport.birth_date
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Identity
+                  h6 = t('.identity_id')
                   p = @passport.identity_id
   .buttons
-    = link_to 'Edit', edit_passport_path(@passport), class: 'btn btn-warning'
-    = link_to 'Back', passports_path(@passport), class: 'btn'
+    = link_to t('buttons.edit'), edit_passport_path(@passport), class: 'btn btn-warning'
+    = link_to t('buttons.back'), passports_path(@passport), class: 'btn'

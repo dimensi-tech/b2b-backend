@@ -1,0 +1,25 @@
+= render 'filter'
+section.section
+  .section-header
+    h1 = t('.page_header')
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title = t('.body_title')
+    .row
+      .col
+        .card
+          .card-header.d-flex.justify-content-between
+            .col-md-12.mg-bottom-25
+              .d-flex.justify-content-between.align-items-center
+                = search_form_for @search do |f|
+                  .input-group.input-group-alternative
+                    .input-group-prepend
+                      .input-group-text @
+                    = f.search_field :code_eq, class: 'form-control'
+                = link_to t('.create'), new_icon_path, class: 'btn btn-info'
+          = render 'icons'

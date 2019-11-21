@@ -1,6 +1,6 @@
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -8,13 +8,10 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Create New Travel Destination
-    p.section-lead On this page you can create a new travel destination and fill in all fields.
+    h2.section-title = t('.body_title')
     .row
       .col
         .card
           .card-header
-            h4 Input Data Travel Destination
+            h4 = t('.card_header')
           == render 'form'
-  .buttons
-    = link_to 'Back', travel_destinations_path, class: 'btn'
