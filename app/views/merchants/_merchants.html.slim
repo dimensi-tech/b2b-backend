@@ -1,0 +1,16 @@
+- if @merchants.present?
+  .card-body
+    .table-responsive
+      table.table.table-bordered.table-md
+        tr
+          th = t('.name')
+          th = t('.description')
+        - @merchants.each do |merchant|
+          tr
+            td = merchant.name
+            td = merchant.description
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @merchants
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_merchant_path }

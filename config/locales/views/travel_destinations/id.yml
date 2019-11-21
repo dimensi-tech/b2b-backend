@@ -1,0 +1,42 @@
+id:
+  travel_destinations:
+    travel_destinations:
+      country_id: Id Negara
+      destination: Destinasi
+    filter: 
+      filter_header: Filter
+      country_id: Id Negara
+      destination: Destinasi
+    form:
+      country_id: Id Negara
+      destination: Destinasi
+    index:
+      page_header: Tujuan Wisata
+      body_title: Kelola Tujuan Wisata
+      create: Tambah Tujuan Wisata
+    new:
+      page_header: Tujuan Wisata
+      body_title: Entry Tujuan Wisata Baru
+      card_header: Input Data Tujuan Wisata
+    edit:
+      page_header: Tujuan Wisata
+      body_title: Ubah Tujuan Wisata
+      card_header: Ubah Data Tujuan Wisata
+    show:
+      page_header: Detail Travel Destinasi
+      details: Detail
+      country_id: Id Negara
+      destination: Destinasi
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Tujuan Wisata baru berhasil dibuat.
+    update:
+      notice: Tujuan Wisata berhasil diubah.
+    destroy:
+      notice: Tujuan Wisata berhasil dihapus.
+  simple_form:
+    labels:
+      travel_destination:
+        country_id: Id Negara
+        destination: Destinasi

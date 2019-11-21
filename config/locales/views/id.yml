@@ -5,6 +5,8 @@ id:
     create: Buat data baru
   buttons:
     submit: Simpan
+    cancel: Batal
     back: Kembali
     filter: Filter
     reset: Reset
+    edit: Ubah

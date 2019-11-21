@@ -1,6 +1,6 @@
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -8,14 +8,11 @@ section.section
         a href="#"  Components
       .breadcrumb-item Table
   .section-body
-    h2.section-title Editing Package
-    p.section-lead On this page you can edit a package.
+    h2.section-title = t('.body_title')
     .row
       .col
         .card
           .card-header
-            h4 Edit Data Package
+            h4 = t('.card_header')
           == render 'form'
-  .buttons
-    = link_to 'Show', @package, class: 'btn btn-info'
-    = link_to 'Back', packages_path, class: 'btn'
+

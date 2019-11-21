@@ -1,0 +1,42 @@
+id:
+  merchants:
+    merchants:
+      name: Nama
+      description: Deskripsi
+    filter: 
+      filter_header: Filter
+      name: Nama
+      description: Deskripsi
+    form:
+      name: Nama
+      description: Deskripsi    
+    index:
+      page_header: Master Data Merchant
+      body_title: Kelola Merchant
+      create: Tambah Merchant
+    new:
+      page_header: Master Data Merchant
+      body_title: Entry Merchant Baru
+      card_header: Input Data Merchant
+    edit:
+      page_header: Master Data Negara
+      body_title: Ubah Merchant
+      card_header: Ubah Data Merchant
+    show:
+      page_header: Detail Merchant
+      details: Detail
+      name: Nama
+      description: Deskripsi
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Merchant baru berhasil dibuat.
+    update:
+      notice: Merchant berhasil diubah.
+    destroy:
+      notice: Merchant berhasil dihapus.
+  simple_form:
+    labels:
+      merchant:
+        name: Nama
+        description: Deskripsi

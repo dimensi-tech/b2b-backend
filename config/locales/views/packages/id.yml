@@ -1,0 +1,58 @@
+id:
+  packages:
+    packages:
+      product_id: Id Produk
+      name: Nama
+      description: Deskripsi
+      price: Harga
+      min_person: Minimal Orang
+      max_person: Maksimal Orang
+    filter: 
+      filter_header: Filter
+      product_id: Id Produk
+      name: Nama
+      description: Deskripsi
+      price: Harga
+    form:
+      product_id: Id Produk
+      name: Nama
+      description: Deskripsi
+      price: Harga
+    index:
+      page_header: Master Data Paket
+      body_title: Kelola Paket
+      create: Tambah Paket
+    new:
+      page_header: Master Data Paket
+      body_title: Entry Paket Baru
+      card_header: Input Data Paket
+    edit:
+      page_header: Master Data Paket
+      body_title: Ubah Paket
+      card_header: Ubah Data Paket
+    show:
+      page_header: Detail Paket
+      details: Detail
+      product_id: Id Produk
+      name: Nama
+      description: Deskripsi
+      price: Harga
+      min_person: Minimal Orang
+      max_person: Maksimal Orang
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Paket baru berhasil dibuat.
+    update:
+      notice: Paket berhasil diubah.
+    destroy:
+      notice: Paket berhasil dihapus.
+  simple_form:
+    labels:
+      package:
+        product_id: Id Produk
+        name: Nama
+        description: Deskripsi
+        price: Harga
+        min_person: Minimal Orang
+        max_person: Maksimal Orang

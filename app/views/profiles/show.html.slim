@@ -1,6 +1,6 @@
 section.section
   .section-header
-    h1 Master Data
+    h1 = t('.page_header')
     .section-header-breadcrumb
       .breadcrumb-item.active
         a href="#"  Dashboard
@@ -20,45 +20,45 @@ section.section
       .col-12
         .card
           .card-header
-            h4 Details
+            h4 = t('.details')
           .card-body
             .list-unstyled.list-unstyled-border.mt-4
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 User
+                  h6 = t('.user_id')
                   p = @profile.user_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Identity
+                  h6 = t('.identity_id')
                   p = @profile.identity_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Passport
+                  h6 = t('.passport_id')
                   p = @profile.passport_id
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Avatar
+                  h6 = t('.avatar')
                   p = @profile.avatar
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Telephone number
+                  h6 = t('.telephone_number')
                   p = @profile.telephone_number
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Phone number
+                  h6 = t('.phone_number')
                   p = @profile.phone_number
   .buttons
-    = link_to 'Edit', edit_profile_path(@profile), class: 'btn btn-warning'
-    = link_to 'Back', profiles_path(@profile), class: 'btn'
+    = link_to t('buttons.edit'), edit_profile_path(@profile), class: 'btn btn-warning'
+    = link_to t('buttons.back'), profiles_path(@profile), class: 'btn'

@@ -1,23 +1,38 @@
 id:
   products:
-    products:
+    products: 
       name: Nama
       description: Deskripsi
+      image: Gambar
+    filter: 
+      filter_header: Filter
+      name: Nama
+      description: Deskripsi
+      image: Gambar
+    form:
+      name: Nama
+      description: Deskripsi
+      image: Gambar
     index:
-      page_header: Kelola Produk
-      create: Buat Produk Baru
+      page_header: Master Data Produk
+      body_title: Kelola Produk
+      create: Tambah Produk
     new:
-      page_header: Buat Produk Baru
-      sub_page_header: Input Data Produk
+      page_header: Master Data Produk
+      body_title: Entry Produk Baru
+      card_header: Input Data Produk
     edit:
-      page_header: Ubah Produk
-      sub_page_header: Ubah Data Produk
+      page_header: Master Data Produk
+      body_title: Ubah Produk
+      card_header: Ubah Data Produk
     show:
       page_header: Detail Produk
+      details: Detail
       name: Nama
+      description: Deskripsi
+      image: Gambar
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
-      description: Deskripsi
     create:
       notice: Produk baru berhasil dibuat.
     update:
@@ -29,3 +44,4 @@ id:
       product:
         name: Nama
         description: Deskripsi
+        image: Gambar

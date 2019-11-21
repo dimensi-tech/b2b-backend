@@ -1,25 +1,25 @@
 button.btn.btn-icon.btn-3.btn-primary type="button" data-target="#filter" data-toggle="modal"
   span.btn-inner--icon
     i.fa.fa-filter
-  span.btn-inner--text Filter
+  span.btn-inner--text = t('buttons.filter')
 #filter.modal.fade
   = search_form_for @search do |f|
     .modal-dialog.modal-dialog-centered
         .modal-content
           .modal-header
-            h5.modal-title Filter
+            h5.modal-title = t('.filter_header')
             button.close aria-label="Close" data-dismiss="modal" type="button"
               span aria-hidden="true"  &times;
           .modal-body
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = 'Name'
+                  label class='form-control-label' = t('.name')
                   = f.search_field :name_cont, class: 'form-control form-control-alternative'
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = 'Code'
+                  label class='form-control-label' = t('.description')
                   = f.search_field :description_cont, class: 'form-control form-control-alternative'
           .modal-footer
             = link_to t('buttons.reset'), products_path, class: 'btn btn-danger'

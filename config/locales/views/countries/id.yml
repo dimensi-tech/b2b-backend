@@ -1,0 +1,42 @@
+id:
+  countries:
+    countries: 
+      name: Nama
+      code: Kode
+    filter: 
+      filter_header: Filter
+      name: Nama
+      code: Kode
+    form:
+      name: Nama
+      code: Kode
+    index:
+      page_header: Master Data Negara
+      body_title: Kelola Negara
+      create: Tambah Negara
+    new:
+      page_header: Master Data Negara
+      body_title: Entry Negara Baru
+      card_header: Input Data Negara
+    edit:
+      page_header: Master Data Negara
+      body_title: Ubah Negara
+      card_header: Ubah Data Negara
+    show:
+      page_header: Detail Negara
+      details: Detail
+      name: Nama
+      code: Kode
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Negara baru berhasil dibuat.
+    update:
+      notice: Negara berhasil diubah.
+    destroy:
+      notice: Negara berhasil dihapus.
+  simple_form:
+    labels:
+      country:
+        name: Nama
+        code: Kode

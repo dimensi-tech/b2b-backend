@@ -1,0 +1,52 @@
+id:
+  facilities:
+    facilities:
+      package_id: Id Paket
+      name: Fasilitas
+      description: Deskripsi
+      icon: Ikon
+      package: Paket
+    filter:
+      filter_header: Filter      
+      package_id: Id Paket
+      name: Fasilitas
+      package: Paket
+    form:
+      filter_header: Filter      
+      package_id: Id Paket
+      name: Fasilitas
+      package: Paket      
+    index:
+      page_header: Master Data Fasilitas
+      body_title: Daftar Fasilitas
+      create: Tambah Fasilitas
+    new:
+      page_header: Master Data Fasilitas      
+      body_title: Entry Fasilitas Baru
+      card_header: Input Data Fasilitas
+    edit:
+      page_header: Master Data Fasilitas
+      body_title: Ubah Fasilitas
+      card_header: Ubah Data Fasilitas
+    show:
+      page_header: Detail Fasilitas
+      details: Detail
+      package_id: Id Paket
+      name: Fasilitas
+      description: Deskripsi
+      icon: Ikon
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Fasilitas baru berhasil dibuat.
+    update:
+      notice: Fasilitas berhasil diubah.
+    destroy:
+      notice: Fasilitas berhasil dihapus.
+  simple_form:
+    labels:
+      facility:
+        package_id: Id Paket
+        name: Fasilitas
+        description: Deskripsi
+        icon: Ikon

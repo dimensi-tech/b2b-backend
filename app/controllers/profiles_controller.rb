@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def index
-    @search = Profile.ransack(params[:q])
+    @search = Profile.ransack(params[:q]) 
     @profiles = @search.result(distinct: true).page(params[:page]).per(15)
   end
 

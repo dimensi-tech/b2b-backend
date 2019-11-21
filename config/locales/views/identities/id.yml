@@ -1,0 +1,111 @@
+id:
+  identities:
+    identities:
+      nik: NIK
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      birth_date: Tanggal Lahir
+      gender: Jenis Kelamin
+      address: Alamat
+      rt: RT
+      rw: RW
+      urban_village: Kelurahan
+      district: Kecamatan
+      province_id: Id Provinsi
+      city_id: Id Kota
+      religion: Agama
+      martial_status: Status Perkawinan
+      job: Pekerjaan
+      nationality: Negara Asal
+    filter: 
+      filter_header: Filter
+      nik: NIK
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      birth_date: Tanggal Lahir
+      gender: Jenis Kelamin
+      address: Alamat
+      rt: RT
+      rw: RW
+      urban_village: Kelurahan
+      district: Kecamatan
+      province_id: Id Provinsi
+      city_id: Id Kota
+      religion: Agama
+      martial_status: Status Perkawinan
+      job: Pekerjaan
+      nationality: Negara Asal
+    form:
+      nik: NIK
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      birth_date: Tanggal Lahir
+      gender: Jenis Kelamin
+      address: Alamat
+      rt: RT
+      rw: RW
+      urban_village: Kelurahan
+      district: Kecamatan
+      province_id: Id Provinsi
+      city_id: Id Kota
+      religion: Agama
+      martial_status: Status Perkawinan
+      job: Pekerjaan
+      nationality: Negara Asal
+    index:
+      page_header: Master Data Identitas
+      body_title: Daftar Identitas
+      create: Tambah Identitas
+    new:
+      page_header: Master Data Identitas
+      body_title: Entry Identitas Baru
+      card_header: Input Data Identitas
+    edit:
+      page_header: Master Data Identitas
+      body_title: Ubah Identitas
+      card_header: Ubah Data Identitas
+    show:
+      page_header: Detail Identitas
+      nik: NIK
+      full_name: Nama Lengkap
+      birth_place: Tempat Lahir
+      birth_date: Tanggal Lahir
+      gender: Jenis Kelamin
+      address: Alamat
+      rt: RT
+      rw: RW
+      urban_village: Kelurahan
+      district: Kecamatan
+      province_id: Id Provinsi
+      city_id: Id Kota
+      religion: Agama
+      martial_status: Status Perkawinan
+      job: Pekerjaan
+      nationality: Negara Asal
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Identitas baru berhasil dibuat.
+    update:
+      notice: Identitas berhasil diubah.
+    destroy:
+      notice: Identitas berhasil dihapus.
+  simple_form:
+    labels:
+      identity:
+        nik: NIK
+        full_name: Nama Lengkap
+        birth_place: Tempat Lahir
+        birth_date: Tanggal Lahir
+        gender: Jenis Kelamin
+        address: Alamat
+        rt: RT
+        rw: RW
+        urban_village: Kelurahan
+        district: Kecamatan
+        province_id: Id Provinsi
+        city_id: Id Kota
+        religion: Agama
+        martial_status: Status Perkawinan
+        job: Pekerjaan
+        nationality: Negara Asal
