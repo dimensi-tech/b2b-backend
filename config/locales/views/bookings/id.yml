@@ -1,0 +1,45 @@
+id:
+  bookings:
+    bookings: 
+      number: Nomor
+      package: Paket
+      user: User
+    filter: 
+      filter_header: Filter
+      number: Nomor
+      package: Paket
+      user: User
+    form:
+      number: Nomor
+      package: Paket
+      user: User
+    index:
+      page_header: Master Data Boking
+      body_title: Kelola Boking
+      create: Tambah Boking
+    new:
+      page_header: Master Data Boking
+      body_title: Entry Boking Baru
+      card_header: Input Data Boking
+    edit:
+      page_header: Master Data Boking
+      body_title: Ubah Boking
+      card_header: Ubah Data Boking
+    show:
+      page_header: Detail Boking
+      details: Detail
+      name: Nama
+      code: Kode
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Boking baru berhasil dibuat.
+    update:
+      notice: Boking berhasil diubah.
+    destroy:
+      notice: Boking berhasil dihapus.
+  simple_form:
+    labels:
+      country:
+        name: Nama
+        code: Kode
