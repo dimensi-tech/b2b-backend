@@ -5,3 +5,7 @@
 .mg-top-50 {
   margin-top: 50px; 
 }
+
+.button-actions > *:not(:last-child) {
+  margin-right: 10px;
+}

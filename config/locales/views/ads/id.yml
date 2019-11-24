@@ -1,0 +1,62 @@
+id:
+  ads:
+    ads: 
+      name: Nama
+      image: Gambar
+      status: Status
+      active: Aktif
+      non_active: Tidak Aktif
+      created_at: Dibuat Pada
+    filter: 
+      filter_header: Filter
+      name: Nama
+      image: Gambar
+      status: Status
+      active: Aktif
+      non_active: Tidak Aktif
+      created_at: Dibuat Pada
+    form:
+      name: Nama
+      image: Gambar
+      status: Status
+      active: Aktif
+      non_active: Tidak Aktif
+      created_at: Dibuat Pada
+    index:
+      page_header: Master Data Iklan
+      body_title: Kelola Iklan
+      create: Tambah Iklan
+    new:
+      page_header: Master Data Iklan
+      body_title: Entry Iklan Baru
+      card_header: Input Data Iklan
+    edit:
+      page_header: Master Data Iklan
+      body_title: Ubah Iklan
+      card_header: Ubah Data Iklan
+    show:
+      page_header: Detail Iklan
+      details: Detail
+      name: Nama
+      image: Gambar
+      status: Status
+      active: Aktif
+      non_active: Tidak Aktif
+      created_at: Dibuat Pada
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Iklan baru berhasil dibuat.
+    update:
+      notice: Iklan berhasil diubah.
+    destroy:
+      notice: Iklan berhasil dihapus.
+  simple_form:
+    labels:
+      country:
+        name: Nama
+        image: Gambar
+        status: Status
+        active: Aktif
+        non_active: Tidak Aktif
+        created_at: Dibuat Pada

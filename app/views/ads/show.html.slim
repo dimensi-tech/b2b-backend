@@ -1,0 +1,46 @@
+section.section
+  .section-header
+    h1 = t('.page_header')
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    - if notice
+      .alert.alert-success.alert-dismissible.show.fade
+        .alert-body
+          button.close data-dismiss="alert"
+            span &times;
+          = notice
+
+    h2.section-title = @ad.name
+    p.section-lead
+      = "Data ID : #{@ad.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 = t('.details')
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.name')
+                  p = @ad.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.image')
+                  p = image_tag @ad.image_url, class: 'img-fluid'
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.status')
+                  p = @ad.status ? t('.active') : t('.non_active')
+  .buttons
+    = link_to t('buttons.edit'), edit_ad_path(@ad), class: 'btn btn-warning'
+    = link_to t('buttons.back'), ads_path(@ad), class: 'btn'
