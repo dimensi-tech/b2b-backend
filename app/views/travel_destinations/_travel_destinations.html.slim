@@ -1,17 +1,28 @@
-          - if @travel_destinations.present?
-            .card-body
-              .table-responsive
-                table.table.table-bordered.table-md
-                  tr
-                    th Country Id
-                    th Destination
-                  - @travel_destinations.each do |travel_destination|
-                    tr
-                      td = travel_destination.country_id
-                      td = travel_destination.destination
+- if @travel_destinations.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th Country Id
+          th Destination
+          th Action
+        - @travel_destinations.each do |travel_destination|
+          tr
+            td = travel_destination.country_id
+            td = travel_destination.destination
+            td
+              = link_to travel_destination, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_travel_destination_path(travel_destination), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to travel_destination, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
 
-            .card-footer.text-right
-              nav.d-inline-block
-                = paginate @travel_destinations
-          - else
-            = render partial: 'shared/empty_message', locals: { path: new_travel_destination_path }
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @travel_destinations
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_travel_destination_path }

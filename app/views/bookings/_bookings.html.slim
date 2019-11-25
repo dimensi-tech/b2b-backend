@@ -1,15 +1,27 @@
 - if @bookings.present?
-  .card-body
+  .card-body.p-0
     .table-responsive
-      table.table.table-bordered.table-md
+      table.table.table-striped
         tr
           th = t('.name')
           th = t('.code')
+          th Action
         - @bookings.each do |booking|
           tr
             td = booking.number
             td = booking.package.name
             td = booking.user.name
+            td
+              = link_to booking, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_booking_path(booking), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to booking, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
   .card-footer.text-right
     nav.d-inline-block
       = paginate @bookings
