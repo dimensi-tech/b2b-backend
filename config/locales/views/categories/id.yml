@@ -1,0 +1,45 @@
+id:
+  categories:
+    categories: 
+      name: Nama
+      code: Kode
+      description: Deskripsi
+    filter: 
+      filter_header: Filter
+      name: Nama
+      code: Kode
+    form:
+      name: Nama
+      code: Kode
+      description: Deskripsi
+    index:
+      page_header: Master Data Kategori
+      body_title: Kelola Kategori
+      create: Tambah Kategori
+    new:
+      page_header: Master Data Kategori
+      body_title: Entry Kategori Baru
+      card_header: Input Data Kategori
+    edit:
+      page_header: Master Data Kategori
+      body_title: Ubah Kategori
+      card_header: Ubah Data Kategori
+    show:
+      page_header: Detail Kategori
+      details: Detail
+      name: Nama
+      code: Kode
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Kategori baru berhasil dibuat.
+    update:
+      notice: Kategori berhasil diubah.
+    destroy:
+      notice: Kategori berhasil dihapus.
+  simple_form:
+    labels:
+      category:
+        name: Nama
+        code: Kode
+        description: Deskripsi

@@ -1,0 +1,18 @@
+- if @categories.present?
+  .card-body
+    .table-responsive
+      table.table.table-bordered.table-md
+        tr
+          th = t('.name')
+          th = t('.code')
+          th = t('.description')
+        - @categories.each do |category|
+          tr
+            td = category.code
+            td = category.name
+            td = category.description
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @categories
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_booking_path }
