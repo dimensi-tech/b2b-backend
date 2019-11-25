@@ -1,0 +1,57 @@
+section.section
+  .section-header
+    h1 = t('.page_header')
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    - if notice
+      .alert.alert-success.alert-dismissible.show.fade
+        .alert-body
+          button.close data-dismiss="alert"
+            span &times;
+          = notice
+
+    h2.section-title = @discount.name
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 = t('.details')
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.name')
+                  p = @discount.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.percentage')
+                  p = @discount.percentage
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.start_date')
+                  p = @discount.start_date
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.end_date')
+                  p = @discount.end_date
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.status')
+                  p = @discount.status
+
+  .buttons
+    = link_to t('buttons.edit'), edit_discount_path(@discount), class: 'btn btn-warning'
+    = link_to t('buttons.back'), discounts_path, class: 'btn'

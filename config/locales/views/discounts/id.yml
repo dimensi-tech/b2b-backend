@@ -1,0 +1,52 @@
+id:
+  discounts:
+    discounts:
+      name: Nama
+      percentage: Persantese
+      status: Status
+      valid_date: Valid Sampai
+    filter:
+      filter_header: Filter
+      name: Nama
+      percentage: Persantese
+      status: Status
+      valid_date: Valid Sampai
+    form:
+      name: Nama
+      percentage: Persantese
+      status: Status
+      valid_date: Valid Sampai
+    index:
+      page_header: Kelola Diskon
+      body_title: Daftar Diskon
+      create: Tambah Diskon
+    new:
+      page_header: Tambah Diskon
+      body_title: Entry Diskon Baru
+      card_header: Input Data Diskon
+    edit:
+      page_header: Kelola Diskon
+      body_title: Ubah Diskon
+      card_header: Ubah Data Diskon
+    show:
+      page_header: Detail Diskon
+      details: Detail
+      name: Nama
+      percentage: Persantese
+      status: Status
+      valid_date: Valid Sampai
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Diskon baru berhasil dibuat.
+    update:
+      notice: Diskon berhasil diubah.
+    destroy:
+      notice: Diskon berhasil dihapus.
+  simple_form:
+    labels:
+      discount:
+        name: Nama
+        percentage: Persantese
+        status: Status
+        valid_date: Valid Sampai
