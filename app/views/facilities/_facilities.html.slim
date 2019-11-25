@@ -1,14 +1,26 @@
 - if @facilities.present?
-  .card-body
+  .card-body.p-0
     .table-responsive
-      table.table.table-bordered.table-md
+      table.table.table-striped
         tr
           th = t('.package')
           th = t('.name')
+          th Action
         - @facilities.each do |facility|
           tr
             td = facility.package.name
             td = facility.name
+            td
+              = link_to facility, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_facility_path(facility), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to facility, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
   .card-footer.text-right
     nav.d-inline-block
       = paginate @facilities

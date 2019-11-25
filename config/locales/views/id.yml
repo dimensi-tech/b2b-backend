@@ -7,6 +7,7 @@ id:
     submit: Simpan
     cancel: Batal
     back: Kembali
+    confirm: Apakah Anda yakin ?
     filter: Filter
     reset: Reset
     edit: Ubah

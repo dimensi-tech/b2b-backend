@@ -46,13 +46,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_130244) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "districts", force: :cascade do |t|
     t.string "name"
     t.string "code"

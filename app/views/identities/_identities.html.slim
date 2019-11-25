@@ -1,13 +1,14 @@
 - if @identities.present?
-  .card-body
+  .card-body.p-0
     .table-responsive
-      table.table.table-bordered.table-md
+      table.table.table-striped
         tr
           th = t('.nik')
           th = t('.full_name')
           th = t('.birth_place')
           th = t('.birth_date')
           th = t('.gender')
+          th Action
         - @identities.each do |identity|
           tr
             td = identity.nik
@@ -15,6 +16,17 @@
             td = identity.birth_place
             td = identity.birth_date
             td = identity.gender
+            td
+              = link_to identity, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_identity_path(identity), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to identity, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
   .card-footer.text-right
     nav.d-inline-block
       = paginate @identities

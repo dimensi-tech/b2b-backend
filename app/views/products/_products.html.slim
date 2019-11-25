@@ -1,14 +1,26 @@
 - if @products.present?
-  .card-body
+  .card-body.p-0
     .table-responsive
-      table.table.table-bordered.table-md
+      table.table.table-striped
         tr
           th = t('.name')
           th = t('.description')
+          th Action
         - @products.each do |product|
           tr
             td = link_to product.name, product
             td = product.description
+            td
+              = link_to product, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_product_path(product), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to product, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
   .card-footer.text-right
     nav.d-inline-block
       = paginate @products

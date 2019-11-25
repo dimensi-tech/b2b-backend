@@ -1,14 +1,26 @@
 - if @icons.present?
-  .card-body
+  .card-body.p-0
     .table-responsive
-      table.table.table-bordered.table-md
+      table.table.table-striped
         tr
           th = t('.code')
           th = t('.description')
+          th Action
         - @icons.each do |icon|
           tr
             td = icon.code
             td = icon.description
+            td
+              = link_to icon, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_icon_path(icon), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to icon, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
   .card-footer.text-right
     nav.d-inline-block
       = paginate @icons

@@ -1,7 +1,7 @@
 - if @passports.present?
-  .card-body
+  .card-body.p-0
     .table-responsive
-      table.table.table-bordered.table-md
+      table.table.table-striped
         tr
           th = t('.full_name')
           th = t('.birth_place')
@@ -11,6 +11,7 @@
           th = t('.expired_date')
           th = t('.birth_date')
           th = t('.identity_id')
+          th Action
         - @passports.each do |passport|
           tr
             td = passport.full_name
@@ -21,6 +22,17 @@
             td = passport.expired_date
             td = passport.birth_date
             td = passport.identity_id
+            td
+              = link_to passport, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_passport_path(passport), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to passport, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
   .card-footer.text-right
     nav.d-inline-block
       = paginate @passports

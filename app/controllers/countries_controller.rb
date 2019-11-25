@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
 
   def index
     @search = Country.ransack(params[:q])
-    @countries = @search.result(distinct: true).page(params[:page]).per(15)
+    @countries = @search.result(distinct: true).page(params[:page])
   end
 
   def show
