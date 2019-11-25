@@ -1,0 +1,32 @@
+- if @ads.present?
+  .card-body
+    .table-responsive
+      table.table.table-striped.table-md
+        tr
+          th = t('.name')
+          th = t('.image')
+          th = t('.status')
+          th = t('.created_at')
+        - @ads.each do |ad|
+          tr
+            td
+              = ad.name
+              .table-links
+                = link_to t('buttons.view'), ad_path(ad)
+                .bullet
+                = link_to t('buttons.edit'), edit_ad_path(ad)
+                .bullet
+                = link_to t('buttons.destroy'), ad_path(ad), method: :delete, class: 'text-danger'
+
+            td = image_tag ad.image_url, class: 'img-fluid', style: 'max-height: 100px'
+            td
+              - if ad.status 
+                .badge.badge-success = t('.active')
+              - else
+                .badge.badge-danger = t('.not_active')
+            td = ad.created_at.strftime('%d %B %Y')
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @ads
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_ad_path }

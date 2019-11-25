@@ -10,8 +10,8 @@
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = t('.name')
-                  = f.search_field :user_id_eq, class: 'form-control form-control-alternative'
+                  label class='form-control-label' = 'Name'
+                  = f.search_field :name_cont, class: 'form-control form-control-alternative'
           .modal-footer
-            = link_to t('buttons.reset'), profiles_path, class: 'btn btn-danger'
+            = link_to t('buttons.reset'), ads_path, class: 'btn btn-danger'
             = f.submit t('buttons.filter'), class: 'btn btn-primary'
