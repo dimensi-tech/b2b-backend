@@ -7,6 +7,7 @@ id:
       price: Harga
       min_person: Minimal Orang
       max_person: Maksimal Orang
+      available_date: Tanggal Ketersedian
     filter: 
       filter_header: Filter
       product_id: Id Produk
@@ -18,6 +19,7 @@ id:
       name: Nama
       description: Deskripsi
       price: Harga
+      available_date: Tanggal Ketersedian
     index:
       page_header: Master Data Paket
       body_title: Kelola Paket
@@ -31,14 +33,18 @@ id:
       body_title: Ubah Paket
       card_header: Ubah Data Paket
     show:
-      page_header: Detail Paket
+      page_header: Nama Paket
       details: Detail
+      package_details: Detail Paket 
       product_id: Id Produk
       name: Nama
       description: Deskripsi
       price: Harga
       min_person: Minimal Orang
       max_person: Maksimal Orang
+      package_id: Id Paket
+      day: Hari
+      image: Gambar
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:

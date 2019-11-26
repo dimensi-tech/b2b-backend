@@ -47,6 +47,34 @@ section.section
                 .media-body
                   h6 = t('.price')
                   p = @package.price
+          .card-header
+            h4 = t('.package_details')
+          .card-body
+            - @package.package_details.each do |detail|
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.package_id')
+                  p = detail.package_id
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.day')
+                  p = detail.day
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.description')
+                  p = detail.description
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.image')
+                  p = detail.image
   .buttons
     = link_to t('buttons.edit'), edit_package_path(@package), class: 'btn btn-warning'
     = link_to t('buttons.back'), packages_path(@package), class: 'btn'

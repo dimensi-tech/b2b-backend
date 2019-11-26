@@ -54,7 +54,7 @@ id:
       nationality: Negara Asal
     index:
       page_header: Master Data Identitas
-      body_title: Daftar Identitas
+      body_title: Kelola Identitas
       create: Tambah Identitas
     new:
       page_header: Master Data Identitas

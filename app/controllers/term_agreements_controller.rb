@@ -2,7 +2,8 @@ class TermAgreementsController < ApplicationController
   before_action :set_term_agreement, only: [:show, :edit, :update, :destroy]
 
   def index
-    @term_agreements = TermAgreement.all
+    @search = TermAgreement.ransack(params[:q])
+    @term_agreements = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   def show
