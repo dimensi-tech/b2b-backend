@@ -18,7 +18,7 @@
       li class=("#{active_class([customers_path])}")
         = link_to customers_path do
           i.fas.fa-map-marker-alt
-          span = t('sidebar.customers')    
+          span = t('sidebar.customers')
       li class=("#{active_class([countries_path])}")
         = link_to countries_path do
           i.fas.fa-map-marker-alt
@@ -67,6 +67,10 @@
         = link_to discounts_path do
           i.fas.fa-map-marker-alt
           span = t('sidebar.discounts')
+      li class=("#{active_class([vouchers_path])}")
+        = link_to vouchers_path do
+          i.fas.fa-map-marker-alt
+          span = t('sidebar.vouchers')
       li class=("#{active_class([term_agreements_path])}")
         = link_to term_agreements_path do
           i.fas.fa-map-marker-alt

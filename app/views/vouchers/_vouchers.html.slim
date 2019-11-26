@@ -1,0 +1,38 @@
+- if @vouchers.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.code')
+          th = t('.name')
+          th = t('.valid_date')
+          th = t('.percentage')
+          th = t('.max_amount')
+          th = t('.max_usage')
+          th = t('.status')
+          th Action
+        - @vouchers.each do |voucher|
+          tr
+            td = voucher.code
+            td = voucher.name
+            td = "#{voucher.start_date} sampai #{voucher.end_date}"
+            td = voucher.percentage
+            td = voucher.max_amount
+            td = voucher.max_usage
+            td = voucher.status
+            td
+              = link_to voucher, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_voucher_path(voucher), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to voucher, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
+
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @vouchers
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_voucher_path }

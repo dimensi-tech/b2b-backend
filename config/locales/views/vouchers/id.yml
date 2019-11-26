@@ -1,0 +1,67 @@
+id:
+  vouchers:
+    vouchers:
+      code: Kode
+      name: Nama
+      valid_date: Valid Sampai
+      percentage: Persantese
+      max_amount: Maksimal Harga
+      max_usage: Maksimal Penggunaan
+      status: Status
+    filter:
+      filter_header: Filter
+      code: Kode
+      name: Nama
+      valid_date: Valid Sampai
+      percentage: Persantese
+      max_amount: Maksimal Harga
+      max_usage: Maksimal Penggunaan
+      status: Status
+    form:
+      code: Kode
+      name: Nama
+      valid_date: Valid Sampai
+      percentage: Persantese
+      max_amount: Maksimal Harga
+      max_usage: Maksimal Penggunaan
+      status: Status
+    index:
+      page_header: Kelola Voucher
+      body_title: Daftar Voucher
+      create: Tambah Voucher
+    new:
+      page_header: Tambah Voucher
+      body_title: Entry Voucher Baru
+      card_header: Input Data Voucher
+    edit:
+      page_header: Kelola Voucher
+      body_title: Ubah Voucher
+      card_header: Ubah Data Voucher
+    show:
+      page_header: Detail Voucher
+      details: Detail
+      code: Kode
+      name: Nama
+      valid_date: Valid Sampai
+      percentage: Persantese
+      max_amount: Maksimal Harga
+      max_usage: Maksimal Penggunaan
+      status: Status
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Voucher baru berhasil dibuat.
+    update:
+      notice: Voucher berhasil diubah.
+    destroy:
+      notice: Voucher berhasil dihapus.
+  simple_form:
+    labels:
+      voucher:
+      code: Kode
+      name: Nama
+      valid_date: Valid Sampai
+      percentage: Persantese
+      max_amount: Maksimal Harga
+      max_usage: Maksimal Penggunaan
+      status: Status

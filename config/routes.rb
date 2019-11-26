@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :profiles
   resources :term_agreements
   resources :travel_destinations
+  resources :vouchers
   resources :voucher_usages
 end
