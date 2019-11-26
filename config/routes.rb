@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  resources :categories
   root 'homes#index'
   devise_for :users
+
   resources :ads
   resources :bookings
+  resources :categories
   resources :countries
-  resources :facilities
-  resources :merchants
+  resources :discounts
   resources :icons
+  resources :facilities
   resources :identities
+  resources :merchants
   resources :packages
   resources :passports
   resources :products

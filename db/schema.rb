@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_130244) do
+ActiveRecord::Schema.define(version: 2019_11_25_170113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 2019_11_25_130244) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.string "code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "discounts", force: :cascade do |t|
+    t.string "name"
+    t.decimal "percentage"
+    t.boolean "status"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -119,6 +129,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_130244) do
     t.integer "max_person"
     t.string "available_date", default: [], array: true
     t.string "duration_trip"
+    t.integer "discount_id"
   end
 
   create_table "passports", force: :cascade do |t|
