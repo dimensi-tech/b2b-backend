@@ -1,0 +1,19 @@
+id:
+  voucher_usages:
+    voucher_usages:   
+      customer: Pelanggan
+      voucher: Nama Voucher
+    filter: 
+      filter_header: Filter
+      customer: Nama
+      voucher: Nama Voucher
+    index:
+      page_header: Master Data Penggunaan Voucher
+      body_title: Kelola Penggunaan Voucher
+      create: Tambah Penggunaan Voucher
+    create:
+      notice: Penggunaan Voucher baru berhasil dibuat.
+    update:
+      notice: Penggunaan Voucher berhasil diubah.
+    destroy:
+      notice: Penggunaan Voucher berhasil dihapus.
