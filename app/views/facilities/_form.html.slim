@@ -1,10 +1,13 @@
 = simple_form_for @facility do |f|
   - if @facility.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@facility.errors.count, "error")} prohibited this facility from being saved:"
-      ul
-        - @facility.errors.full_messages.each do |message|
-          li = message
+    .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@facility.errors.count, "error")} prohibited this country from being saved:"
+          ul
+            - @facility.errors.full_messages.each do |message|
+              li = message
 
   .form-group.row.mb-4
     = f.label :package_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'

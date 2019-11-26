@@ -12,7 +12,7 @@ id:
       description: Deskripsi
     index:
       page_header: Kelola Ikon
-      body_title: Daftar Ikon
+      body_title: Kelola Ikon
       create: Tambah Ikon
     new:
       page_header: Tambah Ikon

@@ -2,16 +2,16 @@ id:
   bookings:
     bookings: 
       number: Nomor
-      package: Paket
+      package_id: Paket
       user: User
     filter: 
       filter_header: Filter
       number: Nomor
-      package: Paket
+      package_id: Paket
       user: User
     form:
       number: Nomor
-      package: Paket
+      package_id: Paket
       user: User
     index:
       page_header: Master Data Boking

@@ -1,0 +1,42 @@
+id:
+  term_agreements:
+    term_agreements: 
+      name: Nama
+      description: Deskripsi
+    filter: 
+      filter_header: Filter
+      name: Nama
+      description: Deskripsi
+    form:
+      name: Nama
+      description: Deskripsi
+    index:
+      page_header: Syarat dan Ketentuan
+      body_title: Kelola Syarat dan Ketentuan
+      create: Tambah Syarat dan Ketentuan
+    new:
+      page_header: Syarat dan Ketentuan
+      body_title: Entry Syarat dan Ketentuan Baru
+      card_header: Input Data Syarat dan Ketentuan
+    edit:
+      page_header: Syarat dan Ketentuan
+      body_title: Ubah Syarat dan Ketentuan
+      card_header: Ubah Data Syarat dan Ketentuan
+    show:
+      page_header: Detail Syarat dan Ketentuan
+      details: Detail
+      name: Nama
+      description: Deskripsi
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Syarat dan Ketentuan baru berhasil dibuat.
+    update:
+      notice: Syarat dan Ketentuan berhasil diubah.
+    destroy:
+      notice: Syarat dan Ketentuan berhasil dihapus.
+  simple_form:
+    labels:
+      term_agreement:
+        name: Nama
+        description: Deskripsi

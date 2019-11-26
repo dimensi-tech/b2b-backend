@@ -18,7 +18,7 @@ id:
       package: Paket      
     index:
       page_header: Master Data Fasilitas
-      body_title: Daftar Fasilitas
+      body_title: Kelola Fasilitas
       create: Tambah Fasilitas
     new:
       page_header: Master Data Fasilitas      

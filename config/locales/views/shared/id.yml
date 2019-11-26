@@ -1,5 +1,7 @@
 id:
   sidebar:
+    ads: Iklan
+    bookings: Boking
     countries: Negara
     facilities: Fasilitas
     icons: Ikon
@@ -14,3 +16,4 @@ id:
     categories: Kategori
     bookings: Booking
     discounts: Diskon
+    term_agreements: Syarat dan Ketentuan
