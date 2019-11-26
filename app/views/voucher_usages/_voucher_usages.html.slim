@@ -1,0 +1,18 @@
+- if @voucher_usages.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.customer')
+          th = t('.voucher')
+          th Action
+        - @voucher_usages.each do |voucher_usage|
+          tr
+            td = voucher_usage.customer.email
+            td = voucher_usage.voucher.code
+            
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @voucher_usages
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_voucher_usage_path }
