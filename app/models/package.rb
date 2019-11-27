@@ -9,11 +9,11 @@ class Package < ApplicationRecord
   def self.mapping_available_date
     results = []
 
-    pluck(:available_date).uniq.each do |available_dates|
-      available_dates.each do |available_date|
-        results << available_date
-      end
-    end
+    # pluck(:available_date).uniq.each do |available_dates|
+    #   available_dates.each do |available_date|
+    #     results << available_date
+    #   end
+    # end
 
     results = results.reject { |i| i.empty? }
     results.uniq
