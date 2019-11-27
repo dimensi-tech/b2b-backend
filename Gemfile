@@ -73,3 +73,4 @@ gem 'ransack', '2.3.0' # Ransack
 gem 'rolify', '5.2.0' # user roles
 gem 'simple_form', '4.1.0' # simple form on all form
 gem 'slim-rails', '3.2.0' # slim language
+gem 'uglifier', '~> 4.1', '>= 4.1.20'
