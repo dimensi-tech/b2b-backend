@@ -17,7 +17,10 @@
                     .bullet
                     = link_to t('buttons.edit'), edit_product_path(product)
                     .bullet
-                    = link_to t('buttons.destroy'), product_path(product), method: :delete, class: 'text-danger'
+                    = link_to t('buttons.destroy'), product_path(product),
+                      method: :delete,
+                      data: { confirm: t('buttons.confirm') },
+                      class: 'text-danger'
             td = default_datetime(product.updated_at)
 
   .card-footer.text-right
