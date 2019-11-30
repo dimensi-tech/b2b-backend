@@ -3,3 +3,19 @@
   = javascript_include_tag "#{controller_name}/mixins"
 - if asset_exists? "#{controller_name}/#{js_name}.js"
   = javascript_include_tag "#{controller_name}/#{js_name}"
+
+- if notice
+  javascript:
+    iziToast.info({
+      title: '',
+      message: "#{notice}",
+      position: 'topRight'
+    });
+
+- if alert
+  javascript:
+    iziToast.error({
+      title: '',
+      message: "#{alert}",
+      position: 'topRight'
+    });

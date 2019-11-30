@@ -13,4 +13,7 @@ id:
     edit: Ubah
     destroy: Hapus
     view: Lihat Detail
+    confirm: Apakah anda yakin?
   search: Cari
+  last_update: Terakhir diupdate
+  ago: yang lalu

@@ -1,4 +1,5 @@
-= simple_form_for @package do |f|
+= simple_form_for [:product, @package] do |f|
+  = f.input :product_id, as: :hidden, label: false, input_html: { value: params[:product_id] }
   - if @package.errors.any?
     .alert.alert-danger.alert-has-icon
         .alert-icon
@@ -10,19 +11,25 @@
               li = message
 
   .form-group.row.mb-4
-    = f.label :product_id, t('.product_id'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
-    .col-sm-12.col-md-7
-      = f.input :product_id,
-                collection: Product.pluck(:name, :id), label: false,
-                input_html: { class: 'form-control product-select' }
-  .form-group.row.mb-4
-    = f.label :name, t('.name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.text_field :name, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :description, t('.description'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :description, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
-      = f.text_area :description, class: 'form-control'
+      = f.text_area :description, class: 'summernote'
+  .form-group.row.mb-4
+    = f.label :price, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :price, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :down_payment, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :down_payment, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :duration_trip, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :duration_trip, class: 'form-control'
   .form-group.row.mb-4
     = f.label :min_person, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
@@ -32,23 +39,22 @@
     .col-sm-12.col-md-7
       = f.number_field :max_person, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :available_date,t('.available_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :available_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
-      = f.input :available_date, collection: Package.mapping_available_date, label: false,
-                input_html: { class: 'form-control available-date-select', multiple: true },
-                include_hidden: false
+      #available_date_datepicker
+      = f.hidden_field :available_date, data: { dates: @package.available_date }
   .form-group.row.mb-4
-    = f.label :price, t('.price'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :itinerary, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-8
+      #package_details.activities.m-0
+        = f.fields_for :package_details do |package_detail|
+          = render 'package_detail_fields', f: package_detail
+        div
+          = link_to_add_association '<i class="fa fa-plus"></i> Buat Rencana Perjalanan'.html_safe, f, :package_details, class: 'btn btn-info'
+  
+  .form-group.row.mb-4
+    label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
     .col-sm-12.col-md-7
-      = f.number_field :price, class: 'form-control'
-  .mg-top-20
-  #package_details
-    = f.fields_for :package_details do |package_detail|
-      = render 'package_detail_fields', f: package_detail
-    .mg-top-20
-      = link_to_add_association '+ Detail Paket', f, :package_details, class: 'btn btn-primary'
-  .form-group.row.mb-4
-      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
-      .col-sm-12.col-md-7
+      .button-actions
         = f.submit t('buttons.submit'), class: 'btn btn-primary'
-      = link_to t('buttons.back'), packages_path, class: 'btn btn-secondary'
+        = link_to t('buttons.back'), product_path(params[:product_id]), class: 'btn float-right'

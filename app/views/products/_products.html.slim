@@ -1,25 +1,24 @@
 - if @products.present?
   .card-body.p-0
     .table-responsive
-      table.table.table-striped
+      table.table.table-striped.table-md
         tr
           th = t('.name')
-          th = t('.description')
-          th Action
+          th = t('last_update')
         - @products.each do |product|
           tr
-            td = link_to product.name, product
-            td = product.description
             td
-              = link_to product, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_product_path(product), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to product, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
+              .d-flex
+                = image_tag product.image_url, width: 100, class: 'img-corner mr-3'
+                div
+                  = product.name
+                  .table-links
+                    = link_to t('buttons.view'), product
+                    .bullet
+                    = link_to t('buttons.edit'), edit_product_path(product)
+                    .bullet
+                    = link_to t('buttons.destroy'), product_path(product), method: :delete, class: 'text-danger'
+            td = default_datetime(product.updated_at)
 
   .card-footer.text-right
     nav.d-inline-block

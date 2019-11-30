@@ -13,4 +13,16 @@ module ApplicationHelper
 
     custom_class.present? ? custom_class : 'active'
   end
+
+  def default_currency(value)
+    ActionController::Base.helpers.number_to_currency(value, unit: 'Rp ', delimiter: '.', precision: 0)
+  end
+
+  def default_date(value)
+    value.strftime('%d %B %Y')
+  end
+
+  def default_datetime(value)
+    value.strftime('%I:%M %p %A, %d %B %Y')
+  end
 end

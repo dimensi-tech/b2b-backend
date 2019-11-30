@@ -1,0 +1,76 @@
+.mg-top-20 {
+  margin-top: 20px; 
+}
+
+.mg-top-50 {
+  margin-top: 50px; 
+}
+
+.button-actions > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btn-icon i {
+  margin-right: 5px;
+}
+
+.simple_form  {
+  padding: 15px;
+}
+
+.card {
+  .media-body {
+    ul {
+      margin: 1rem 0;
+    }
+  }
+  .activities {
+    margin: 1rem 0;
+    .activity {
+      .activity-detail {
+        border: 2px solid #eee;
+        text-align: justify;
+        &:before {
+          color: #eee;
+        }
+      }
+      &.nested-fields {
+        max-width: 100%;
+        overflow: hidden;
+        .activity-detail {
+          width: calc(100% - 70px);
+        }
+      }
+    }
+  }
+}
+
+
+.note-editor {
+  .note-toolbar {
+    flex-wrap: wrap;
+    .note-btn {
+      padding: 8px;
+      line-height: 0;
+      border-radius: 3px !important;
+    }
+  }
+}
+
+.ui-tooltip {
+  &.ui-widget-content {
+    border: 0;
+    box-shadow: none;
+    background: rgba(0,0,0,0.8);
+    color: #f5f5f5;
+    font-size: small;
+    padding: 4px 8px;
+    cursor: default;
+  }
+}
+
+input[type="file"] {
+  &.form-control {
+    height: auto !important;
+  }
+}

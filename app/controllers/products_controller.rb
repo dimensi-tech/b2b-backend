@@ -6,7 +6,9 @@ class ProductsController < ApplicationController
     @products = @search.result(distinct: true).page(params[:page])
   end
 
-  def show; end
+  def show
+    @product_packages = @product.packages.order('id asc')
+  end
 
   def new
     @product = Product.new

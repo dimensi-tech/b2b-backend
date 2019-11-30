@@ -53,6 +53,9 @@ id:
       notice: Paket berhasil diubah.
     destroy:
       notice: Paket berhasil dihapus.
+    package_detail_fields:
+      day: Hari ke
+      description: Deskripsi Perjalanan
   simple_form:
     labels:
       package:
@@ -60,5 +63,9 @@ id:
         name: Nama
         description: Deskripsi
         price: Harga
+        down_payment: Pembayaran Minimum (DP)
+        duration_trip: Lama Perjalanan (hari)
+        available_date: Tanggal Ketersediaan
         min_person: Minimal Orang
         max_person: Maksimal Orang
+        itinerary: Rencana Perjalanan

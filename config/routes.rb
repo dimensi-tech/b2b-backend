@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   resources :facilities
   resources :identities
   resources :merchants
-  resources :packages
   resources :passports
-  resources :products
+  resources :products do
+    resources :packages
+  end
   resources :profiles
   resources :term_agreements
   resources :travel_destinations

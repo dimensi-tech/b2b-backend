@@ -17,7 +17,7 @@
     .form-group.row.mb-4
       = f.label :description, t('.description'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
-        = f.input :description, label: false, input_html: { class: 'form-control' }
+        = f.input :description, label: false, input_html: { class: 'summernote' }
     .form-group.row.mb-4
       = f.label :image, t('.image'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
@@ -25,5 +25,6 @@
     .form-group.row.mb-4
       label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
       .col-sm-12.col-md-7
-        = f.submit t('buttons.submit'), class: 'btn btn-primary'
-      = link_to t('buttons.back'), products_path, class: 'btn btn-secondary'
+        .button-actions
+          = f.submit t('buttons.submit'), class: 'btn btn-primary'
+          = link_to t('buttons.back'), products_path, class: 'btn float-right'

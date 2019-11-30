@@ -5,4 +5,4 @@
  *
  */
 
-"use strict";
+'use strict';

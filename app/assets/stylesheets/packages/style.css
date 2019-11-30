@@ -144,6 +144,9 @@ h1, h2, h3, h4, h5, h6 {
 p, ul:not(.list-unstyled), ol {
   line-height: 28px; }
 
+.no-shadow {
+  box-shadow: none !important; }
+
 .shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); }
 
@@ -2041,6 +2044,9 @@ a.bb {
 
 .img-shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); }
+
+.img-corner {
+  border-radius: 3px; }
 
 .colors {
   display: flex;

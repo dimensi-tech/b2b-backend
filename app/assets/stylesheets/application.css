@@ -1,6 +1,10 @@
 /*
+ *= require packages/jquery-ui
  *= require packages/components
  *= require packages/style
- *= require packages/custom
  *= require packages/select2.min
+ *= require packages/jquery-ui.multidatespicker
+ *= require packages/selectric
+ *= require packages/iziToast.min
+ *= require packages/custom
  */

@@ -6,13 +6,6 @@ section.section
         a href="#"  Dashboard
       .breadcrumb-item Credits
   .section-body
-    - if notice
-      .alert.alert-success.alert-dismissible.show.fade
-        .alert-body
-          button.close data-dismiss="alert"
-            span &times;
-          = notice
-
     h2.section-title = @product.name
     p.section-lead
       = "Data ID : #{@product.id}"
@@ -22,25 +15,121 @@ section.section
           .card-header
             h4 = t('.details')
           .card-body
-            .list-unstyled.list-unstyled-border.mt-4
-              .media
-                .media-icon
-                  i.far.fa-circle
-                .media-body
-                  h6 = t('.name')
-                  p = @product.name
-              .media
-                .media-icon
-                  i.far.fa-circle
-                .media-body
-                  h6 = t('.description')
-                  p = @product.description
-              .media
-                .media-icon
-                  i.far.fa-circle
-                .media-body
-                  h6 = t('.image')
-                  p = @product.image
+            .tickets.mb-4
+              #ticket-items.ticket-items
+                = image_tag @product.image_url, class: 'img-fluid img-corner'
+              .ticket-content
+                .ticket-header
+                  .ticket-detail
+                    .ticket-title.mb-2.d-flex.align-items-center
+                      h4.m-0 = @product.name
+                      = link_to edit_product_path(@product), class: 'btn btn-icon btn-outline-warning btn-sm text-small ml-2' do
+                        i.fas.fa-pencil-alt
+                        span = t('buttons.edit')
+                    .ticket-info
+                      .font-weight-600 = t('last_update')
+                      .bullet
+                      .text-primary.font-weight-600 = "#{time_ago_in_words(@product.updated_at)} #{t('ago')}"
+                .ticket-description
+                  p
+                    = raw @product.description
+            ul#product-packages.nav.nav-tabs role="tablist"
+              - @product.packages.each do |package|
+                li.nav-item
+                  a.nav-link data-toggle="tab" href="#package_#{package.id}" class="#{'active' if package == @product.packages[0]}"
+                    = package.name
+              li.nav-item
+                = link_to new_product_package_path(@product.id),
+                  class: 'nav-link btn-info btn-icon text-white no-shadow' do
+                    i.fa.fa-plus
+                    = t('.add_packages')
+            #product-packages-content.tab-content.tab-bordered
+              - @product_packages.each do |package|
+                .tab-pane.fade id="package_#{package.id}" class="#{'show active' if package == @product.packages[0]}"
+                  .mt-4
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.description')
+                        p = package.description ? raw(package.description) : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.price')
+                        p = default_currency(package.price)
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.down_payment')
+                        p = package.down_payment ? default_currency(package.down_payment) : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.duration_trip')
+                        p = package.duration_trip ? package.duration_trip : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.min_person')
+                        p = package.min_person ? package.min_person : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.max_person')
+                        p = package.max_person ? package.max_person : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.available_date')
+                        - if package.available_date.present?
+                          ul.list-group
+                            - package.available_date.each do |date|
+                              - if (Date.strptime(date, '%m/%d/%Y') >= Date.today)
+                                li.p-2.list-group-item = default_date(Date.strptime(date, '%m/%d/%Y'))
+                              - else
+                                li.p-2.list-group-item.disabled
+                                  del = default_date(Date.strptime(date, '%m/%d/%Y'))
+                        - else
+                          p -
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.itinerary')
+                        - if package.package_details.present?
+                          .activities
+                            - package.package_details.each do |package_detail|
+                              .activity
+                                .activity-icon.bg-primary.text-white.shadow-primary
+                                  i.fa.fa-hiking
+                                .activity-detail
+                                  .row
+                                    .col-md-4
+                                      - if package_detail.image.present?
+                                        = image_tag package_detail.image_url, class: 'img-fluid img-corner'
+                                    .col-md-8
+                                      h4 = package_detail.day
+                                      p = raw package_detail.description
+                        - else
+                          p -
+
+                  .button-actions
+                    = link_to t('buttons.edit'), edit_product_package_path(@product.id, package), class: 'btn btn-warning'
+                    = link_to t('buttons.destroy'), product_package_path(@product.id, package),
+                      method: :delete,
+                      data: { confirm: t('buttons.confirm') },
+                      class: 'btn btn-danger float-right'
+
   .buttons
-    = link_to 'Edit', edit_product_path(@product), class: 'btn btn-warning'
-    = link_to 'Back', products_path(@product), class: 'btn'
+    = link_to t('buttons.back'), products_path, class: 'btn'
+    = link_to t('buttons.destroy'), product_path(@product),
+      method: :delete,
+      data: { confirm: t('buttons.confirm') },
+      class: 'btn btn-danger float-right'

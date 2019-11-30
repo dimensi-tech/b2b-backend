@@ -1,15 +1,32 @@
-.nested-fields
-  .form-group.row.mb-4
-    = f.label :day, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
-    .col-sm-12.col-md-7
-      = f.text_field :day, class: 'form-control'
-  .form-group.row.mb-4
-    = f.label :image, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
-    .col-sm-12.col-md-7
-      = f.file_field :image, class: 'form-control'
-  .form-group.row.mb-4
-    = f.label :description, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
-    .col-sm-12.col-md-7
-      = f.text_area :description, class: 'form-control'
-  hr
-  = link_to_remove_association 'Hapus Detail Paket', f, class: 'btn btn-danger'
+- index = index
+.activity.nested-fields id='activity_#{index}' data-description='#{t('.description')}' data-upload='upload_#{index}' data-preview='preview_#{index}' label='label_#{index}'
+  .activity-icon.bg-primary.text-white.shadow-primary
+    i.fa.fa-hiking
+  .activity-detail
+    .row
+      .col-md-4
+        - if f.object.image.present?
+          = image_tag f.object.image_url, class: 'img-fluid img-corner mb-2'
+        = f.file_field :image, class: 'form-control'
+      .col-md-8
+        h4 = f.text_field :day, class: 'form-control', placeholder: t('.day')
+        p = f.text_area :description, class: 'summernote', placeholder: t('.description')
+      .col
+        = link_to_remove_association '<i class="fa fa-trash"></i>'.html_safe, f,
+          data: { confirm: t('buttons.confirm') },
+          class: 'btn btn-danger'
+
+- if f.object.day.blank?
+  javascript:
+    $(".summernote").summernote({
+        dialogsInBody: true,
+        minHeight: 150,
+        placeholder: $("#activity_#{index}").data('description'),
+        toolbar: [
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']]
+        ]
+    })

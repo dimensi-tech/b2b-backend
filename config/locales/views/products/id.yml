@@ -33,6 +33,17 @@ id:
       image: Gambar
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
+      add_packages: Tambah Paket
+      package:
+        description: Deskripsi
+        price: Harga
+        min_person: Minimal Orang
+        max_person: Maksimal Orang
+        package_id: Id Paket
+        available_date: Tanggal Ketersediaan
+        day: Hari
+        image: Gambar
+        itinerary: Rencana Perjalanan
     create:
       notice: Produk baru berhasil dibuat.
     update:
