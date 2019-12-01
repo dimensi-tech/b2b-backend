@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_30_231351) do
+=======
+ActiveRecord::Schema.define(version: 2019_12_01_095444) do
+>>>>>>> Add Category on Products
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -163,6 +167,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_231351) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.integer "category_id"
   end
 
   create_table "profiles", force: :cascade do |t|
