@@ -13,6 +13,7 @@ id:
       name: Nama
       description: Deskripsi
       image: Gambar
+      category: Kategori
     index:
       page_header: Master Data Produk
       body_title: Kelola Produk
