@@ -4,6 +4,7 @@ id:
       name: Nama
       code: Kode
       description: Deskripsi
+      action: Aksi
     filter: 
       filter_header: Filter
       name: Nama
@@ -29,6 +30,7 @@ id:
       details: Detail
       name: Nama
       code: Kode
+      description: Deskripsi
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:

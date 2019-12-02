@@ -9,6 +9,7 @@ id:
       expired_date: Tanggal Kadaluarsa
       birth_date: Tanggal Lahir
       identity_id: Id Identitas
+      action: Aksi
     filter: 
       filter_header: Filter
       full_name: Nama Lengkap

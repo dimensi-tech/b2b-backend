@@ -2,7 +2,9 @@ id:
   sidebar:
     ads: Iklan
     bookings: Boking
+    categories: Kategori
     countries: Negara
+    discounts: Diskon
     facilities: Fasilitas
     icons: Ikon
     identities: Identitas
@@ -11,9 +13,5 @@ id:
     passports : Paspor
     products: Produk
     profiles: Profil
-    travel_destinations: Tujuan Wisata
-    ads: Iklan
-    categories: Kategori
-    bookings: Booking
-    discounts: Diskon
     term_agreements: Syarat dan Ketentuan
+    travel_destinations: Tujuan Wisata

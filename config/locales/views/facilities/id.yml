@@ -6,6 +6,7 @@ id:
       description: Deskripsi
       icon: Ikon
       package: Paket
+      action: Aksi
     filter:
       filter_header: Filter      
       package_id: Id Paket

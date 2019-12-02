@@ -3,6 +3,7 @@ id:
     merchants:
       name: Nama
       description: Deskripsi
+      action: Aksi
     filter: 
       filter_header: Filter
       name: Nama

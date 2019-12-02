@@ -4,6 +4,7 @@ id:
       number: Nomor
       package_id: Paket
       user: User
+      action: Aksi
     filter: 
       filter_header: Filter
       number: Nomor

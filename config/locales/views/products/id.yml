@@ -4,6 +4,7 @@ id:
       name: Nama
       description: Deskripsi
       image: Gambar
+      action: Aksi
     filter: 
       filter_header: Filter
       name: Nama

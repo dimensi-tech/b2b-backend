@@ -3,6 +3,7 @@ id:
     countries: 
       name: Nama
       code: Kode
+      action: Aksi
     filter: 
       filter_header: Filter
       name: Nama

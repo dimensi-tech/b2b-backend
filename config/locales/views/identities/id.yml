@@ -17,6 +17,7 @@ id:
       martial_status: Status Perkawinan
       job: Pekerjaan
       nationality: Negara Asal
+      action: Aksi
     filter: 
       filter_header: Filter
       nik: NIK

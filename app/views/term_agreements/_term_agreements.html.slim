@@ -5,10 +5,21 @@
         tr
           th = t('.name')
           th = t('.description')
+          th = t('.action')
         - @term_agreements.each do |term_agreement|
           tr
             td = link_to term_agreement.name, term_agreement
             td = term_agreement.description
+            td
+              = link_to term_agreement, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_term_agreement_path(term_agreement), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to term_agreement, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
   .card-footer.text-right
     nav.d-inline-block
       = paginate @term_agreements

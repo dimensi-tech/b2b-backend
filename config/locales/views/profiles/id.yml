@@ -7,6 +7,7 @@ id:
       avatar: Avatar
       telephone_number: Nomor Telepon
       phone_number: Nomor Ponsel
+      action: Aksi
     filter: 
       filter_header: Filter
       user_id: Id User

@@ -11,40 +11,40 @@
               li = message
 
   .form-group.row.mb-4
-    = f.label :name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :name, t('.name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.text_field :name, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :description, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :description, t('.description'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.text_area :description, class: 'summernote'
   .form-group.row.mb-4
-    = f.label :price, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :price, t('.price'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.number_field :price, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :down_payment, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :down_payment, t('.down_payment'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.number_field :down_payment, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :duration_trip, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :duration_trip, t('.duration_trip'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.number_field :duration_trip, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :min_person, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :min_person, t('.min_person'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.number_field :min_person, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :max_person, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :max_person, t('.max_person'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.number_field :max_person, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :available_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :available_date, t('.avaliable_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-8
       #available_date_datepicker
       = f.hidden_field :available_date, data: { dates: @package.available_date }
   .form-group.row.mb-4
-    = f.label :itinerary, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :itinerary, t('.itinerary'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-8
       #package_details.activities.m-0
         = f.fields_for :package_details do |package_detail|
