@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_11_30_231351) do
-=======
-ActiveRecord::Schema.define(version: 2019_12_01_095444) do
->>>>>>> Add Category on Products
+ActiveRecord::Schema.define(version: 2019_12_02_145032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_12_01_095444) do
     t.integer "adult"
     t.integer "child"
     t.date "departure_date"
+    t.integer "identity_ids", default: [], array: true
   end
 
   create_table "categories", force: :cascade do |t|
