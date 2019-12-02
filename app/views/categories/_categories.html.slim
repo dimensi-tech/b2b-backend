@@ -6,11 +6,22 @@
           th = t('.name')
           th = t('.code')
           th = t('.description')
+          th = t('.action')
         - @categories.each do |category|
           tr
-            td = category.code
             td = category.name
+            td = category.code
             td = category.description
+            td
+              = link_to category, title: t('buttons.view'),
+                        class: 'btn btn-icon btn-primary' do
+                        i.fa.fa-eye
+              = link_to edit_category_path(category), title: t('buttons.edit'),
+                        class: 'btn btn-icon btn-warning' do
+                        i.fa.fa-edit
+              = link_to category, data: { confirm: t('buttons.confirm') }, method: :delete,
+                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
+                        i.fa.fa-times
   .card-footer.text-right
     nav.d-inline-block
       = paginate @categories

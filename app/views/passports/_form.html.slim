@@ -11,39 +11,39 @@
               li = message
 
     .form-group.row.mb-4
-      = f.label :full_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :full_name, t('.full_name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :full_name, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :birth_place, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :birth_place, t('.birth_place'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :birth_place, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :mother_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :mother_name, t('.mother_name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :mother_name, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :father_name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :father_name, t('.father_name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :father_name, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :number, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :number, t('.number'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :number, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :expired_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :expired_date, t('.expired_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.date_select :expired_date, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :birth_date, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :birth_date, t('.birth_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.date_select :birth_date, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :identity_id, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :identity_id, t('.identity_id'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.number_field :identity_id, class: 'form-control'
     .form-group.row.mb-4
       label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
       .col-sm-12.col-md-7
         = f.submit t('buttons.submit'), class: 'btn btn-primary'
-      = link_to t('buttons.back'), packages_path, class: 'btn btn-secondary'
+      = link_to t('buttons.back'), passports_path, class: 'btn btn-secondary'

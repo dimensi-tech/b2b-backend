@@ -5,6 +5,7 @@ id:
       image: Gambar
       status: Status
       active: Aktif
+      action: Aksi
       non_active: Tidak Aktif
       created_at: Dibuat Pada
     filter: 

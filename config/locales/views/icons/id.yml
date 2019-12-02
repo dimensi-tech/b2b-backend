@@ -3,6 +3,7 @@ id:
     icons:
       code: Kode
       description: Deskripsi
+      action: Aksi
     filter: 
       filter_header: Filter
       code: Kode

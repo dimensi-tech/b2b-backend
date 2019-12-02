@@ -5,7 +5,7 @@
         tr
           th = t('.customer')
           th = t('.voucher')
-          th Action
+          th = t('.action')
         - @voucher_usages.each do |voucher_usage|
           tr
             td = voucher_usage.customer.email

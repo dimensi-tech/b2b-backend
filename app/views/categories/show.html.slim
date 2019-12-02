@@ -1,15 +1,39 @@
-p#notice = notice
-
-p
-  strong Name:
-  = @category.name
-p
-  strong Code:
-  = @category.code
-p
-  strong Description:
-  = @category.description
-
-=> link_to 'Edit', edit_category_path(@category)
-'|
-=< link_to 'Back', categories_path
+section.section
+  .section-header
+    h1 = t('.page_header')
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    h2.section-title = @category.name
+    p.section-lead
+      = "Data ID : #{@category.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 = t('.details')
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.name')
+                  p = @category.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.code')
+                  p = @category.code
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.description')
+                  p = @category.description
+  .buttons
+    = link_to t('buttons.edit'), edit_category_path(@category), class: 'btn btn-warning'
+    = link_to t('buttons.back'), categories_path(@category), class: 'btn'

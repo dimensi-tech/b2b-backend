@@ -11,11 +11,11 @@
               li = message
 
     .form-group.row.mb-4
-      = f.label :code, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :code, t('.code'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_field :code, class: 'form-control'
     .form-group.row.mb-4
-      = f.label :description, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      = f.label :description, t('.description'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.text_area :description, class: 'form-control'
     .form-group.row.mb-4

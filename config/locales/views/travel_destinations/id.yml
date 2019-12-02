@@ -3,6 +3,7 @@ id:
     travel_destinations:
       country_id: Id Negara
       destination: Destinasi
+      action: Aksi
     filter: 
       filter_header: Filter
       country_id: Id Negara

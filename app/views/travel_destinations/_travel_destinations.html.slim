@@ -3,9 +3,9 @@
     .table-responsive
       table.table.table-striped
         tr
-          th Country Id
-          th Destination
-          th Action
+          th = t('.country_id')
+          th = t('.destination')
+          th = t('.action')
         - @travel_destinations.each do |travel_destination|
           tr
             td = travel_destination.country_id

@@ -8,6 +8,7 @@ id:
       min_person: Minimal Orang
       max_person: Maksimal Orang
       available_date: Tanggal Ketersedian
+      action: Aksi
     filter: 
       filter_header: Filter
       product_id: Id Produk
