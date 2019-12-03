@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :bookings
   resources :categories
   resources :countries
+  resources :customers
   resources :discounts
   resources :icons
   resources :facilities

@@ -1,0 +1,11 @@
+id:
+  customers:
+    customers:
+      email: Email
+      created_at: Di Buat Pada
+      updated_at: Di Update Pada
+    index:
+      page_header: Kelola Pelanggan
+      body_title: Kelola Pelanggan
+      create: Tambah Pelanggan
+      

@@ -1,0 +1,20 @@
+section.section
+  .section-header
+    h1 = t('.page_header')
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item
+        a href="#"  Components
+      .breadcrumb-item Table
+  .section-body
+    h2.section-title = t('.body_title')
+    .row
+      .col
+        .card
+          .card-header.d-flex.justify-content-between
+            .col-md-12.mg-bottom-25
+              .d-flex.justify-content-between.align-items-center
+                = search_form_for @search do |f|
+                  = f.search_field :email_cont, class: 'form-control', placeholder: t('search')
+          = render 'customers'

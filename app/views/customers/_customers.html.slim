@@ -1,0 +1,19 @@
+- if @customers.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.email')
+          th = t('.created_at')
+          th = t('.updated_at')
+        - @customers.each do |customer|
+          tr
+            td = customer.email
+            td = customer.created_at.strftime('%d %B %Y')
+            td = customer.updated_at.strftime('%d %B %Y')
+
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @customers
+- else
+  = render partial: 'shared/empty_message', locals: { path: customers_path }
