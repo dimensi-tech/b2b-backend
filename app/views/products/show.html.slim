@@ -33,6 +33,10 @@ section.section
                 .ticket-description
                   p
                     = raw @product.description
+                  p
+                    = raw @product.category.name
+                  p
+                    = raw @product.travel_destination.destination
             ul#product-packages.nav.nav-tabs role="tablist"
               - @product.packages.each do |package|
                 li.nav-item

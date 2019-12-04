@@ -25,6 +25,12 @@
                 collection: Category.pluck(:name, :id), label: false,
                 input_html: { class: 'form-control product-select' }
     .form-group.row.mb-4
+      = f.label :description, t('.travel_destination'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.input :travel_destination_id,
+                collection: TravelDestination.pluck(:destination, :id), label: false,
+                input_html: { class: 'form-control product-select' }
+    .form-group.row.mb-4
       = f.label :image, t('.image'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
       .col-sm-12.col-md-7
         = f.file_field :image, label: false, input_html: { class: 'form-control' }
