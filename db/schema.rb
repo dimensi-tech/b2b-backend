@@ -51,13 +51,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_145032) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "discounts", force: :cascade do |t|
     t.string "name"
     t.decimal "percentage"
@@ -249,6 +242,19 @@ ActiveRecord::Schema.define(version: 2019_12_02_145032) do
   create_table "voucher_usages", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "voucher_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "vouchers", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal "percentage"
+    t.decimal "max_amount"
+    t.integer "max_usage"
+    t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

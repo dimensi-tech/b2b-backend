@@ -1,0 +1,50 @@
+.card-body
+  = simple_form_for @voucher do |f|
+    - if @voucher.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@voucher.errors.count, "error")} prohibited this voucher from being saved:"
+          ul
+            - @voucher.errors.full_messages.each do |message|
+              li = message
+
+    .form-group.row.mb-4
+      = f.label :code, t('.code'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :code, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :name, t('.name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :start_date, t('.start_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.datetime_select :start_date, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :end_date, t('.end_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.datetime_select :end_date, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :percentage, t('.percentage'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :percentage, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :max_amount, t('.max_amount'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :max_amount, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :max_usage, t('.max_usage'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :max_usage, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :status, t('.status'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.check_box :status, class: 'form-control'
+
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit t('buttons.submit'), class: 'btn btn-primary'
+      = link_to t('buttons.back'), vouchers_path, class: 'btn btn-secondary'
