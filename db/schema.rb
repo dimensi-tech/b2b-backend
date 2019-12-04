@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_145800) do
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "url"
   end
 
   create_table "bookings", force: :cascade do |t|

@@ -1,16 +1,18 @@
 id:
   ads:
-    ads: 
+    ads:
       name: Nama
+      url: URL
       image: Gambar
       status: Status
       active: Aktif
       action: Aksi
       non_active: Tidak Aktif
       created_at: Dibuat Pada
-    filter: 
+    filter:
       filter_header: Filter
       name: Nama
+      url: URL
       image: Gambar
       status: Status
       active: Aktif
@@ -18,6 +20,7 @@ id:
       created_at: Dibuat Pada
     form:
       name: Nama
+      url: URL
       image: Gambar
       status: Status
       active: Aktif
@@ -39,6 +42,7 @@ id:
       page_header: Detail Iklan
       details: Detail
       name: Nama
+      url: URL
       image: Gambar
       status: Status
       active: Aktif
@@ -56,6 +60,7 @@ id:
     labels:
       country:
         name: Nama
+        url: URL
         image: Gambar
         status: Status
         active: Aktif
