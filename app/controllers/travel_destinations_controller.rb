@@ -70,6 +70,6 @@ class TravelDestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def travel_destination_params
-      params.require(:travel_destination).permit(:country_id, :destination)
+      params.require(:travel_destination).permit(:country_id, :destination, :image)
     end
 end

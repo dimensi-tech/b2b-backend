@@ -8,18 +8,23 @@
           th = t('.action')
         - @travel_destinations.each do |travel_destination|
           tr
-            td = travel_destination.country_id
-            td = travel_destination.destination
             td
-              = link_to travel_destination, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_travel_destination_path(travel_destination), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to travel_destination, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
+              .d-flex
+                - if travel_destination.image_url
+                  = image_tag travel_destination.image_url, class: 'img-corner img-table mr-3'
+                div
+                  = "#{travel_destination.country.name}, #{travel_destination.destination}"
+                  
+                  .table-links
+                    = link_to t('buttons.view'), travel_destination
+                    .bullet
+                    = link_to t('buttons.edit'), edit_travel_destination_path(travel_destination)
+                    .bullet
+                    = link_to t('buttons.destroy'), travel_destination_path(travel_destination),
+                      method: :delete,
+                      data: { confirm: t('buttons.confirm') },
+                      class: 'text-danger'
+            td = default_datetime(travel_destination.updated_at)
 
   .card-footer.text-right
     nav.d-inline-block
