@@ -2045,6 +2045,11 @@ a.bb {
 .img-shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); }
 
+.img-table {
+  width: 100px;
+  height: 100%;
+}
+
 .img-corner {
   border-radius: 3px; }
 
