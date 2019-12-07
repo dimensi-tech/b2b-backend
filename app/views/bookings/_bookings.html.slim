@@ -9,8 +9,8 @@
         - @bookings.each do |booking|
           tr
             td = booking.number
-            td = booking.package.name
-            td = booking.user.name
+            td = booking.package.try(:name)
+            td = booking.user.try(:name)
             td
               = link_to booking, title: t('buttons.view'),
                         class: 'btn btn-icon btn-primary' do
