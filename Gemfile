@@ -62,8 +62,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add
 gem 'carrierwave', '~> 2.0'
+gem 'city-state', '0.0.13'
 gem 'ckeditor', '5.0.0' # text editor
 gem 'cocoon' # nested form
+gem 'countries', '3.0.0'
 gem 'devise', '4.7.1' # user authentication
 gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
 gem 'jquery-ui-rails' # jquery ui
