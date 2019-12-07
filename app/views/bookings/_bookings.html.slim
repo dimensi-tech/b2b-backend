@@ -3,22 +3,17 @@
     .table-responsive
       table.table.table-striped
         tr
-          th = t('.name')
-          th = t('.code')
-          th = t('.action')
+          th = t('.number')
+          th = t('.product')
+          th = t('.package')
+          th = t('.customer')
         - @bookings.each do |booking|
           tr
             td = booking.number
+            td = booking.package.product.try(:name)
             td = booking.package.try(:name)
-            td = booking.user.try(:name)
-            td
-              = link_to booking, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_booking_path(booking), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to booking, data: { confirm: t('buttons.confirm') }, method: :delete,
+            td = booking.customer.try(:name)
+            td = link_to booking, data: { confirm: t('buttons.confirm') }, method: :delete,
                         title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
                         i.fa.fa-times
 

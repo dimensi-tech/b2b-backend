@@ -2,8 +2,9 @@ id:
   bookings:
     bookings: 
       number: Nomor
-      package_id: Paket
-      user: User
+      package: Paket
+      customer: Email Pelanggan
+      product: Produk
       action: Aksi
     filter: 
       filter_header: Filter
