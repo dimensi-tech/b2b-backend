@@ -9,26 +9,21 @@
           th = t('.avatar')
           th = t('.telephone_number')
           th = t('.phone_number')
-          th = t('.action')
         - @profiles.each do |profile|
           tr
-            td = profile.user_id
+            td
+              = profile.user_id
+              .table-links
+                = link_to t('buttons.view'), profile_path(profile)
+                .bullet
+                = link_to t('buttons.edit'), edit_profile_path(profile)
+                .bullet
+                = link_to t('buttons.destroy'), profile_path(profile), method: :delete, class: 'text-danger'
             td = profile.identity_id
             td = profile.passport_id
             td = profile.avatar
             td = profile.telephone_number
             td = profile.phone_number
-            td
-              = link_to profile, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_profile_path(profile), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to profile, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
   .card-footer.text-right
     nav.d-inline-block
       = paginate @profiles

@@ -10,27 +10,26 @@
           th = t('.max_amount')
           th = t('.max_usage')
           th = t('.status')
-          th Action
         - @vouchers.each do |voucher|
           tr
-            td = voucher.code
+            td
+              = voucher.code
+              .table-links
+                = link_to t('buttons.view'), voucher_path(voucher)
+                .bullet
+                = link_to t('buttons.edit'), edit_voucher_path(voucher)
+                .bullet
+                = link_to t('buttons.destroy'), voucher_path(voucher), method: :delete, class: 'text-danger'
             td = voucher.name
             td = "#{voucher.start_date} sampai #{voucher.end_date}"
             td = voucher.percentage
             td = voucher.max_amount
             td = voucher.max_usage
-            td = voucher.status
             td
-              = link_to voucher, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_voucher_path(voucher), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to voucher, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
+              - if voucher.status
+                .badge.badge-success = t('.active')
+              - else
+                .badge.badge-danger = t('.not_active')
   .card-footer.text-right
     nav.d-inline-block
       = paginate @vouchers

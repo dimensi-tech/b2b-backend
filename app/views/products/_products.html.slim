@@ -5,7 +5,6 @@
         tr
           th = t('.name')
           th = t('last_update')
-          th = t('.action')
         - @products.each do |product|
           tr
             td
@@ -23,7 +22,6 @@
                       data: { confirm: t('buttons.confirm') },
                       class: 'text-danger'
             td = default_datetime(product.updated_at)
-
   .card-footer.text-right
     nav.d-inline-block
       = paginate @products

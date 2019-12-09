@@ -3,24 +3,19 @@
     .table-responsive
       table.table.table-striped
         tr
-          th = t('.package')
           th = t('.name')
-          th = t('.action')
+          th = t('.package')
         - @facilities.each do |facility|
           tr
+            td 
+              = facility.name
+              .table-links
+                = link_to t('buttons.view'), facility_path(facility)
+                .bullet
+                = link_to t('buttons.edit'), edit_facility_path(facility)
+                .bullet
+                = link_to t('buttons.destroy'), facility_path(facility), method: :delete, class: 'text-danger'
             td = facility.package.name
-            td = facility.name
-            td
-              = link_to facility, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_facility_path(facility), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to facility, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
   .card-footer.text-right
     nav.d-inline-block
       = paginate @facilities

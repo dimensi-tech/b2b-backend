@@ -7,7 +7,6 @@
           th = t('.image')
           th = t('.status')
           th = t('.created_at')
-          th = t('.action')
         - @ads.each do |ad|
           tr
             td
@@ -26,17 +25,6 @@
               - else
                 .badge.badge-danger = t('.not_active')
             td = ad.created_at.strftime('%d %B %Y')
-            td
-              = link_to ad, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_ad_path(ad), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to ad, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
   .card-footer.text-right
     nav.d-inline-block
       = paginate @ads

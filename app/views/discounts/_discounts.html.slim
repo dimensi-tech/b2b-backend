@@ -7,24 +7,23 @@
           th = t('.percentage')
           th = t('.valid_date')
           th = t('.status')
-          th = t('.action')
         - @discounts.each do |discount|
           tr
-            td = discount.name
+            td
+              = discount.name
+              .table-links
+                = link_to t('buttons.view'), discount_path(discount)
+                .bullet
+                = link_to t('buttons.edit'), edit_discount_path(discount)
+                .bullet
+                = link_to t('buttons.destroy'), discount_path(discount), method: :delete, class: 'text-danger'
             td = discount.percentage
             td = "#{discount.start_date} sampai #{discount.end_date}"
-            td = discount.status
             td
-              = link_to discount, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_discount_path(discount), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to discount, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
+              - if discount.status
+                .badge.badge-success = t('.active')
+              - else
+                .badge.badge-danger = t('.not_active')
   .card-footer.text-right
     nav.d-inline-block
       = paginate @discounts

@@ -8,25 +8,20 @@
           th = t('.birth_place')
           th = t('.birth_date')
           th = t('.gender')
-          th = t('.action')
         - @identities.each do |identity|
           tr
-            td = identity.nik
+            td
+              = identity.nik
+              .table-links
+                = link_to t('buttons.view'), identity_path(identity)
+                .bullet
+                = link_to t('buttons.edit'), edit_identity_path(identity)
+                .bullet
+                = link_to t('buttons.destroy'), identity_path(identity), method: :delete, class: 'text-danger'
             td = identity.full_name
             td = identity.birth_place
             td = identity.birth_date
             td = identity.gender
-            td
-              = link_to identity, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_identity_path(identity), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to identity, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
   .card-footer.text-right
     nav.d-inline-block
       = paginate @identities
