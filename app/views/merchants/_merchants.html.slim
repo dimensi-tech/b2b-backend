@@ -5,22 +5,17 @@
         tr
           th = t('.name')
           th = t('.description')
-          th = t('.action')
         - @merchants.each do |merchant|
           tr
-            td = merchant.name
-            td = merchant.description
             td
-              = link_to merchant, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_merchant_path(merchant), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to merchant, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
+              = merchant.name
+              .table-links
+                = link_to t('buttons.view'), merchant_path(merchant)
+                .bullet
+                = link_to t('buttons.edit'), edit_merchant_path(merchant)
+                .bullet
+                = link_to t('buttons.destroy'), merchant_path(merchant), method: :delete, class: 'text-danger'
+            td = merchant.description
   .card-footer.text-right
     nav.d-inline-block
       = paginate @merchants

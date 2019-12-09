@@ -5,22 +5,17 @@
         tr
           th = t('.name')
           th = t('.code')
-          th = t('.action')
         - @countries.each do |country|
           tr
-            td = country.name
-            td = country.code
             td
-              = link_to country, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_country_path(country), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to country, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
+              = country.name
+              .table-links
+                = link_to t('buttons.view'), country_path(country)
+                .bullet
+                = link_to t('buttons.edit'), edit_country_path(country)
+                .bullet
+                = link_to t('buttons.destroy'), country_path(country), method: :delete, class: 'text-danger'
+            td = country.code
   .card-footer.text-right
     nav.d-inline-block
       = paginate @countries

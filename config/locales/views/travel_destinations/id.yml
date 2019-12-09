@@ -1,7 +1,7 @@
 id:
   travel_destinations:
     travel_destinations:
-      country_id: Id Negara
+      country_id: Lokasi Tujuan
       destination: Destinasi
       action: Aksi
     filter: 
