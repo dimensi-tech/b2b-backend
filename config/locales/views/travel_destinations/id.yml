@@ -6,10 +6,10 @@ id:
       action: Aksi
     filter: 
       filter_header: Filter
-      country_id: Id Negara
+      country_id: Negara
       destination: Destinasi
     form:
-      country_id: Id Negara
+      country_id: Negara
       destination: Destinasi
     index:
       page_header: Tujuan Wisata
@@ -26,7 +26,7 @@ id:
     show:
       page_header: Detail Travel Destinasi
       details: Detail
-      country_id: Id Negara
+      country_id: Negara
       destination: Destinasi
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
@@ -39,5 +39,5 @@ id:
   simple_form:
     labels:
       travel_destination:
-        country_id: Id Negara
+        country_id: Negara
         destination: Destinasi
