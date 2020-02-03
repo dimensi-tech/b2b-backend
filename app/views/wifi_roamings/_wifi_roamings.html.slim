@@ -1,0 +1,25 @@
+- if @wifi_roamings.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.name')
+          th = t('.description')
+          th = t('.price')
+        - @wifi_roamings.each do |wifi_roaming|
+          tr
+            td
+              = wifi_roaming.name
+              .table-links
+                = link_to t('buttons.view'), wifi_roaming_path(wifi_roaming)
+                .bullet
+                = link_to t('buttons.edit'), edit_wifi_roaming_path(wifi_roaming)
+                .bullet
+                = link_to t('buttons.destroy'), wifi_roaming_path(wifi_roaming), method: :delete, class: 'text-danger'
+            td = wifi_roaming.description
+            td = wifi_roaming.price
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @wifi_roamings
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_wifi_roaming_path }

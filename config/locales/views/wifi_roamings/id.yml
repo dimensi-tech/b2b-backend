@@ -1,0 +1,47 @@
+id:
+  wifi_roamings:
+    wifi_roamings:
+      name: Nama
+      price: Harga
+      description: Deskripsi
+    filter:
+      filter_header: Filter
+      name: Nama
+    form:
+      name: Nama
+      description: Deskripsi
+      price: Harga
+    index:
+      page_header: Kelola Wifi Roaming
+      body_title: Daftar Wifi Roaming
+      create: Tambah Wifi Roaming
+    new:
+      page_header: Tambah Wifi Roaming
+      body_title: Entry Wifi Roaming
+      card_header: Input Data Wifi Roaming
+    edit:
+      page_header: Kelola Wifi Roaming
+      body_title: Ubah Wifi Roaming
+      card_header: Ubah Data Wifi Roaming
+    show:
+      page_header: Detail Voucher
+      details: Detail
+      name: Nama
+      price: Harga
+      description: Deskripsi
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Voucher baru berhasil dibuat.
+    update:
+      notice: Voucher berhasil diubah.
+    destroy:
+      notice: Voucher berhasil dihapus.
+  simple_form:
+    labels:
+      voucher:
+      name: Nama
+      valid_date: Valid Sampai
+      max_amount: Maksimal Harga
+      max_usage: Maksimal Penggunaan
+      status: Status

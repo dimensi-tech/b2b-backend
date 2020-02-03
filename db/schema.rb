@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_135355) do
+ActiveRecord::Schema.define(version: 2020_02_03_124303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -280,6 +280,14 @@ ActiveRecord::Schema.define(version: 2019_12_10_135355) do
     t.decimal "max_amount"
     t.integer "max_usage"
     t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wifi_roamings", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
