@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :identities
   resources :merchants
   resources :passports
+  resources :wifi_roamings
   resources :products do
     resources :packages
   end

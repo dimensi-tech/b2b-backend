@@ -1,0 +1,3 @@
+class WifiRoaming < ApplicationRecord
+  
+end

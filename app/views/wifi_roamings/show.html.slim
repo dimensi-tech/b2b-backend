@@ -1,0 +1,40 @@
+section.section
+  .section-header
+    h1 = t('.page_header')
+    .section-header-breadcrumb
+      .breadcrumb-item.active
+        a href="#"  Dashboard
+      .breadcrumb-item Credits
+  .section-body
+    h2.section-title = @wifi_roaming.name
+    p.section-lead
+      = "Data ID : #{@wifi_roaming.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 = t('.details')
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.name')
+                  p = @wifi_roaming.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.description')
+                  p = @wifi_roaming.description
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.price')
+                  p = @wifi_roaming.price
+
+  .buttons
+    = link_to t('buttons.edit'), edit_wifi_roaming_path(@wifi_roaming), class: 'btn btn-warning'
+    = link_to t('buttons.back'), wifi_roamings_path(@wifi_roaming), class: 'btn'

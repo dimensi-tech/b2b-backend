@@ -1,0 +1,29 @@
+.card-body  
+  = simple_form_for @wifi_roaming do |f|
+    - if @wifi_roaming.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@wifi_roaming.errors.count, "error")} prohibited this wifi roaming from being saved:"
+          ul
+            - @profile.errors.full_messages.each do |message|
+              li = message
+
+    .form-group.row.mb-4
+      = f.label :name, t('.name'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_field :name, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :price, t('.price'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.number_field :price, class: 'form-control'
+    .form-group.row.mb-4
+      = f.label :description, t('.description'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.text_area :description, class: 'form-control'
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit t('buttons.submit'), class: 'btn btn-primary'
+      = link_to t('buttons.back'), wifi_roamings_path, class: 'btn btn-secondary'
