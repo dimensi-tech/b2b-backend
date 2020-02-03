@@ -8,7 +8,14 @@
           th = t('.updated_at')
         - @customers.each do |customer|
           tr
-            td = customer.email
+            td
+              = customer.email
+              .table-links
+                = link_to t('buttons.view'), customer_path(customer)
+                .bullet
+                = link_to t('buttons.edit'), edit_customer_path(customer)
+                .bullet
+                = link_to t('buttons.destroy'), customer_path(customer), method: :delete, class: 'text-danger'
             td = customer.created_at.strftime('%d %B %Y')
             td = customer.updated_at.strftime('%d %B %Y')
 

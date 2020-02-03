@@ -1,10 +1,7 @@
 section.section
   .section-header
     h1 = t('.page_header')
-    .section-header-breadcrumb
-      .breadcrumb-item.active
-        a href="#"  Dashboard
-      .breadcrumb-item Credits
+    = render 'shared/breadcrumb'
   .section-body
     h2.section-title = @facility.name
     p.section-lead
@@ -39,7 +36,7 @@ section.section
                   i.far.fa-circle
                 .media-body
                   h6 = t('.icon')
-                  p = @facility.icon                  
+                  p = @facility.icon
   .buttons
     = link_to 'Edit', edit_facility_path(@facility), class: 'btn btn-warning'
     = link_to 'Back', facilities_path(@facility), class: 'btn'

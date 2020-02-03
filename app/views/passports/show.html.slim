@@ -1,10 +1,7 @@
 section.section
   .section-header
     h1 = t('.page_header')
-    .section-header-breadcrumb
-      .breadcrumb-item.active
-        a href="#"  Dashboard
-      .breadcrumb-item Credits
+    = render 'shared/breadcrumb'
   .section-body
     h2.section-title = @passport.full_name
     p.section-lead

@@ -1,0 +1,101 @@
+id:
+  loaf:
+    errors:
+      invalid_options: "Invalid option :%{invalid}. Valid options are: %{valid}, make sure these are the ones you are using."
+    breadcrumbs:
+      home: 'Home'
+      bookings:
+        index: Kelola Booking
+        show: Detail Booking
+        new: Entry Booking Baru
+        edit: Ubah Booking
+      ads:
+        index: Kelola Iklan
+        show: Detail Iklan
+        new: Entry Iklan Baru
+        edit: Ubah Iklan
+      categories:
+        index: Kelola Kategori
+        show: Detail Kategori
+        new: Entry Kategori Baru
+        edit: Ubah Kategori
+      countries:
+        index: Kelola Negara
+        show: Detail Negara
+        new: Entry Negara Baru
+        edit: Ubah Negara
+      customers:
+        index: Kelola Pelanggan
+        show: Detail Pelanggan
+        new: Entry Pelanggan Baru
+        edit: Ubah Pelanggan
+      discounts:
+        index: Kelola Diskon
+        show: Detail Diskon
+        new: Entry Diskon Baru
+        edit: Ubah Diskon
+      facilities:
+        index: Kelola Fasilitas
+        show: Detail Fasilitas
+        new: Entry Fasilitas Baru
+        edit: Ubah Fasilitas
+      icons:
+        index: Kelola Ikon
+        show: Detail Ikon
+        new: Entry Ikon Baru
+        edit: Ubah Ikon
+      identities:
+        index: Kelola Identitas
+        show: Detail Identitas
+        new: Entry Identitas Baru
+        edit: Ubah Identitas
+      merchants:
+        index: Kelola Merchant
+        show: Detail Merchant
+        new: Entry Merchant Baru
+        edit: Ubah Merchant
+      packages:
+        index: Kelola Paket
+        show: Detail Paket
+        new: Entry Paket Baru
+        edit: Ubah Paket
+      passports:
+        index: Kelola Paspor
+        show: Detail Paspor
+        new: Entry Paspor Baru
+        edit: Ubah Paspor
+      products:
+        index: Kelola Produk
+        show: Detail Produk
+        new: Entry Produk Baru
+        edit: Ubah Produk
+      profiles:
+        index: Kelola Profil
+        show: Detail Profil
+        new: Entry Profil Baru
+        edit: Ubah Profil
+      term_agreements:
+        index: Kelola Syarat dan Ketentuan
+        show: Detail Syarat dan Ketentuan
+        new: Entry Syarat dan Ketentuan Baru
+        edit: Ubah Syarat dan Ketentuan
+      travel_destinations:
+        index: Kelola Tujuan Wisata
+        show: Detail Tujuan Wisata
+        new: Entry Tujuan Wisata Baru
+        edit: Ubah Tujuan Wisata
+      voucher_usages:
+        index: Kelola Penggunaan Voucher
+        show: Detail Penggunaan Voucher
+        new: Entry Penggunaan Voucher Baru
+        edit: Ubah Penggunaan Voucher
+      vouchers:
+        index: Kelola Voucher
+        show: Detail Voucher
+        new: Entry Voucher Baru
+        edit: Ubah Voucher
+      wifi_roamings:
+        index: Kelola Wifi Roaming
+        show: Detail Wifi Roaming
+        new: Entry Wifi Roaming Baru
+        edit: Ubah Wifi Roaming

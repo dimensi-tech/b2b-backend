@@ -2,12 +2,7 @@
 section.section
   .section-header
     h1 = t('.page_header')
-    .section-header-breadcrumb
-      .breadcrumb-item.active
-        a href="#"  Dashboard
-      .breadcrumb-item
-        a href="#"  Components
-      .breadcrumb-item Table
+    = render 'shared/breadcrumb'
   .section-body
     h2.section-title = t('.body_title')
     .row
@@ -22,7 +17,6 @@ section.section
                   button.btn.btn-icon.btn-3.btn-primary type="button" data-target="#filter" data-toggle="modal"
                     span.btn-inner--icon
                       i.fa.fa-filter
-                    span.btn-inner--text = t('buttons.filter')  
+                    span.btn-inner--text = t('buttons.filter')
                   = link_to t('.create'), new_travel_destination_path, class: 'btn btn-info'
           = render 'travel_destinations'
-            

@@ -7,9 +7,17 @@
           th = t('.product')
           th = t('.package')
           th = t('.customer')
+          th Opsi
         - @bookings.each do |booking|
           tr
-            td = booking.number
+            td
+              = booking.number
+              .table-links
+                = link_to t('buttons.view'), booking_path(booking)
+                .bullet
+                = link_to t('buttons.edit'), edit_booking_path(booking)
+                .bullet
+                = link_to t('buttons.destroy'), booking_path(booking), method: :delete, class: 'text-danger'
             td = booking.package.product.try(:name)
             td = booking.package.try(:name)
             td = booking.customer.try(:name)

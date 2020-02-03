@@ -70,6 +70,7 @@ gem 'devise', '4.7.1' # user authentication
 gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
 gem 'jquery-ui-rails' # jquery ui
 gem 'kaminari', '1.1.1' # Pagination
+gem 'loaf', '~> 0.8.1'
 gem 'rails-i18n', '~> 6.0.0' # Translations
 gem 'ransack', '2.3.0' # Ransack
 gem 'rolify', '5.2.0' # user roles

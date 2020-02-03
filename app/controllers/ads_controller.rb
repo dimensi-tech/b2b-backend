@@ -3,59 +3,47 @@ class AdsController < ApplicationController
 
   def index
     @search = Ad.ransack(params[:q])
-    @ads = @search.result(distinct: true).page(params[:page]).per(15)
+    @ads    = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @ad = Ad.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @ad = Ad.new(ad_params)
 
-    respond_to do |format|
-      if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
-        format.json { render :show, status: :created, location: @ad }
-      else
-        format.html { render :new }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if @ad.save
+      redirect_to @ad, notice: 'Ad was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ad }
-      else
-        format.html { render :edit }
-        format.json { render json: @ad.errors, status: :unprocessable_entity }
-      end
+    if @ad.update(ad_params)
+      redirect_to @ad, notice: 'Ad was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @ad.destroy
-    respond_to do |format|
-      format.html { redirect_to ads_url, notice: 'Ad was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to ads_url, notice: 'Ad was successfully destroyed.'
   end
 
   private
-    def set_ad
-      @ad = Ad.find(params[:id])
-    end
 
-    def ad_params
-      params.require(:ad).permit(:name, :image, :status, :url)
-    end
+  def set_ad
+    @ad = Ad.find(params[:id])
+  end
+
+  def ad_params
+    params.require(:ad).permit(:name, :image, :status, :url)
+  end
 end
