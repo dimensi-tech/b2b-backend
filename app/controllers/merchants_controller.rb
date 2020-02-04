@@ -2,7 +2,7 @@ class MerchantsController < ApplicationController
   before_action :set_merchant, only: %i[show edit update destroy]
 
   def index
-    @search = Merchant.ransack(params[:q])
+    @search    = Merchant.ransack(params[:q])
     @merchants = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
@@ -17,35 +17,24 @@ class MerchantsController < ApplicationController
   def create
     @merchant = Merchant.new(merchant_params)
 
-    respond_to do |format|
-      if @merchant.save
-        format.html { redirect_to @merchant, notice: 'Merchant was successfully created.' }
-        format.json { render :show, status: :created, location: @merchant }
-      else
-        format.html { render :new }
-        format.json { render json: @merchant.errors, status: :unprocessable_entity }
-      end
+    if @merchant.save
+      redirect_to @merchant, notice: 'Merchant was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @merchant.update(merchant_params)
-        format.html { redirect_to @merchant, notice: 'Merchant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @merchant }
-      else
-        format.html { render :edit }
-        format.json { render json: @merchant.errors, status: :unprocessable_entity }
-      end
+    if @merchant.update(merchant_params)
+      redirect_to @merchant, notice: 'Merchant was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @merchant.destroy
-    respond_to do |format|
-      format.html { redirect_to merchants_url, notice: 'Merchant was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to merchants_url, notice: 'Merchant was successfully destroyed.'
   end
 
   private

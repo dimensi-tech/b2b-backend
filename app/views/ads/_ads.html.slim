@@ -17,7 +17,6 @@
                 = link_to t('buttons.edit'), edit_ad_path(ad)
                 .bullet
                 = link_to t('buttons.destroy'), ad_path(ad), method: :delete, class: 'text-danger'
-
             td = image_tag ad.image_url, class: 'img-fluid', style: 'max-height: 100px'
             td
               - if ad.status

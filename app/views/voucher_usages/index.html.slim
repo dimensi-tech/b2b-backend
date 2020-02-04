@@ -2,12 +2,7 @@
 section.section
   .section-header
     h1 = t('.page_header')
-    .section-header-breadcrumb
-      .breadcrumb-item.active
-        a href="#"  Dashboard
-      .breadcrumb-item
-        a href="#"  Components
-      .breadcrumb-item Table
+    = render 'shared/breadcrumb'
   .section-body
     h2.section-title = t('.body_title')
     .row

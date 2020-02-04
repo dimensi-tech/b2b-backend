@@ -5,12 +5,17 @@
         tr
           th = t('.customer')
           th = t('.voucher')
-          th = t('.action')
         - @voucher_usages.each do |voucher_usage|
           tr
-            td = voucher_usage.customer.email
+            td
+              = voucher_usage.customer.email
+              .table-links
+                = link_to t('buttons.view'), voucher_usage_path(voucher_usage)
+                .bullet
+                = link_to t('buttons.edit'), edit_voucher_usage_path(voucher_usage)
+                .bullet
+                = link_to t('buttons.destroy'), voucher_usage_path(voucher_usage), method: :delete, class: 'text-danger'
             td = voucher_usage.voucher.code
-            
   .card-footer.text-right
     nav.d-inline-block
       = paginate @voucher_usages

@@ -1,0 +1,4 @@
+.section-header-breadcrumb
+  - breadcrumb_trail do |crumb|
+    .breadcrumb-item class="#{request.path == crumb.path ? 'active' : ''}"
+      = link_to_unless request.path == crumb.path, crumb.name, crumb.url, (request.path == crumb.path ? {'aria-current' => 'page'} : {})

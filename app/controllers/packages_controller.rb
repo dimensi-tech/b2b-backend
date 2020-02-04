@@ -1,11 +1,9 @@
-# frozen_string_literal: true
-
 class PackagesController < ApplicationController
   before_action :set_package, only: %i[show edit update destroy]
   before_action :check_product_id, only: %i[new edit]
 
   def index
-    @search = Package.ransack(params[:q])
+    @search   = Package.ransack(params[:q])
     @packages = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
@@ -18,33 +16,29 @@ class PackagesController < ApplicationController
   def edit; end
 
   def create
-    @package = Package.new(package_params)
+    @package                = Package.new(package_params)
     @package.available_date = params.dig(:package, :available_date).split(', ')
-    respond_to do |format|
-      if @package.save
-        format.html { redirect_to product_path(@package.product_id), notice: 'Package was successfully created.' }
-      else
-        format.html { render :new }
-      end
+
+    if @package.save
+      redirect_to product_path(@package.product_id), notice: 'Package was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      params[:package][:available_date] = params.dig(:package, :available_date).split(', ')
-      if @package.update(package_params)
-        format.html { redirect_to product_path(@package.product_id), notice: 'Package was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    params[:package][:available_date] = params.dig(:package, :available_date).split(', ')
+
+    if @package.update(package_params)
+      redirect_to product_path(@package.product_id), notice: 'Package was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @package.destroy
-    respond_to do |format|
-      format.html { redirect_to product_path(params[:product_id]), notice: 'Package was successfully destroyed.' }
-    end
+    redirect_to product_path(params[:product_id]), notice: 'Package was successfully destroyed.'
   end
 
   private

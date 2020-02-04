@@ -6,23 +6,18 @@
           th = t('.name')
           th = t('.description')
           th = t('.price')
-          th = t('.action')
         - @packages.each do |package|
           tr
-            td = package.name
+            td
+              = package.name
+              .table-links
+                = link_to t('buttons.view'), package_path(package)
+                .bullet
+                = link_to t('buttons.edit'), edit_package_path(package)
+                .bullet
+                = link_to t('buttons.destroy'), package_path(package), method: :delete, class: 'text-danger'
             td = package.description
             td = package.price
-            td
-              = link_to package, title: t('buttons.view'),
-                        class: 'btn btn-icon btn-primary' do
-                        i.fa.fa-eye
-              = link_to edit_package_path(package), title: t('buttons.edit'),
-                        class: 'btn btn-icon btn-warning' do
-                        i.fa.fa-edit
-              = link_to package, data: { confirm: t('buttons.confirm') }, method: :delete,
-                        title: t('buttons.destroy'), class: 'btn btn-icon btn-danger' do
-                        i.fa.fa-times
-
   .card-footer.text-right
     nav.d-inline-block
       = paginate @packages
