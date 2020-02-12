@@ -22,3 +22,4 @@ id:
     vouchers: Voucher
     customers: Pelanggan
     wifi_roamings: Wifi Roaming
+    email_templates: Template Email

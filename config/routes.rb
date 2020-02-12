@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :countries
   resources :customers
   resources :discounts
+  resources :email_templates
   resources :icons
   resources :facilities
   resources :identities

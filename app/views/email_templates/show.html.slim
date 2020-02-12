@@ -1,0 +1,49 @@
+section.section
+  .section-header
+    h1 = t('.page_header')
+    = render 'shared/breadcrumb'
+  .section-body
+    h2.section-title = @email_template.name
+    p.section-lead
+      = "Data ID : #{@email_template.id}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 = t('.details')
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.name')
+                  p = @email_template.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.template_type')
+                  p = @email_template.template_type_text
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.attachment_file')
+                  p = to_download(@email_template.attachment_file_url)
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.status')
+                  p = check_value?(@email_template.status)
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.body')
+                  p = @email_template.body.html_safe
+
+  .buttons
+    = link_to t('buttons.edit'), edit_email_template_path(@email_template), class: 'btn btn-warning'
+    = link_to t('buttons.back'), email_templates_path(@email_template), class: 'btn'

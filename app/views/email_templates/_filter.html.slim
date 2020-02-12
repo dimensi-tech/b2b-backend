@@ -1,0 +1,26 @@
+#filter.modal
+  = search_form_for @search do |f|
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+          .modal-header
+            h5.modal-title = t('.filter_header')
+            button.close aria-label="Close" data-dismiss="modal" type="button"
+              span aria-hidden="true"  &times;
+          .modal-body
+            .row
+              .col-md-12
+                .form-group
+                  label class='form-control-label' = t('.name')
+                  = f.search_field :name_cont, class: 'form-control form-control-alternative'
+                .form-group
+                  label class='form-control-label' = t('.template_type')
+                  = f.select :template_type_eq, options_for_select(EmailTemplate.template_type.options, @search.template_type_eq),
+                             { include_blank: true }, { class: 'form-control form-control-alternative' }
+                .form-group
+                  .custom-control.custom-control-alternative.custom-checkbox
+                    = f.check_box :status_true, class: 'custom-control-input'
+                    = f.label :status_true, t('.status'), class: 'custom-control-label form-control-label'
+
+          .modal-footer
+            = link_to t('buttons.reset'), email_templates_path, class: 'btn btn-danger'
+            = f.submit t('buttons.filter'), class: 'btn btn-primary'

@@ -1,0 +1,10 @@
+.modal-dialog.modal-dialog-centered.modal-lg
+  .modal-content
+    .modal-header
+      h5.modal-title = t('.page_header', name: email_template.name)
+      button.close aria-label="Close" data-dismiss="modal" type="button"
+        span aria-hidden="true"  &times;
+    .modal-body
+      .row
+        .col-md-12
+          = email_template.body.html_safe

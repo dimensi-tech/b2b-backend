@@ -9,3 +9,4 @@
 //= require vendors/scripts
 //= require vendors/custom
 //= require cocoon
+//= require ckeditor/init

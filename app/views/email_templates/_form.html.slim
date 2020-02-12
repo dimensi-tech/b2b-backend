@@ -1,0 +1,47 @@
+.card-body
+  = simple_form_for @email_template do |f|
+    - if @email_template.errors.any?
+      .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@email_template.errors.count, "error")} prohibited this email_template from being saved:"
+          ul
+            - @email_template.errors.full_messages.each do |message|
+              li = message
+
+    .form-group.row.mb-4
+      = f.label :name, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.input :name, label: false, input_html: { class: 'form-control' }
+    .form-group.row.mb-4
+      - EmailTemplate.template_type.values.sort.each do |type|
+        textarea id="template-#{type}" cols="50" rows="5" style="display:none;"
+          = render "email_templates/templates/#{type}"
+      = f.label :template_type, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.input :template_type,
+                  collection: EmailTemplate.template_type.options, label: false,
+                  input_html: { class: 'form-control select2 template-type-select' }
+    .form-group.row.mb-4
+      = f.label :body, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.input :body, as: :ckeditor, label: false, input_html: { class: 'form-control' }
+    .form-group.row.mb-4
+      = f.label :attachment_file, class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.input :attachment_file, label: false, as: :file,
+                  input_html: { class: 'form-control', accept: 'image/png,image/gif,image/jpeg,image/jpg,application/pdf' }
+    .form-group.row.mb-4
+      div class='col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        .custom-control.custom-control-alternative.custom-checkbox
+          = f.check_box :status, class: 'custom-control-input'
+          = f.label :status, class: 'custom-control-label form-control-label'
+        small = t('.status_description')
+
+    .form-group.row.mb-4
+      label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+      .col-sm-12.col-md-7
+        = f.submit t('buttons.submit'), class: 'btn btn-primary'
+      = link_to t('buttons.back'), email_templates_path, class: 'btn btn-secondary'

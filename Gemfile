@@ -61,16 +61,19 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.0' # image file uploader
+gem 'carrierwave-i18n', '0.2.0' # image file uploader
 gem 'city-state', '0.0.13'
-gem 'ckeditor', '5.0.0' # text editor
+gem 'ckeditor', '4.3.0' # text editor
 gem 'cocoon' # nested form
 gem 'countries', '3.0.0'
 gem 'devise', '4.7.1' # user authentication
 gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
+gem 'enumerize', '2.3.1' # Enumerated attributes
 gem 'jquery-ui-rails' # jquery ui
 gem 'kaminari', '1.1.1' # Pagination
-gem 'loaf', '~> 0.8.1'
+gem 'loaf', '~> 0.8.1' # breadcrumb
+gem 'mini_magick', '4.9.5' # image file uploader
 gem 'rails-i18n', '~> 6.0.0' # Translations
 gem 'ransack', '2.3.0' # Ransack
 gem 'rolify', '5.2.0' # user roles
