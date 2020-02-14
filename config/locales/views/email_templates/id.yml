@@ -1,0 +1,64 @@
+id:
+  enumerize:
+    email_template:
+      template_type:
+        payment_finish: Pembayaran Sukses
+  email_templates:
+    email_templates:
+      name: Nama
+      body: Body
+      template_type: Tipe
+      attachment_file: File Lampiran
+      status: Status
+    filter:
+      filter_header: Filter
+      name: Nama
+      body: Body
+      template_type: Tipe
+      attachment_file: File Lampiran
+      status: Status
+    form:
+      name: Nama
+      body: Body
+      template_type: Tipe
+      attachment_file: File Lampiran
+      status: Status
+      status_description: Ceklis jika template aktif
+    index:
+      page_header: Kelola Template Email
+      body_title: Daftar Template Email
+      create: Tambah Template Email
+    new:
+      page_header: Tambah Template Email
+      body_title: Entry Template Email Baru
+      card_header: Input Data Template Email
+    edit:
+      page_header: Kelola Template Email
+      body_title: Ubah Template Email
+      card_header: Ubah Data Template Email
+    show:
+      page_header: Detail Template Email
+      details: Detail
+      name: Nama
+      body: Body
+      template_type: Tipe
+      attachment_file: File Lampiran
+      status: Status
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Template Email baru berhasil dibuat.
+    update:
+      notice: Template Email berhasil diubah.
+    destroy:
+      notice: Template Email berhasil dihapus.
+    preview_template:
+      page_header: Template %{name}
+  simple_form:
+    labels:
+      email_template:
+        name: Nama
+        body: Body
+        template_type: Tipe
+        attachment_file: File Lampiran
+        status: Status

@@ -13,7 +13,8 @@ id:
     edit: Ubah
     destroy: Hapus
     view: Lihat Detail
-    confirm: Apakah anda yakin?
+    confirm: Apakah Anda yakin?
+    preview_template: Preview Template
   search: Cari
   last_update: Terakhir diupdate
   ago: yang lalu

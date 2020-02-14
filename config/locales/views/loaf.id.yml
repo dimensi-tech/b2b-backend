@@ -34,6 +34,11 @@ id:
         show: Detail Diskon
         new: Entry Diskon Baru
         edit: Ubah Diskon
+      email_templates:
+        index: Kelola Template Email
+        show: Detail Template Email
+        new: Entry Template Email Baru
+        edit: Ubah Template Email
       facilities:
         index: Kelola Fasilitas
         show: Detail Fasilitas

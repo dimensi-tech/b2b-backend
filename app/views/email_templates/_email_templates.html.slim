@@ -1,0 +1,39 @@
+- if @email_templates.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.name')
+          th = t('.template_type')
+          th = t('.attachment_file')
+          th = t('.status')
+        - @email_templates.each do |email_template|
+          tr
+            td
+              = email_template.name
+              .table-links
+                = link_to t('buttons.view'), email_template_path(email_template)
+                / Uncomment if bug modal have been fixed, below is preview template with modal
+                / = link_to t('buttons.preview_template'), '#!',
+                          data: { target: "#template-#{email_template.id}", toggle: 'modal' }
+                .bullet
+                = link_to t('buttons.edit'), edit_email_template_path(email_template)
+                .bullet
+                = link_to t('buttons.destroy'), email_template_path(email_template),
+                          method: :delete, class: 'text-danger', data: { confirm: t('buttons.confirm') }
+            td
+              = email_template.template_type_text
+            td
+              = to_download(email_template.attachment_file_url)
+            td
+              = check_value?(email_template.status)
+
+          / Uncomment if bug modal have been fixed, below is preview template with modal
+          / .modal.fade id="template-#{email_template.id}"
+            = render partial: 'preview_template', locals: { email_template: email_template }
+
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @email_templates
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_email_template_path }
