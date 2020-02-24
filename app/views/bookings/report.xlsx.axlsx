@@ -1,0 +1,50 @@
+# frozen_string_literal: true
+
+wb = xlsx_package.workbook
+
+bold_style = wb.styles.add_style sz: 14, b: true, font_name: 'Courier',
+                                 alignment: { horizontal: :left,
+                                              vertical: :center,
+                                              wrap_text: true }
+
+item_style = wb.styles.add_style sz: 10, font_name: 'Courier',
+                                 alignment: { horizontal: :left,
+                                              vertical: :center,
+                                              wrap_text: true }
+
+date_style = wb.styles.add_style format_code: 'DD/MM/YYYY',
+                                 sz: 10, font_name: 'Courier',
+                                 alignment: { horizontal: :left,
+                                              vertical: :center,
+                                              wrap_text: true }
+wb.add_worksheet(name: 'Booking') do |sheet|
+  sheet.add_row [t('bookings.report.page_header')], style: bold_style
+  sheet.merge_cells('A1:D1')
+
+  sheet.add_row ["#{t('bookings.report.export_date')} : #{default_date(@export_date)}"]
+  sheet.add_row ['']
+
+  sheet.add_row ['No', t('bookings.report.number'),
+                 t('bookings.report.product'),
+                 t('bookings.report.package'),
+                 t('bookings.report.email'),
+                 t('bookings.report.booking_date'),
+                 t('bookings.report.departure_date')], style: bold_style
+
+  @bookings.each_with_index do |booking, index|
+    column = []
+    column << index + 1
+    column << booking.number
+    column << booking.package.product.name
+    column << booking.package.name
+    column << booking.customer.email
+    column << default_date(booking.created_at)
+    column << default_date(booking.departure_date)
+
+    sheet.add_row column, style: [
+      item_style, item_style, item_style,
+      item_style, date_style, date_style
+    ]
+  end
+  sheet.column_widths 8, 40, 30, 30, 30, 40, 40, 25, 30
+end

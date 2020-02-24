@@ -19,6 +19,8 @@ id:
       page_header: Master Data Boking
       body_title: Kelola Boking
       create: Tambah Boking
+      report:
+        page_header: Format Laporan
     new:
       page_header: Master Data Boking
       body_title: Entry Boking Baru
@@ -40,6 +42,16 @@ id:
       notice: Boking berhasil diubah.
     destroy:
       notice: Boking berhasil dihapus.
+    report:
+      page_header: Laporan Booking
+      number: Nomor
+      package: Paket
+      customer: Email Pelanggan
+      product: Produk
+      export_date: Tanggal Export
+      booking_date: Tanggal Boking
+      departure_date: Tanggal Keberangkatan
+      email: Email
   simple_form:
     labels:
       country:

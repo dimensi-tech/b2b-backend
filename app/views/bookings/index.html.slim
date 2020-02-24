@@ -18,4 +18,13 @@ section.section
                     span.btn-inner--icon
                       i.fa.fa-filter
                     span.btn-inner--text = t('buttons.filter')
+                  .dropdown.btn-export
+                    button.btn.btn-secondary.dropdown-toggle data-toggle="dropdown"
+                      | Export
+                      em.fa.fa-caret-down
+                    .dropdown-menu
+                      .export-title = t('.report.page_header')
+                      = link_to t('button.export.excel'),
+                                report_bookings_path(format: :xlsx, q: params[:q].try(:to_unsafe_h)),
+                                target: '_blank', class: 'dropdown-item'
           = render 'bookings'

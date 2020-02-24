@@ -61,6 +61,8 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add
+gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844' # converter html to excel
+gem 'caxlsx_rails' #convert to xlsx spreadsheets
 gem 'carrierwave', '~> 2.0' # image file uploader
 gem 'carrierwave-i18n', '0.2.0' # image file uploader
 gem 'city-state', '0.0.13'
