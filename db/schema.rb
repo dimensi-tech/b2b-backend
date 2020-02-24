@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_121428) do
+ActiveRecord::Schema.define(version: 2020_02_24_140823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2020_02_19_121428) do
     t.integer "voucher_id"
     t.integer "person"
     t.string "payment_code"
-    t.integer "midtrans_id"
-    t.integer "status"
+    t.string "midtrans_id"
+    t.string "status"
   end
 
   create_table "categories", force: :cascade do |t|

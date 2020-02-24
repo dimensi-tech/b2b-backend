@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingsController < ApplicationController
   before_action :set_country, only: %i[show edit update destroy]
 
@@ -37,10 +39,29 @@ class BookingsController < ApplicationController
     redirect_to bookings_url, notice: 'Booking was successfully destroyed.'
   end
 
+  def report
+    resource_filename(params)
+    respond_to do |format|
+      format.xlsx do
+        response.headers['Content-Disposition'] =
+          "attachment;filename=#{@filename}.xlsx"
+      end
+    end
+  end
+
   private
 
   def set_country
     @booking = Booking.find(params[:id])
+  end
+
+  def resource_filename(params)
+    @search      = Booking.all
+    @search      = @search.ransack(params[:q])
+    @bookings    = @search.result(distinct: true)
+    @filename    = "Laporan Booking - #{Date.today}"
+    @filters     = params[:q]
+    @export_date = Time.now
   end
 
   def country_params

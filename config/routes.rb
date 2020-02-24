@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :ads
-  resources :bookings
   resources :categories
   resources :countries
   resources :customers
@@ -15,12 +14,19 @@ Rails.application.routes.draw do
   resources :merchants
   resources :passports
   resources :wifi_roamings
-  resources :products do
-    resources :packages
-  end
   resources :profiles
   resources :term_agreements
   resources :travel_destinations
   resources :vouchers
   resources :voucher_usages
+
+  resources :products do
+    resources :packages
+  end
+
+  resources :bookings do
+    collection do
+      get :report
+    end
+  end
 end
