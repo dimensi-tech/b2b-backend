@@ -203,7 +203,7 @@ GEM
     polyamorous (2.3.0)
       activerecord (>= 5.0)
     public_suffix (4.0.1)
-    puma (3.12.2)
+    puma (3.12.3)
     rack (2.0.7)
     rack-proxy (0.6.5)
       rack
@@ -362,7 +362,7 @@ DEPENDENCIES
   loaf (~> 0.8.1)
   mini_magick (= 4.9.5)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 6.0.0)
   rails-i18n (~> 6.0.0)
   ransack (= 2.3.0)
