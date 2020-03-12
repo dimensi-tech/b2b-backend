@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CustomersController < ApplicationController
   before_action :set_customer, only: %i[show]
 
@@ -5,6 +7,8 @@ class CustomersController < ApplicationController
     @search    = Customer.ransack(params[:q])
     @customers = @search.result(distinct: true).page(params[:page])
   end
+
+  def show; end
 
   private
 

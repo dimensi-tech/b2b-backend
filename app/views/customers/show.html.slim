@@ -1,0 +1,27 @@
+section.section
+  .section-header
+    h1 = t('.page_header')
+    = render 'shared/breadcrumb'
+  .section-body
+    h2.section-title = @customer.email
+    p.section-lead
+      = "Data ID : #{@customer.id}"
+    .row
+      .col-12
+        .card
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.email')
+                  p = @customer.email
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 = t('.created_at')
+                  p = @customer.created_at
+  .buttons
+    = link_to t('buttons.back'), customers_path, class: 'btn btn-danger'
