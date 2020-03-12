@@ -6,5 +6,5 @@ class EmailTemplate < ApplicationRecord
 
   scope :active, -> { where(status: true) }
 
-  enumerize :template_type, in: %i[payment_finish], scope: :type
+  enumerize :template_type, in: %i[payment_finish email_confirmation], scope: :type
 end
