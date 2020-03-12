@@ -118,6 +118,7 @@ GEM
     caxlsx_rails (0.6.2)
       actionpack (>= 3.1)
       caxlsx (>= 3.0)
+    chartkick (3.3.1)
     childprocess (3.0.0)
     city-state (0.0.13)
       rubyzip (~> 1.1)
@@ -149,6 +150,8 @@ GEM
     ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.0.0)
+      activesupport (>= 5)
     htmlentities (4.3.4)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
@@ -348,6 +351,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   carrierwave-i18n (= 0.2.0)
   caxlsx_rails
+  chartkick
   city-state (= 0.0.13)
   ckeditor (= 4.3.0)
   cocoon
@@ -355,6 +359,7 @@ DEPENDENCIES
   devise (= 4.7.1)
   dotenv-rails (= 2.7.4)
   enumerize (= 2.3.1)
+  groupdate
   jbuilder (~> 2.7)
   jquery-ui-rails
   kaminari (= 1.1.1)

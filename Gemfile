@@ -65,6 +65,7 @@ gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844' # conver
 gem 'caxlsx_rails' #convert to xlsx spreadsheets
 gem 'carrierwave', '~> 2.0' # image file uploader
 gem 'carrierwave-i18n', '0.2.0' # image file uploader
+gem 'chartkick'
 gem 'city-state', '0.0.13'
 gem 'ckeditor', '4.3.0' # text editor
 gem 'cocoon' # nested form
@@ -72,6 +73,7 @@ gem 'countries', '3.0.0'
 gem 'devise', '4.7.1' # user authentication
 gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
 gem 'enumerize', '2.3.1' # Enumerated attributes
+gem 'groupdate'
 gem 'jquery-ui-rails' # jquery ui
 gem 'kaminari', '1.1.1' # Pagination
 gem 'loaf', '~> 0.8.1' # breadcrumb

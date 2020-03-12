@@ -5,13 +5,10 @@
     .sidebar-brand.sidebar-brand-sm
       a href='/'  B2B
     ul.sidebar-menu
-      li.dropdown class=("#{active_class([root_path])}")
-        a.nav-link.has-dropdown href="#" 
+      li class=("#{active_class([root_path])}")
+        = link_to root_path do
           i.fas.fa-fire
-          span Dashboard
-        ul.dropdown-menu style=("display: none;")
-          li class=("#{active_class([root_path])}")
-            = link_to "Revenue and profits", root_path, class: "nav-link"
+          span = "Dashboard"
 
       li.dropdown class=("#{active_class([countries_path, facilities_path, icons_path, travel_destinations_path, ads_path, categories_path])}")
         a.nav-link.has-dropdown href="#"

@@ -679,6 +679,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@kurkle/color@^0.1.6":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.1.7.tgz#d8b5a558ea91556790c053d31c7eae30087bd220"
+  integrity sha512-6Dc4aR0xzQyWnxur+HOxt4rD/an6f1yuc7o/vpdMFuggQvg/CAIBmXrhPfQNI2pFJqNiSBoBSu5aXyYqOgNmaw==
+
 "@rails/actioncable@^6.0.0-alpha":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.0.tgz#8bff9c902be1531ef7a9e191562e9771efcfdfe1"
@@ -1573,6 +1578,18 @@ chalk@^1.1.1:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
+
+chart.js@^3.0.0-alpha:
+  version "3.0.0-alpha"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.0.0-alpha.tgz#d82e3f7c882b8e321ad05bc1833f983b2b0b630b"
+  integrity sha512-9jbL1IsG9+1oq01GMKbeJ/257O46nVjQuYWEanpo0MuCr18cXMfkrzBTwdbl0VTOkIvWLJJcU5Cmhdc546k2bA==
+  dependencies:
+    "@kurkle/color" "^0.1.6"
+
+chartkick@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/chartkick/-/chartkick-3.2.0.tgz#5296bbadfa6fbb93d3ab0f9c8e5d27649860e806"
+  integrity sha512-EkscIyDBdtUJVIuA2kIIjMq+YkNf4jDWr1fYjDUMZ9IakIJFoJ+9Hl+PW/POutElu8iYbebCEHWsrsXu09o4hw==
 
 chokidar@^2.0.2, chokidar@^2.1.8:
   version "2.1.8"
