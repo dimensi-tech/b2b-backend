@@ -5,81 +5,64 @@
     .sidebar-brand.sidebar-brand-sm
       a href='/'  B2B
     ul.sidebar-menu
-      li.menu-header Dashboard
-      li class=("#{active_class([root_path])}")
-        = link_to root_path do
+      li.dropdown class=("#{active_class([root_path])}")
+        a.nav-link.has-dropdown href="#" 
           i.fas.fa-fire
-          span Revenue and profits
-      li.menu-header Master Data
-      li class=("#{active_class([bookings_path])}")
-        = link_to bookings_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.bookings')
-      li class=("#{active_class([customers_path])}")
-        = link_to customers_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.customers')
-      li class=("#{active_class([countries_path])}")
-        = link_to countries_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.countries')
-      li class=("#{active_class([facilities_path])}")
-        = link_to facilities_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.facilities')
-      li class=("#{active_class([icons_path])}")
-        = link_to icons_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.icons')
-      li class=("#{active_class([identities_path])}")
-        = link_to identities_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.identities')
-      li class=("#{active_class([merchants_path])}")
-        = link_to merchants_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.merchants')
-      li class=("#{active_class([passports_path])}")
-        = link_to passports_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.passports')
-      li class=("#{active_class([products_path])}")
-        = link_to products_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.products')
-      li class=("#{active_class([profiles_path])}")
-        = link_to profiles_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.profiles')
-      li class=("#{active_class([travel_destinations_path])}")
-        = link_to travel_destinations_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.travel_destinations')
-      li class=("#{active_class([ads_path])}")
-        = link_to ads_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.ads')
-      li class=("#{active_class([categories_path])}")
-        = link_to categories_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.categories')
-      li class=("#{active_class([discounts_path])}")
-        = link_to discounts_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.discounts')
-      li class=("#{active_class([vouchers_path])}")
-        = link_to vouchers_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.vouchers')
-      li class=("#{active_class([term_agreements_path])}")
-        = link_to term_agreements_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.term_agreements')
-      li class=("#{active_class([wifi_roamings_path])}")
-        = link_to wifi_roamings_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.wifi_roamings')
-      li class=("#{active_class([email_templates_path])}")
-        = link_to email_templates_path do
-          i.fas.fa-map-marker-alt
-          span = t('sidebar.email_templates')
+          span Dashboard
+        ul.dropdown-menu style=("display: none;")
+          li class=("#{active_class([root_path])}")
+            = link_to "Revenue and profits", root_path, class: "nav-link"
+
+      li.dropdown class=("#{active_class([countries_path, facilities_path, icons_path, travel_destinations_path, ads_path, categories_path])}")
+        a.nav-link.has-dropdown href="#"
+          i.fas.fa-fire
+          span Master Data
+        ul.dropdown-menu style=("display: none;")
+          li class=("#{active_class([countries_path])}")
+            = link_to t('sidebar.countries'), countries_path, class: "nav-link"
+          li class=("#{active_class([facilities_path])}")
+            = link_to t('sidebar.facilities'), facilities_path, class: "nav-link"
+          li class=("#{active_class([icons_path])}")
+            = link_to t('sidebar.icons'), icons_path, class: "nav-link"
+          li class=("#{active_class([travel_destinations_path])}")
+            = link_to t('sidebar.travel_destinations'), travel_destinations_path, class: "nav-link"
+          li class=("#{active_class([ads_path])}")
+            = link_to t('sidebar.ads'), ads_path, class: "nav-link"
+          li class=("#{active_class([categories_path])}")
+            = link_to t('sidebar.categories'), categories_path, class: "nav-link"
+
+      li.dropdown class=("#{active_class([bookings_path, customers_path, identities_path, merchants_path, passports_path, products_path, profiles_path, discounts_path, vouchers_path, wifi_roamings_path])}")
+        a.nav-link.has-dropdown href="#" 
+          i.fas.fa-fire
+          span Management Data
+        ul.dropdown-menu style=("display: none;")
+          li class=("#{active_class([bookings_path])}")
+            = link_to t('sidebar.bookings'), bookings_path, class: "nav-link"
+          li class=("#{active_class([customers_path])}")
+            = link_to t('sidebar.customers'), customers_path, class: "nav-link"
+          li class=("#{active_class([identities_path])}")
+            = link_to t('sidebar.identities'), identities_path, class: "nav-link"
+          li class=("#{active_class([merchants_path])}")
+            = link_to t('sidebar.merchants'), merchants_path, class: "nav-link"
+          li class=("#{active_class([passports_path])}")
+            = link_to t('sidebar.passports'), passports_path, class: "nav-link"
+          li class=("#{active_class([products_path])}")
+            = link_to t('sidebar.products'), products_path, class: "nav-link"
+          li class=("#{active_class([profiles_path])}")
+            = link_to t('sidebar.profiles'), profiles_path, class: "nav-link"
+          li class=("#{active_class([discounts_path])}")
+            = link_to t('sidebar.discounts'), discounts_path, class: "nav-link"
+          li class=("#{active_class([vouchers_path])}")
+            = link_to t('sidebar.vouchers'), vouchers_path, class: "nav-link"
+          li class=("#{active_class([wifi_roamings_path])}")
+            = link_to t('sidebar.wifi_roamings'), wifi_roamings_path, class: "nav-link"
+
+      li.dropdown class=("#{active_class([term_agreements_path, email_templates_path])}")
+        a.nav-link.has-dropdown href="#" 
+          i.fas.fa-fire
+          span Global Setting
+        ul.dropdown-menu style=("display: none;")
+          li class=("#{active_class([term_agreements_path])}")
+            = link_to t('sidebar.term_agreements'), term_agreements_path, class: "nav-link"
+          li class=("#{active_class([email_templates_path])}")
+            = link_to t('sidebar.email_templates'), email_templates_path, class: "nav-link"
