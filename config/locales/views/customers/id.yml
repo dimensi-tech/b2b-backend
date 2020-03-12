@@ -8,4 +8,8 @@ id:
       page_header: Kelola Pelanggan
       body_title: Kelola Pelanggan
       create: Tambah Pelanggan
+    show:
+      page_header: Detail Pelanggan
+      created_at: Registrasi Pada
+      email: Email
       
