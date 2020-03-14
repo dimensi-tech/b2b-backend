@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :set_breadcrumbs
+  # before_action :set_breadcrumbs
 
   protected
 

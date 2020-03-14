@@ -3,6 +3,7 @@ id:
     email_template:
       template_type:
         payment_finish: Pembayaran Sukses
+        email_confirmation: Konfirmasi Email
   email_templates:
     email_templates:
       name: Nama

@@ -70,6 +70,8 @@ gem 'city-state', '0.0.13'
 gem 'ckeditor', '4.3.0' # text editor
 gem 'cocoon' # nested form
 gem 'countries', '3.0.0'
+gem 'daemons', '1.3.1' # background tasks
+gem 'delayed_job_active_record', '4.1.4' # Background tasks
 gem 'devise', '4.7.1' # user authentication
 gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
 gem 'enumerize', '2.3.1' # Enumerated attributes
