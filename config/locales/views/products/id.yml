@@ -1,11 +1,11 @@
 id:
   products:
-    products: 
+    products:
       name: Nama
       description: Deskripsi
       image: Gambar
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       name: Nama
       description: Deskripsi
@@ -47,6 +47,10 @@ id:
         day: Hari
         image: Gambar
         itinerary: Rencana Perjalanan
+      saving_package:
+        description: Rencana Tabungan
+        sort: Bulan ke
+        amount: Jumlah Pembayaran
     create:
       notice: Produk baru berhasil dibuat.
     update:

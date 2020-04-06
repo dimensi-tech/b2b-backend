@@ -27,6 +27,14 @@
     .col-sm-12.col-md-7
       = f.number_field :down_payment, class: 'form-control'
   .form-group.row.mb-4
+    = f.label :itinerary, t('.itinerary'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      #saving_packages.activities.m-0
+        = f.fields_for :saving_packages do |saving_package|
+          = render 'saving_package_fields', f: saving_package
+        div
+          = link_to_add_association '<i class="fa fa-plus"></i> Buat Rencana Tabungan'.html_safe, f, :saving_packages, class: 'btn btn-info'
+  .form-group.row.mb-4
     = f.label :duration_trip, t('.duration_trip'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       = f.number_field :duration_trip, class: 'form-control'
@@ -51,7 +59,7 @@
           = render 'package_detail_fields', f: package_detail
         div
           = link_to_add_association '<i class="fa fa-plus"></i> Buat Rencana Perjalanan'.html_safe, f, :package_details, class: 'btn btn-info'
-  
+
   .form-group.row.mb-4
     label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
     .col-sm-12.col-md-7

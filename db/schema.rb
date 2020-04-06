@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_04_102719) do
+ActiveRecord::Schema.define(version: 2020_04_05_030417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2020_04_04_102719) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_confirmed"
+    t.datetime "confirmed_at"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -76,8 +78,6 @@ ActiveRecord::Schema.define(version: 2020_04_04_102719) do
     t.string "confirmation_token"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.boolean "is_confirmed"
-    t.datetime "confirmed_at"
     t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
@@ -255,6 +255,14 @@ ActiveRecord::Schema.define(version: 2020_04_04_102719) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "saving_packages", force: :cascade do |t|
+    t.integer "package_id"
+    t.integer "sort"
+    t.decimal "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sub_districts", force: :cascade do |t|

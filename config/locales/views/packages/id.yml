@@ -9,7 +9,7 @@ id:
       max_person: Maksimal Orang
       available_date: Tanggal Ketersedian
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       product_id: Id Produk
       name: Nama
@@ -36,7 +36,7 @@ id:
     show:
       page_header: Nama Paket
       details: Detail
-      package_details: Detail Paket 
+      package_details: Detail Paket
       product_id: Id Produk
       name: Nama
       description: Deskripsi
@@ -57,6 +57,10 @@ id:
     package_detail_fields:
       day: Hari ke
       description: Deskripsi Perjalanan
+    saving_package_fields:
+      sort: Bulan ke
+      amount: Jumlah Pembayaran
+      description: Deskripsi Rencana Tabungan
   simple_form:
     labels:
       package:
