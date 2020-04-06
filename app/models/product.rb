@@ -1,7 +1,10 @@
 class Product < ApplicationRecord
-  has_many :packages
+  mount_uploader :image, ImageUploader
+
   belongs_to :category
   belongs_to :travel_destination
-  mount_uploader :image, ImageUploader
+
+  has_many :packages
+
   validates :name, :image, presence: true
 end

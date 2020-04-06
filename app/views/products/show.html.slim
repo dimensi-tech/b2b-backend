@@ -103,6 +103,25 @@ section.section
                       .media-icon
                         i.far.fa-circle
                       .media-body
+                        h6 = t('.saving_package.description')
+                        - if package.saving_packages.present?
+                          .table-responsive
+                            table.table.table-striped.table-md
+                              thead
+                                tr
+                                  th = t('.saving_package.sort')
+                                  th = t('.saving_package.amount')
+                              tbody
+                                - package.saving_packages.each do |saving_package|
+                                  tr
+                                    td = saving_package.sort
+                                    td = default_currency(saving_package.amount)
+                        - else
+                          p -
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
                         h6 = t('.package.itinerary')
                         - if package.package_details.present?
                           .activities

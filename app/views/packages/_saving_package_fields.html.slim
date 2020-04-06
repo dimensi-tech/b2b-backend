@@ -1,0 +1,14 @@
+- index = index
+.activity.nested-fields id='activity_saving_#{index}' data-description='#{t('.description')}' data-upload='upload_saving_#{index}' data-preview='preview_saving_#{index}' label='label_saving_#{index}'
+  .activity-icon.bg-primary.text-white.shadow-primary
+    i.fa.fa-hand-holding-usd
+  .activity-detail
+    .row
+      .col-md-5
+        = f.number_field :sort, class: 'form-control', placeholder: t('.sort')
+      .col-md-5
+        = f.number_field :amount, class: 'form-control', placeholder: t('.amount')
+      .col-md-2
+        = link_to_remove_association '<i class="fa fa-trash"></i>'.html_safe, f,
+          data: { confirm: t('buttons.confirm') },
+          class: 'btn btn-danger'
