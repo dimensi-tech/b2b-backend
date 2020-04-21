@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_060517) do
+ActiveRecord::Schema.define(version: 2020_04_20_140703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_04_11_060517) do
     t.string "status"
     t.integer "passport_ids", default: [], array: true
     t.integer "booking_status"
+    t.integer "booking_type"
+    t.integer "saving_package_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -218,6 +220,16 @@ ActiveRecord::Schema.define(version: 2020_04_11_060517) do
     t.string "status_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "payment_savings", force: :cascade do |t|
+    t.integer "booking_id"
+    t.integer "payment_for"
+    t.decimal "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "identity_id"
+    t.integer "status"
   end
 
   create_table "products", force: :cascade do |t|
