@@ -39,6 +39,8 @@ id:
       add_packages: Tambah Paket
       package:
         description: Deskripsi
+        down_payment: DP Minimal
+        duration_trip: Lama Perjalanan (hari)
         price: Harga
         min_person: Minimal Orang
         max_person: Maksimal Orang
@@ -49,8 +51,8 @@ id:
         itinerary: Rencana Perjalanan
       saving_package:
         description: Rencana Tabungan
-        sort: Bulan ke
-        amount: Jumlah Pembayaran
+        sort: Total Angsuran
+        amount: Jumlah Pembayaran Perbulan (per pax)
     create:
       notice: Produk baru berhasil dibuat.
     update:

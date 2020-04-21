@@ -21,6 +21,12 @@ id:
       description: Deskripsi
       price: Harga
       available_date: Tanggal Ketersedian
+      down_payment: DP Minimal
+      duration_trip: Lama Perjalanan (hari)
+      min_person: Minimal Orang
+      max_person: Maksimal Orang
+      itinerary: Rencana Perjalanan
+      itinerary_saving: Rencana Tabungan
     index:
       page_header: Master Data Paket
       body_title: Kelola Paket
@@ -58,8 +64,8 @@ id:
       day: Hari ke
       description: Deskripsi Perjalanan
     saving_package_fields:
-      sort: Bulan ke
-      amount: Jumlah Pembayaran
+      sort: Total Angsuran
+      amount: Jumlah Pembayaran Perbulan (per pax)
       description: Deskripsi Rencana Tabungan
   simple_form:
     labels:
