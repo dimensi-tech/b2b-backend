@@ -114,7 +114,7 @@ section.section
                               tbody
                                 - package.saving_packages.each do |saving_package|
                                   tr
-                                    td = saving_package.sort
+                                    td = "#{saving_package.sort}x"
                                     td = default_currency(saving_package.amount)
                         - else
                           p -

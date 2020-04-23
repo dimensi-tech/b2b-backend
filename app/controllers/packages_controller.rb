@@ -34,6 +34,8 @@ class PackagesController < ApplicationController
     else
       render :edit
     end
+
+    @package.assigned_down_payment
   end
 
   def destroy

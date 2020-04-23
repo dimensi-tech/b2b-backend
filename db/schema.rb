@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_120512) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_confirmed"
+    t.datetime "confirmed_at"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -79,8 +81,6 @@ ActiveRecord::Schema.define(version: 2020_04_23_120512) do
     t.string "confirmation_token"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.boolean "is_confirmed"
-    t.datetime "confirmed_at"
     t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
