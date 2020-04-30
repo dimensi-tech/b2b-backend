@@ -1,0 +1,14 @@
+en:
+  customers:
+    customers:
+      email: Email
+      created_at: Registration At
+      updated_at: Updated At
+    index:
+      page_header: Master Data Customers
+      body_title: Manage Customers
+      create: Add Customer
+    show:
+      page_header: Detail Customer
+      created_at: Registration At
+      email: Email

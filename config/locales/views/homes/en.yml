@@ -1,0 +1,8 @@
+en:
+  homes:
+    index:
+      page_header: Dashboard
+      body_title: Chart and Statistic
+      bookings:
+        chart_title: Data Bookings (monthly)
+        statistic_title: Latest Bookings

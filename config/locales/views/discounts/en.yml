@@ -1,0 +1,53 @@
+en:
+  discounts:
+    discounts:
+      name: Name
+      percentage: Percentage
+      status: Status
+      valid_date: Valid Until
+      action: Action
+    filter:
+      filter_header: Filter
+      name: Name
+      percentage: Percentage
+      status: Status
+      valid_date: Valid Until
+    form:
+      name: Name
+      percentage: Percentage
+      status: Status
+      valid_date: Valid Until
+    index:
+      page_header: Master Data Discounts
+      body_title: Manage Discounts
+      create: Add Discount
+    new:
+      page_header: Master Data Discounts
+      body_title: Entry New Discount
+      card_header: Input Data Discount
+    edit:
+      page_header: Master Data Discounts
+      body_title: Edit Discount
+      card_header: Edit Data Discount
+    show:
+      page_header: Detail Discount
+      details: Details
+      name: Name
+      percentage: Percentage
+      status: Status
+      valid_date: Valid Until
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Discount Successfuly Created.
+    update:
+      notice: Discount Successfuly Updated.
+    destroy:
+      notice: Discount Successfuly Deleted.
+  simple_form:
+    labels:
+      discount:
+        name: Name
+        percentage: Percentage
+        status: Status
+        valid_date: Valid Until

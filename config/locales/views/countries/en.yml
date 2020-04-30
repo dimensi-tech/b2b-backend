@@ -1,0 +1,43 @@
+en:
+  countries:
+    countries:
+      name: Name
+      code: Code
+      action: Action
+    filter:
+      filter_header: Filter
+      name: Name
+      code: Code
+    form:
+      name: Name
+      code: Code
+    index:
+      page_header: Master Data Countries
+      body_title: Manage Countries
+      create: Add Country
+    new:
+      page_header: Master Data Countries
+      body_title: Entry New Country
+      card_header: Input Data Country
+    edit:
+      page_header: Master Data Countries
+      body_title: Edit Country
+      card_header: Edit Data Country
+    show:
+      page_header: Detail Country
+      details: Details
+      name: Name
+      code: Code
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Country Successfuly Created.
+    update:
+      notice: Country Successfuly Updated.
+    destroy:
+      notice: Country Successfuly Deleted.
+  simple_form:
+    labels:
+      country:
+        name: Name
+        code: Code

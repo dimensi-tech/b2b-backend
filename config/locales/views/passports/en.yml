@@ -1,0 +1,73 @@
+en:
+  passports:
+    passports:
+      full_name: Full Name
+      birth_place: Birth Place
+      mother_name: Mother Name
+      father_name: Father Name
+      number: Passport Number
+      expired_date: Expired Date
+      birth_date: Birth Date
+      identity_id: Identity
+      action: Action
+    filter:
+      filter_header: Filter
+      full_name: Full Name
+      birth_place: Birth Place
+      mother_name: Mother Name
+      father_name: Father Name
+      number: Passport Number
+      expired_date: Expired Date
+      birth_date: Birth Date
+      identity_id: Identity
+    form:
+      full_name: Full Name
+      birth_place: Birth Place
+      mother_name: Mother Name
+      father_name: Father Name
+      number: Passport Number
+      expired_date: Expired Date
+      birth_date: Birth Date
+      identity_id: Identity
+    index:
+      page_header: Master Data Passports
+      body_title: Manage Passport
+      create: Add Passport
+    new:
+      page_header: Master Data Passports
+      body_title: Entry New Passport
+      card_header: Input Data Passport
+    edit:
+      page_header: Master Data Passports
+      body_title: Edit Passport
+      card_header: Edit Data Passport
+    show:
+      page_header: Detail Passport
+      details: Details
+      full_name: Full Name
+      birth_place: Birth Place
+      mother_name: Mother Name
+      father_name: Father Name
+      number: Passport Number
+      expired_date: Expired Date
+      birth_date: Birth Date
+      identity_id: Identity
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Passport Successfuly Created.
+    update:
+      notice: Passport Successfuly Updated.
+    destroy:
+      notice: Passport Successfuly Deleted.
+  simple_form:
+    labels:
+      passport:
+        full_name: Full Name
+        birth_place: Birth Place
+        mother_name: Mother Name
+        father_name: Father Name
+        number: Passport Number
+        expired_date: Expired Date
+        birth_date: Birth Date
+        identity_id: Identity

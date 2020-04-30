@@ -4,7 +4,7 @@ id:
       code: Kode
       name: Nama
       valid_date: Valid Sampai
-      percentage: Persantese
+      percentage: Persentase
       max_amount: Maksimal Harga
       max_usage: Maksimal Penggunaan
       status: Status
@@ -13,7 +13,7 @@ id:
       code: Kode
       name: Nama
       valid_date: Valid Sampai
-      percentage: Persantese
+      percentage: Persentase
       max_amount: Maksimal Harga
       max_usage: Maksimal Penggunaan
       status: Status
@@ -21,7 +21,7 @@ id:
       code: Kode
       name: Nama
       valid_date: Valid Sampai
-      percentage: Persantese
+      percentage: Persentase
       max_amount: Maksimal Harga
       max_usage: Maksimal Penggunaan
       status: Status
@@ -43,7 +43,7 @@ id:
       code: Kode
       name: Nama
       valid_date: Valid Sampai
-      percentage: Persantese
+      percentage: Persentase
       max_amount: Maksimal Harga
       max_usage: Maksimal Penggunaan
       status: Status
@@ -58,10 +58,10 @@ id:
   simple_form:
     labels:
       voucher:
-      code: Kode
-      name: Nama
-      valid_date: Valid Sampai
-      percentage: Persantese
-      max_amount: Maksimal Harga
-      max_usage: Maksimal Penggunaan
-      status: Status
+        code: Kode
+        name: Nama
+        valid_date: Valid Sampai
+        percentage: Persentase
+        max_amount: Maksimal Harga
+        max_usage: Maksimal Penggunaan
+        status: Status

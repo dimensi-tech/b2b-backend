@@ -1,0 +1,67 @@
+en:
+  products:
+    products:
+      name: Name
+      description: Description
+      image: Image
+      action: Action
+    filter:
+      filter_header: Filter
+      name: Name
+      description: Description
+      image: Image
+    form:
+      name: Name
+      description: Description
+      image: Image
+      category: Category
+      travel_destination: Travel Destination
+    index:
+      page_header: Master Data Products
+      body_title: Manage Products
+      create: Add Product
+    new:
+      page_header: Master Data Products
+      body_title: Entry New Product
+      card_header: Input Data Product
+    edit:
+      page_header: Master Data Products
+      body_title: Edit Product
+      card_header: Edit Data Product
+    show:
+      page_header: Detail Product
+      details: Details
+      name: Name
+      description: Description
+      image: Image
+      created_by: Created By
+      updated_by: Updated By
+      add_packages: Add Packages
+      package:
+        description: Description
+        down_payment: Min. Down Payment
+        duration_trip: Trip Duration
+        price: Price
+        min_person: Min. Person
+        max_person: Max. Person
+        package_id: Package
+        available_date: Available Date
+        day: Day
+        image: Image
+        itinerary: Plan Trip
+      saving_package:
+        description: Description Savings
+        sort: Total Installments
+        amount: Monthly Amount (per pax)
+    create:
+      notice: Product Successfuly Created.
+    update:
+      notice: Product Successfuly Updated.
+    destroy:
+      notice: Product Successfully Deleted.
+  simple_form:
+    labels:
+      product:
+        name: Name
+        description: Description
+        image: Image

@@ -7,6 +7,13 @@ nav.navbar.navbar-expand-lg.main-navbar
           i.fas.fa-bars
   ul.navbar-nav.navbar-right
     li.dropdown
+      a.nav-link.nav-link-lg.nav-link-user style="padding-left: 5px !important;padding-right: 5px !important;" href="#{root_path(locale: :id)}"
+        = image_tag 'id.svg', alt: 'image'
+    .vl style="border-left: 2px solid #fff;height: 30px;"
+    li.dropdown
+      a.nav-link.nav-link-lg.nav-link-user style="padding-left: 5px !important;padding-right: 5px !important;" href="#{root_path(locale: :en)}"
+        = image_tag 'en.svg', alt: 'image'
+    li.dropdown
       a.nav-link.dropdown-toggle.nav-link-lg.nav-link-user data-toggle="dropdown" href="#"
         = image_tag 'admin.png', class: 'rounded-circle mr-1', alt: 'image'
         .d-sm-none.d-lg-inline-block = current_user.email

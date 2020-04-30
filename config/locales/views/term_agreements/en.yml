@@ -1,0 +1,43 @@
+en:
+  term_agreements:
+    term_agreements:
+      name: Name
+      description: Description
+      action: Action
+    filter:
+      filter_header: Filter
+      name: Name
+      description: Description
+    form:
+      name: Name
+      description: Description
+    index:
+      page_header: Master Data Terms & Agreements
+      body_title: Manage Term & Agreement
+      create: Add Term & Agreement
+    new:
+      page_header: Master Data Terms & Agreements
+      body_title: Entry New Term & Agreement
+      card_header: Input Data Term & Agreement
+    edit:
+      page_header: Master Data Terms & Agreements
+      body_title: Edit Term & Agreement
+      card_header: Edit Data Term & Agreement
+    show:
+      page_header: Detail Term & Agreement
+      details: Details
+      name: Name
+      description: Description
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Term & Agreement Successfuly Created.
+    update:
+      notice: Term & Agreement Successfuly Updated.
+    destroy:
+      notice: Term & Agreement Successfuly Deleted.
+  simple_form:
+    labels:
+      term_agreement:
+        name: Name
+        description: Description

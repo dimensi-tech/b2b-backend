@@ -1,19 +1,19 @@
 section.section
   .section-header
-    h1 Dashboard
+    h1 = t('.page_header')
   .section-body
-    h2.section-title Grafik dan statistik
+    h2.section-title = t('.body_title')
     .row
       .col
         .card
           .card-header.d-flex.justify-content-between
             .col-md-12.mg-bottom-25
               .d-flex.justify-content-between.align-items-center
-                h3 Data booking per bulan
+                h3 = t('.bookings.chart_title')
           = column_chart Booking.group_by_month(:created_at, format: "%b %Y").count
         .card
           .card-header.d-flex.justify-content-between
             .col-md-12.mg-bottom-25
               .d-flex.justify-content-between.align-items-center
-                h3 Booking Terbaru
+                h3 = t('.bookings.statistic_title')
           = render 'bookings/bookings'

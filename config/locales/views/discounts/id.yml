@@ -2,38 +2,38 @@ id:
   discounts:
     discounts:
       name: Nama
-      percentage: Persantese
+      percentage: Persentase
       status: Status
       valid_date: Valid Sampai
       action: Aksi
     filter:
       filter_header: Filter
       name: Nama
-      percentage: Persantese
+      percentage: Persentase
       status: Status
       valid_date: Valid Sampai
     form:
       name: Nama
-      percentage: Persantese
+      percentage: Persentase
       status: Status
       valid_date: Valid Sampai
     index:
-      page_header: Kelola Diskon
-      body_title: Daftar Diskon
+      page_header: Master Data Diskon
+      body_title: Kelola Diskon
       create: Tambah Diskon
     new:
-      page_header: Tambah Diskon
+      page_header: Master Data Diskon
       body_title: Entry Diskon Baru
       card_header: Input Data Diskon
     edit:
-      page_header: Kelola Diskon
+      page_header: Master Data Diskon
       body_title: Ubah Diskon
       card_header: Ubah Data Diskon
     show:
       page_header: Detail Diskon
       details: Detail
       name: Nama
-      percentage: Persantese
+      percentage: Persentase
       status: Status
       valid_date: Valid Sampai
       created_by: Dibuat Oleh
@@ -48,6 +48,6 @@ id:
     labels:
       discount:
         name: Nama
-        percentage: Persantese
+        percentage: Persentase
         status: Status
         valid_date: Valid Sampai

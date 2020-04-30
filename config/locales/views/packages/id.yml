@@ -1,7 +1,7 @@
 id:
   packages:
     packages:
-      product_id: Id Produk
+      product_id: Produk
       name: Nama
       description: Deskripsi
       price: Harga
@@ -11,12 +11,12 @@ id:
       action: Aksi
     filter:
       filter_header: Filter
-      product_id: Id Produk
+      product_id: Produk
       name: Nama
       description: Deskripsi
       price: Harga
     form:
-      product_id: Id Produk
+      product_id: Produk
       name: Nama
       description: Deskripsi
       price: Harga
@@ -43,13 +43,13 @@ id:
       page_header: Nama Paket
       details: Detail
       package_details: Detail Paket
-      product_id: Id Produk
+      product_id: Produk
       name: Nama
       description: Deskripsi
       price: Harga
       min_person: Minimal Orang
       max_person: Maksimal Orang
-      package_id: Id Paket
+      package_id: Paket
       day: Hari
       image: Gambar
       created_by: Dibuat Oleh
@@ -70,7 +70,7 @@ id:
   simple_form:
     labels:
       package:
-        product_id: Id Produk
+        product_id: Produk
         name: Nama
         description: Deskripsi
         price: Harga

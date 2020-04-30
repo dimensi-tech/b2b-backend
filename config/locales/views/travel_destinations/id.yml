@@ -4,7 +4,7 @@ id:
       country_id: Lokasi Tujuan
       destination: Destinasi
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       country_id: Negara
       destination: Destinasi
@@ -12,15 +12,15 @@ id:
       country_id: Negara
       destination: Destinasi
     index:
-      page_header: Tujuan Wisata
+      page_header: Master Data Tujuan Wisata
       body_title: Kelola Tujuan Wisata
       create: Tambah Tujuan Wisata
     new:
-      page_header: Tujuan Wisata
+      page_header: Master Data Tujuan Wisata
       body_title: Entry Tujuan Wisata Baru
       card_header: Input Data Tujuan Wisata
     edit:
-      page_header: Tujuan Wisata
+      page_header: Master Data Tujuan Wisata
       body_title: Ubah Tujuan Wisata
       card_header: Ubah Data Tujuan Wisata
     show:

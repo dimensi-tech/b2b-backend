@@ -1,10 +1,10 @@
 id:
   term_agreements:
-    term_agreements: 
+    term_agreements:
       name: Nama
       description: Deskripsi
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       name: Nama
       description: Deskripsi
@@ -12,30 +12,30 @@ id:
       name: Nama
       description: Deskripsi
     index:
-      page_header: Syarat dan Ketentuan
-      body_title: Kelola Syarat dan Ketentuan
-      create: Tambah Syarat dan Ketentuan
+      page_header: Master Data Syarat & Ketentuan
+      body_title: Kelola Syarat & Ketentuan
+      create: Tambah Syarat & Ketentuan
     new:
-      page_header: Syarat dan Ketentuan
-      body_title: Entry Syarat dan Ketentuan Baru
-      card_header: Input Data Syarat dan Ketentuan
+      page_header: Master Data Syarat & Ketentuan
+      body_title: Entry Syarat & Ketentuan Baru
+      card_header: Input Data Syarat & Ketentuan
     edit:
-      page_header: Syarat dan Ketentuan
-      body_title: Ubah Syarat dan Ketentuan
-      card_header: Ubah Data Syarat dan Ketentuan
+      page_header: Master Data Syarat & Ketentuan
+      body_title: Ubah Syarat & Ketentuan
+      card_header: Ubah Data Syarat & Ketentuan
     show:
-      page_header: Detail Syarat dan Ketentuan
+      page_header: Detail Syarat & Ketentuan
       details: Detail
       name: Nama
       description: Deskripsi
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:
-      notice: Syarat dan Ketentuan baru berhasil dibuat.
+      notice: Syarat & Ketentuan baru berhasil dibuat.
     update:
-      notice: Syarat dan Ketentuan berhasil diubah.
+      notice: Syarat & Ketentuan berhasil diubah.
     destroy:
-      notice: Syarat dan Ketentuan berhasil dihapus.
+      notice: Syarat & Ketentuan berhasil dihapus.
   simple_form:
     labels:
       term_agreement:

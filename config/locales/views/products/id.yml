@@ -44,7 +44,7 @@ id:
         price: Harga
         min_person: Minimal Orang
         max_person: Maksimal Orang
-        package_id: Id Paket
+        package_id: Paket
         available_date: Tanggal Ketersediaan
         day: Hari
         image: Gambar

@@ -11,14 +11,14 @@ id:
       rw: RW
       urban_village: Kelurahan
       district: Kecamatan
-      province_id: Id Provinsi
-      city_id: Id Kota
+      province_id: Provinsi
+      city_id: Kota
       religion: Agama
       martial_status: Status Perkawinan
       job: Pekerjaan
       nationality: Negara Asal
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       nik: NIK
       full_name: Nama Lengkap
@@ -30,8 +30,8 @@ id:
       rw: RW
       urban_village: Kelurahan
       district: Kecamatan
-      province_id: Id Provinsi
-      city_id: Id Kota
+      province_id: Provinsi
+      city_id: Kota
       religion: Agama
       martial_status: Status Perkawinan
       job: Pekerjaan
@@ -47,8 +47,8 @@ id:
       rw: RW
       urban_village: Kelurahan
       district: Kecamatan
-      province_id: Id Provinsi
-      city_id: Id Kota
+      province_id: Provinsi
+      city_id: Kota
       religion: Agama
       martial_status: Status Perkawinan
       job: Pekerjaan
@@ -77,8 +77,8 @@ id:
       rw: RW
       urban_village: Kelurahan
       district: Kecamatan
-      province_id: Id Provinsi
-      city_id: Id Kota
+      province_id: Provinsi
+      city_id: Kota
       religion: Agama
       martial_status: Status Perkawinan
       job: Pekerjaan
@@ -104,8 +104,8 @@ id:
         rw: RW
         urban_village: Kelurahan
         district: Kecamatan
-        province_id: Id Provinsi
-        city_id: Id Kota
+        province_id: Provinsi
+        city_id: Kota
         religion: Agama
         martial_status: Status Perkawinan
         job: Pekerjaan

@@ -1,0 +1,43 @@
+en:
+  merchants:
+    merchants:
+      name: Name
+      description: Description
+      action: Action
+    filter:
+      filter_header: Filter
+      name: Name
+      description: Description
+    form:
+      name: Name
+      description: Description
+    index:
+      page_header: Master Data Merchants
+      body_title: Manage Merchant
+      create: Add Merchant
+    new:
+      page_header: Master Data Merchants
+      body_title: Entry New Merchant
+      card_header: Input Data Merchant
+    edit:
+      page_header: Master Data Merchants
+      body_title: Edit Merchant
+      card_header: Edit Data Merchant
+    show:
+      page_header: Detail Merchant
+      details: Details
+      name: Name
+      description: Description
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Merchant Successfuly Created.
+    update:
+      notice: Merchant Successfuly Updated.
+    destroy:
+      notice: Merchant Successfuly Deleted.
+  simple_form:
+    labels:
+      merchant:
+        name: Name
+        description: Description

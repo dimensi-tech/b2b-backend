@@ -1,0 +1,62 @@
+en:
+  profiles:
+    profiles:
+      user_id: User
+      identity_id: Identity
+      passport_id: Passport
+      avatar: Avatar
+      telephone_number: Telephone
+      phone_number: Phone
+      action: Action
+    filter:
+      filter_header: Filter
+      user_id: User
+      identity_id: Identity
+      passport_id: Passport
+      avatar: Avatar
+      telephone_number: Telephone
+      phone_number: Phone
+    form:
+      user_id: User
+      identity_id: Identity
+      passport_id: Passport
+      avatar: Avatar
+      telephone_number: Telephone
+      phone_number: Phone
+    index:
+      page_header: Master Data Profiles
+      body_title: Manage Profile
+      create: Add Profile
+    new:
+      page_header: Master Data Profiles
+      body_title: Entry New Profile
+      card_header: Input Data Profile
+    edit:
+      page_header: Master Data Profiles
+      body_title: Edit Profile
+      card_header: Edit Data Profile
+    show:
+      page_header: Detail Profile
+      user_id: User
+      identity_id: Identity
+      passport_id: Passport
+      avatar: Avatar
+      telephone_number: Telephone
+      phone_number: Phone
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Profile Successfuly Created.
+    update:
+      notice: Profile Successfuly Updated.
+    destroy:
+      notice: Profile Successfuly Deleted.
+  simple_form:
+    labels:
+      profile:
+        id_user: User
+        identity_id: Identity
+        passport_id: Passport
+        avatar: Avatar
+        telephone_number: Telephone
+        phone_number: Phone
