@@ -1,6 +1,6 @@
 id:
   passports:
-    passports: 
+    passports:
       full_name: Nama Lengkap
       birth_place: Tempat Lahir
       mother_name: Nama Ibu
@@ -8,9 +8,9 @@ id:
       number: Nomor Paspor
       expired_date: Tanggal Kadaluarsa
       birth_date: Tanggal Lahir
-      identity_id: Id Identitas
+      identity_id: Identitas
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       full_name: Nama Lengkap
       birth_place: Tempat Lahir
@@ -19,7 +19,7 @@ id:
       number: Nomor Paspor
       expired_date: Tanggal Kadaluarsa
       birth_date: Tanggal Lahir
-      identity_id: Id Identitas
+      identity_id: Identitas
     form:
       full_name: Nama Lengkap
       birth_place: Tempat Lahir
@@ -28,7 +28,7 @@ id:
       number: Nomor Paspor
       expired_date: Tanggal Kadaluarsa
       birth_date: Tanggal Lahir
-      identity_id: Id Identitas
+      identity_id: Identitas
     index:
       page_header: Master Data Paspor
       body_title: Kelola Paspor
@@ -51,7 +51,7 @@ id:
       number: Nomor Paspor
       expired_date: Tanggal Kadaluarsa
       birth_date: Tanggal Lahir
-      identity_id: Id Identitas
+      identity_id: Identitas
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:
@@ -70,4 +70,4 @@ id:
         number: Nomor Paspor
         expired_date: Tanggal Kadaluarsa
         birth_date: Tanggal Lahir
-        identity_id: Id Identitas
+        identity_id: Identitas

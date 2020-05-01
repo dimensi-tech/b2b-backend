@@ -1,0 +1,82 @@
+en:
+  packages:
+    packages:
+      product_id: Product
+      name: Name
+      description: Description
+      price: Price
+      min_person: Min. Person
+      max_person: Max. Person
+      available_date: Available Date
+      action: Action
+    filter:
+      filter_header: Filter
+      product_id: Product
+      name: Name
+      description: Description
+      price: Price
+    form:
+      product_id: Product
+      name: Name
+      description: Description
+      price: Price
+      available_date: Available Date
+      down_payment: Min. Down Payment
+      duration_trip: Trip Duration
+      min_person: Min. Person
+      max_person: Max. Person
+      itinerary: Plan Trip
+      itinerary_saving: Plan Savings
+    index:
+      page_header: Master Data Packages
+      body_title: Manage Package
+      create: Add Package
+    new:
+      page_header: Master Data Packages
+      body_title: Entry New Package
+      card_header: Input Data Package
+    edit:
+      page_header: Master Data Packages
+      body_title: Edit Package
+      card_header: Edit Data Package
+    show:
+      page_header: Detail Package
+      details: Details
+      package_details: Detail Package
+      product_id: Product
+      name: Name
+      description: Description
+      price: Price
+      min_person: Min. Person
+      max_person: Max. Person
+      package_id: Package
+      day: Day
+      image: Image
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Package Successfuly Created.
+    update:
+      notice: Package Successfuly Updated.
+    destroy:
+      notice: Package Successfuly Deleted.
+    package_detail_fields:
+      day: Days To
+      description: Trip Description
+    saving_package_fields:
+      sort: Total Installments
+      amount: Monthly Amount (per pax)
+      description: Plan Savings Description
+  simple_form:
+    labels:
+      package:
+        product_id: Product
+        name: Name
+        description: Description
+        price: Price
+        down_payment: Min. Down Payment
+        duration_trip: Trip Duration (day)
+        available_date: Available Date
+        min_person: Min. Person
+        max_person: Max. Person
+        itinerary: Plan Trip

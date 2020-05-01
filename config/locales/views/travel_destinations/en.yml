@@ -1,0 +1,43 @@
+en:
+  travel_destinations:
+    travel_destinations:
+      country_id: Country
+      destination: Destination
+      action: Action
+    filter:
+      filter_header: Filter
+      country_id: Country
+      destination: Destination
+    form:
+      country_id: Country
+      destination: Destination
+    index:
+      page_header: Master Data Travel Destinations
+      body_title: Manage Travel Destination
+      create: Add Travel Destination
+    new:
+      page_header: Master Data Travel Destinations
+      body_title: Entry New Travel Destination
+      card_header: Input Data Travel Destination
+    edit:
+      page_header: Master Data Travel Destinations
+      body_title: Edit Travel Destination
+      card_header: Edit Data Travel Destination
+    show:
+      page_header: Detail Travel Destination
+      details: Details
+      country_id: Country
+      destination: Destination
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Travel Destination Successfuly Created.
+    update:
+      notice: Travel Destination Successfuly Updated.
+    destroy:
+      notice: Travel Destination Successfuly Deleted.
+  simple_form:
+    labels:
+      travel_destination:
+        country_id: Country
+        destination: Destination

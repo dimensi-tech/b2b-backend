@@ -1,0 +1,59 @@
+en:
+  bookings:
+    bookings:
+      number: Number
+      package: Package
+      customer: Customer Email
+      product: Product
+      action: Action
+    filter:
+      filter_header: Filter
+      number: Number
+      package_id: Package
+      user: User
+    form:
+      number: Number
+      package_id: Package
+      user: User
+    index:
+      page_header: Master Data Bookings
+      body_title: Manage Bookings
+      create: Ad Booking
+      report:
+        page_header: Report Format
+    new:
+      page_header: Master Data Bookings
+      body_title: Entry New Booking
+      card_header: Input Data Booking
+    edit:
+      page_header: Master Data Bookings
+      body_title: Edit Booking
+      card_header: Edit Data Booking
+    show:
+      page_header: Detail Booking
+      details: Details
+      name: Nama
+      code: Code
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Booking Successfuly Created.
+    update:
+      notice: Booking Successfuly Updated.
+    destroy:
+      notice: Booking Successfuly Deleteds.
+    report:
+      page_header: Report Booking
+      number: Number
+      package: Package
+      customer: Customer Email
+      product: Product
+      export_date: Export Date
+      booking_date: Booking Date
+      departure_date: Departure Date
+      email: Email
+  simple_form:
+    labels:
+      country:
+        name: Nama
+        code: Code

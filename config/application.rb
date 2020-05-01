@@ -12,6 +12,7 @@ module B2bBackend
     ]
     config.time_zone = 'Asia/Jakarta'
     config.i18n.default_locale = :id
+    config.i18n.available_locales = [:id, :en]
     config.active_job.queue_adapter = :delayed_job
   end
 end

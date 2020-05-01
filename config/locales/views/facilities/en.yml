@@ -1,0 +1,53 @@
+en:
+  facilities:
+    facilities:
+      package_id: Package
+      name: Facilities
+      description: Description
+      icon: Icon
+      package: Package
+      action: Action
+    filter:
+      filter_header: Filter
+      package_id: Package
+      name: Facilities
+      package: Package
+    form:
+      filter_header: Filter
+      package_id: Package
+      name: Facilities
+      package: Package
+    index:
+      page_header: Master Data Facilities
+      body_title: Manage Facilities
+      create: Add Facility
+    new:
+      page_header: Master Data Facilities
+      body_title: Entry New Facility
+      card_header: Input Data Facility
+    edit:
+      page_header: Master Data Facilities
+      body_title: Edit Facility
+      card_header: Edit Data Facility
+    show:
+      page_header: Detail Facility
+      details: Details
+      package_id: Package
+      name: Facilities
+      description: Description
+      icon: Icon
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Facility Successfuly Created.
+    update:
+      notice: Facility Successfuly Updated.
+    destroy:
+      notice: Facility Successfuly Deleted.
+  simple_form:
+    labels:
+      facility:
+        package_id: Package
+        name: Facilities
+        description: Description
+        icon: Icon

@@ -26,15 +26,15 @@ id:
       status: Status
       status_description: Ceklis jika template aktif
     index:
-      page_header: Kelola Template Email
-      body_title: Daftar Template Email
+      page_header: Master Data Template Email
+      body_title: Kelola Template Email
       create: Tambah Template Email
     new:
-      page_header: Tambah Template Email
+      page_header: Master Data Template Email
       body_title: Entry Template Email Baru
       card_header: Input Data Template Email
     edit:
-      page_header: Kelola Template Email
+      page_header: Master Data Template Email
       body_title: Ubah Template Email
       card_header: Ubah Data Template Email
     show:

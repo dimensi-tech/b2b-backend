@@ -4,7 +4,7 @@ id:
       code: Kode
       description: Deskripsi
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       code: Kode
       description: Deskripsi
@@ -12,15 +12,15 @@ id:
       code: Kode
       description: Deskripsi
     index:
-      page_header: Kelola Ikon
+      page_header: Master Data Ikon
       body_title: Kelola Ikon
       create: Tambah Ikon
     new:
-      page_header: Tambah Ikon
-      body_title: Entry Negara Baru
+      page_header: Master Data Ikon
+      body_title: Entry Ikon Baru
       card_header: Input Data Ikon
     edit:
-      page_header: Kelola Ikon
+      page_header: Master Data Ikon
       body_title: Ubah Ikon
       card_header: Ubah Data Ikon
     show:

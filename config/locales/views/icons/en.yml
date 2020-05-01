@@ -1,0 +1,43 @@
+en:
+  icons:
+    icons:
+      code: Code
+      description: Description
+      action: Action
+    filter:
+      filter_header: Filter
+      code: Code
+      description: Description
+    form:
+      code: Code
+      description: Description
+    index:
+      page_header: Master Data Icons
+      body_title: Manage Icon
+      create: Add Icon
+    new:
+      page_header: Master Data Icons
+      body_title: Entry New Icon
+      card_header: Input Data Icon
+    edit:
+      page_header: Master Data Icons
+      body_title: Edit Icon
+      card_header: Edit Data Icon
+    show:
+      page_header: Detail Icon
+      details: Details
+      code: Code
+      description: Description
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Icon Successfuly Created.
+    update:
+      notice: Icon Successfuly Updated.
+    destroy:
+      notice: Icon Successfuly Deleted.
+  simple_form:
+    labels:
+      icon:
+        code: Code
+        description: Description

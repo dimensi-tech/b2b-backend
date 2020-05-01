@@ -1,0 +1,68 @@
+en:
+  ads:
+    ads:
+      name: Name
+      url: URL
+      image: Image
+      status: Status
+      active: Active
+      action: Action
+      non_active: Non Active
+      created_at: Created At
+    filter:
+      filter_header: Filter
+      name: Name
+      url: URL
+      image: Image
+      status: Status
+      active: Active
+      non_active: Non Active
+      created_at: Created At
+    form:
+      name: Name
+      url: URL
+      image: Image
+      status: Status
+      active: Active
+      non_active: Non Active
+      created_at: Created At
+    index:
+      page_header: Master Data Ads
+      body_title: Manage Ads
+      create: Add Ad
+    new:
+      page_header: Master Data Ads
+      body_title: Entry New Ad
+      card_header: Input Data Ad
+    edit:
+      page_header: Master Data Ads
+      body_title: Edit Ad
+      card_header: Edit Data Ad
+    show:
+      page_header: Detail Ad
+      details: Details
+      name: Name
+      url: URL
+      image: Image
+      status: Status
+      active: Active
+      non_active: Non Active
+      created_at: Created At
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Ad Successfuly Created.
+    update:
+      notice: Product Successfuly Updated.
+    destroy:
+      notice: Product Successfuly Deleted.
+  simple_form:
+    labels:
+      country:
+        name: Name
+        url: URL
+        image: Image
+        status: Status
+        active: Active
+        non_active: Non Active
+        created_at: Created At

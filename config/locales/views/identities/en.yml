@@ -1,0 +1,112 @@
+en:
+  identities:
+    identities:
+      nik: NIK
+      full_name: Full Name
+      birth_place: Birth Place
+      birth_date: Birth Date
+      gender: Gender
+      address: Address
+      rt: RT
+      rw: RW
+      urban_village: Urban Village
+      district: District
+      province_id: Province
+      city_id: City
+      religion: Religion
+      martial_status: Martial Status
+      job: Job
+      nationality: Nationality
+      action: Action
+    filter:
+      filter_header: Filter
+      nik: NIK
+      full_name: Full Name
+      birth_place: Birth Place
+      birth_date: Birth Date
+      gender: Gender
+      address: Address
+      rt: RT
+      rw: RW
+      urban_village: Urban Village
+      district: District
+      province_id: Province
+      city_id: City
+      religion: Religion
+      martial_status: Martial Status
+      job: Job
+      nationality: Nationality
+    form:
+      nik: NIK
+      full_name: Full Name
+      birth_place: Birth Place
+      birth_date: Birth Date
+      gender: Gender
+      address: Address
+      rt: RT
+      rw: RW
+      urban_village: Urban Village
+      district: District
+      province_id: Province
+      city_id: City
+      religion: Religion
+      martial_status: Martial Status
+      job: Job
+      nationality: Nationality
+    index:
+      page_header: Master Data Identities
+      body_title: Manage Identities
+      create: Add Identity
+    new:
+      page_header: Master Data Identities
+      body_title: Entry New Identity
+      card_header: Input Data Identity
+    edit:
+      page_header: Master Data Identities
+      body_title: Edit Identity
+      card_header: Edit Data Identity
+    show:
+      page_header: Detail Identity
+      nik: NIK
+      full_name: Full Name
+      birth_place: Birth Place
+      birth_date: Birth Date
+      gender: Gender
+      address: Address
+      rt: RT
+      rw: RW
+      urban_village: Urban Village
+      district: District
+      province_id: Province
+      city_id: City
+      religion: Religion
+      martial_status: Martial Status
+      job: Job
+      nationality: Nationality
+      created_by: Created BY
+      updated_by: Updated By
+    create:
+      notice: Identity Successfuly Created.
+    update:
+      notice: Identity Successfuly Updated.
+    destroy:
+      notice: Identity Successfuly Deleted.
+  simple_form:
+    labels:
+      identity:
+        nik: NIK
+        full_name: Full Name
+        birth_place: Birth Place
+        birth_date: Birth Date
+        gender: Gender
+        address: Address
+        rt: RT
+        rw: RW
+        urban_village: Urban Village
+        district: District
+        province_id: Province
+        city_id: City
+        religion: Religion
+        martial_status: Martial Status
+        job: Job
+        nationality: Nationality

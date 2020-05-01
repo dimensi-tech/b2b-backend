@@ -1,0 +1,45 @@
+en:
+  wifi_roamings:
+    wifi_roamings:
+      name: Name
+      price: Price
+      description: Description
+    filter:
+      filter_header: Filter
+      name: Name
+    form:
+      name: Name
+      description: Description
+      price: Price
+    index:
+      page_header: Master Data Wifi Roamings
+      body_title: Manage Wifi Roaming
+      create: Add Wifi Roaming
+    new:
+      page_header: Master Data Wifi Roamings
+      body_title: Entry New Wifi Roaming
+      card_header: Input Data Wifi Roaming
+    edit:
+      page_header: Master Data Wifi Roamings
+      body_title: Edit Wifi Roaming
+      card_header: Edit Data Wifi Roaming
+    show:
+      page_header: Detail Wifi Roaming
+      details: Details
+      name: Name
+      price: Price
+      description: Description
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Wifi Roaming Successfuly Created.
+    update:
+      notice: Wifi Roaming Successfuly Updated.
+    destroy:
+      notice: Wifi Roaming Successfuly Deleted.
+  simple_form:
+    labels:
+      wifi_roaming:
+        name: Name
+        price: Price
+        description: Description

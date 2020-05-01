@@ -1,7 +1,7 @@
 id:
   sidebar:
     ads: Iklan
-    bookings: Boking
+    bookings: Booking
     categories: Kategori
     countries: Negara
     discounts: Diskon
@@ -15,10 +15,6 @@ id:
     profiles: Profil
     term_agreements: Syarat dan Ketentuan
     travel_destinations: Tujuan Wisata
-    ads: Iklan
-    categories: Kategori
-    bookings: Booking
-    discounts: Diskon
     vouchers: Voucher
     customers: Pelanggan
     wifi_roamings: Wifi Roaming

@@ -24,7 +24,7 @@ id:
       body_title: Ubah Wifi Roaming
       card_header: Ubah Data Wifi Roaming
     show:
-      page_header: Detail Voucher
+      page_header: Detail Wifi Roaming
       details: Detail
       name: Nama
       price: Harga
@@ -32,16 +32,14 @@ id:
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:
-      notice: Voucher baru berhasil dibuat.
+      notice: Wifi Roaming baru berhasil dibuat.
     update:
-      notice: Voucher berhasil diubah.
+      notice: Wifi Roaming berhasil diubah.
     destroy:
-      notice: Voucher berhasil dihapus.
+      notice: Wifi Roaming berhasil dihapus.
   simple_form:
     labels:
-      voucher:
-      name: Nama
-      valid_date: Valid Sampai
-      max_amount: Maksimal Harga
-      max_usage: Maksimal Penggunaan
-      status: Status
+      wifi_roaming:
+        name: Nama
+        price: Harga
+        description: Deskripsi

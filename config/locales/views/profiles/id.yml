@@ -1,25 +1,25 @@
 id:
   profiles:
     profiles:
-      user_id: Id User
-      identity_id: Id Identitas
-      passport_id: Id Passport
+      user_id: User
+      identity_id: Identitas
+      passport_id: Passport
       avatar: Avatar
       telephone_number: Nomor Telepon
       phone_number: Nomor Ponsel
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
-      user_id: Id User
-      identity_id: Id Identitas
-      passport_id: Id Passport
+      user_id: User
+      identity_id: Identitas
+      passport_id: Passport
       avatar: Avatar
       telephone_number: Nomor Telepon
       phone_number: Nomor Ponsel
     form:
-      user_id: Id User
-      identity_id: Id Identitas
-      passport_id: Id Passport
+      user_id: User
+      identity_id: Identitas
+      passport_id: Passport
       avatar: Avatar
       telephone_number: Nomor Telepon
       phone_number: Nomor Ponsel
@@ -37,12 +37,12 @@ id:
       card_header: Ubah Data Profil
     show:
       page_header: Detail Profil
-      user_id: Id User
-      identity_id: Id Identitas
-      passport_id: Id Passport
+      user_id: User
+      identity_id: Identitas
+      passport_id: Passport
       avatar: Avatar
       telephone_number: Nomor Telepon
-      phone_number: Nomor Ponsel      
+      phone_number: Nomor Ponsel
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:
@@ -54,9 +54,9 @@ id:
   simple_form:
     labels:
       profile:
-        id_user: Id User
-        identity_id: Id Identitas
-        passport_id: Id Passport
+        id_user: User
+        identity_id: Identitas
+        passport_id: Passport
         avatar: Avatar
         telephone_number: Nomor Telepon
         phone_number: Nomor Ponsel

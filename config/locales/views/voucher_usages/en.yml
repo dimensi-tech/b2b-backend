@@ -1,0 +1,19 @@
+en:
+  voucher_usages:
+    voucher_usages:
+      customer: Customer
+      voucher: Voucher Name
+    filter:
+      filter_header: Filter
+      customer: Customer
+      voucher: Voucher Name
+    index:
+      page_header: Master Data Voucher Usages
+      body_title: Manage Voucher Usage
+      create: Add Voucher Usage
+    create:
+      notice: Voucher Usage Successfuly Created.
+    update:
+      notice: Voucher Usage Successfuly Updated.
+    destroy:
+      notice: Voucher Usage Successfuly Deleted.

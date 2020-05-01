@@ -1,0 +1,67 @@
+en:
+  vouchers:
+    vouchers:
+      code: Code
+      name: Name
+      valid_date: Valid Until
+      percentage: Percentage
+      max_amount: Max. Price
+      max_usage: Max. Usage
+      status: Status
+    filter:
+      filter_header: Filter
+      code: Code
+      name: Name
+      valid_date: Valid Until
+      percentage: Percentage
+      max_amount: Max. Price
+      max_usage: Max. Usage
+      status: Status
+    form:
+      code: Code
+      name: Name
+      valid_date: Valid Until
+      percentage: Percentage
+      max_amount: Max. Price
+      max_usage: Max. Usage
+      status: Status
+    index:
+      page_header: Master Data Vochers
+      body_title: Manage Vouchers
+      create: Add Voucher
+    new:
+      page_header: Master Data Vochers
+      body_title: Entry New Voucher
+      card_header: Input Data Voucher
+    edit:
+      page_header: Master Data Vochers
+      body_title: Edit Voucher
+      card_header: Edit Data Voucher
+    show:
+      page_header: Detail Voucher
+      details: Details
+      code: Code
+      name: Name
+      valid_date: Valid Until
+      percentage: Percentage
+      max_amount: Max. Price
+      max_usage: Max. Usage
+      status: Status
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Voucher Successfuly Created.
+    update:
+      notice: Voucher Successfuly Updated.
+    destroy:
+      notice: Voucher Successfuly Deleted.
+  simple_form:
+    labels:
+      voucher:
+        code: Code
+        name: Name
+        valid_date: Valid Until
+        percentage: Percentage
+        max_amount: Max. Price
+        max_usage: Max. Usage
+        status: Status

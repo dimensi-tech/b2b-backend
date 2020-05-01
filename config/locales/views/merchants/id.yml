@@ -4,13 +4,13 @@ id:
       name: Nama
       description: Deskripsi
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       name: Nama
       description: Deskripsi
     form:
       name: Nama
-      description: Deskripsi    
+      description: Deskripsi
     index:
       page_header: Master Data Merchant
       body_title: Kelola Merchant
@@ -20,7 +20,7 @@ id:
       body_title: Entry Merchant Baru
       card_header: Input Data Merchant
     edit:
-      page_header: Master Data Negara
+      page_header: Master Data Merchant
       body_title: Ubah Merchant
       card_header: Ubah Data Merchant
     show:

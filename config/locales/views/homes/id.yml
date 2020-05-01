@@ -1,0 +1,8 @@
+id:
+  homes:
+    index:
+      page_header: Dashboard
+      body_title: Grafik dan Statistik
+      bookings:
+        chart_title: Data Booking (per bulan)
+        statistic_title: Booking Terbaru

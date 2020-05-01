@@ -1,28 +1,28 @@
 id:
   facilities:
     facilities:
-      package_id: Id Paket
+      package_id: Paket
       name: Fasilitas
       description: Deskripsi
       icon: Ikon
       package: Paket
       action: Aksi
     filter:
-      filter_header: Filter      
-      package_id: Id Paket
+      filter_header: Filter
+      package_id: Paket
       name: Fasilitas
       package: Paket
     form:
-      filter_header: Filter      
-      package_id: Id Paket
+      filter_header: Filter
+      package_id: Paket
       name: Fasilitas
-      package: Paket      
+      package: Paket
     index:
       page_header: Master Data Fasilitas
       body_title: Kelola Fasilitas
       create: Tambah Fasilitas
     new:
-      page_header: Master Data Fasilitas      
+      page_header: Master Data Fasilitas
       body_title: Entry Fasilitas Baru
       card_header: Input Data Fasilitas
     edit:
@@ -32,7 +32,7 @@ id:
     show:
       page_header: Detail Fasilitas
       details: Detail
-      package_id: Id Paket
+      package_id: Paket
       name: Fasilitas
       description: Deskripsi
       icon: Ikon
@@ -47,7 +47,7 @@ id:
   simple_form:
     labels:
       facility:
-        package_id: Id Paket
+        package_id: Paket
         name: Fasilitas
         description: Deskripsi
         icon: Ikon
