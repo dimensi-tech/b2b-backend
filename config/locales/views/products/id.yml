@@ -42,8 +42,12 @@ id:
         down_payment: DP Minimal
         duration_trip: Lama Perjalanan (hari)
         price: Harga
-        min_person: Minimal Orang
-        max_person: Maksimal Orang
+        adult_price: Harga Dewasa/pax
+        child_price: Harga Anak/pax
+        min_adult: Minimal Orang Dewasa
+        max_adult: Maksimal Orang Dewasa
+        min_child: Minimal Anak
+        max_adult: Maksimal Anakj
         package_id: Paket
         available_date: Tanggal Ketersediaan
         day: Hari

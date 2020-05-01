@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_120512) do
+ActiveRecord::Schema.define(version: 2020_05_01_134042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,6 @@ ActiveRecord::Schema.define(version: 2020_04_23_120512) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "is_confirmed"
-    t.datetime "confirmed_at"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -81,6 +79,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_120512) do
     t.string "confirmation_token"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.boolean "is_confirmed"
+    t.datetime "confirmed_at"
     t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
@@ -190,12 +190,16 @@ ActiveRecord::Schema.define(version: 2020_04_23_120512) do
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "min_person"
-    t.integer "max_person"
+    t.integer "min_adult"
+    t.integer "max_adult"
     t.string "duration_trip"
     t.integer "discount_id"
     t.decimal "down_payment"
     t.string "available_date", default: [], array: true
+    t.integer "min_child"
+    t.integer "max_child"
+    t.decimal "adult_price"
+    t.decimal "child_price"
   end
 
   create_table "passports", force: :cascade do |t|

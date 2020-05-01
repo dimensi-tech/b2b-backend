@@ -8,7 +8,8 @@ class Package < ApplicationRecord
   accepts_nested_attributes_for :package_details, allow_destroy: true
   accepts_nested_attributes_for :saving_packages, allow_destroy: true
 
-  validates :name, :price, :down_payment, :duration_trip, :min_person, presence: true
+  validates :name, :price, :down_payment, :duration_trip, :min_adult,
+            :max_adult, presence: true
 
   def assigned_down_payment
     if saving_packages.present?

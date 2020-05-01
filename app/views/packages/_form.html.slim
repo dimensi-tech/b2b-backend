@@ -40,13 +40,29 @@
     .col-sm-12.col-md-7
       = f.number_field :duration_trip, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :min_person, t('.min_person'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :min_adult, t('.min_adult'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
-      = f.number_field :min_person, class: 'form-control'
+      = f.number_field :min_adult, class: 'form-control'
   .form-group.row.mb-4
-    = f.label :max_person, t('.max_person'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    = f.label :max_adult, t('.max_adult'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
-      = f.number_field :max_person, class: 'form-control'
+      = f.number_field :max_adult, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :adult_price, t('.adult_price'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :adult_price, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :min_child, t('.min_child'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :min_child, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :max_child, t('.max_child'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :max_child, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :child_price, t('.child_price'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.number_field :child_price, class: 'form-control'
   .form-group.row.mb-4
     = f.label :available_date, t('.available_date'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-8

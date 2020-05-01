@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PackagesController < ApplicationController
   before_action :set_package, only: %i[show edit update destroy]
   before_action :check_product_id, only: %i[new edit]
@@ -55,10 +57,10 @@ class PackagesController < ApplicationController
 
   def package_params
     params.require(:package).permit(
-      :product_id, :name, :description, :price, :min_person, :max_person,
+      :product_id, :name, :description, :price, :min_adult, :max_adult, :min_child, :max_child, :adult_price, :child_price,
       :down_payment, :duration_trip, available_date: [],
-      package_details_attributes: %i[_destroy id package_id day description image],
-      saving_packages_attributes: %i[_destroy id package_id sort amount]
+                                     package_details_attributes: %i[_destroy id package_id day description image],
+                                     saving_packages_attributes: %i[_destroy id package_id sort amount]
     )
   end
 end
