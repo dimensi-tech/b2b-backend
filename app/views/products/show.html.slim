@@ -64,6 +64,18 @@ section.section
                       .media-icon
                         i.far.fa-circle
                       .media-body
+                        h6 = t('.package.adult_price')
+                        p = default_currency(package.adult_price)
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.child_price')
+                        p = default_currency(package.child_price)
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
                         h6 = t('.package.down_payment')
                         p = package.down_payment ? default_currency(package.down_payment) : '-'
                     .media
@@ -76,14 +88,26 @@ section.section
                       .media-icon
                         i.far.fa-circle
                       .media-body
-                        h6 = t('.package.min_person')
-                        p = package.min_person ? package.min_person : '-'
+                        h6 = t('.package.min_adult')
+                        p = package.min_adult ? package.min_adult : '-'
                     .media
                       .media-icon
                         i.far.fa-circle
                       .media-body
-                        h6 = t('.package.max_person')
-                        p = package.max_person ? package.max_person : '-'
+                        h6 = t('.package.max_adult')
+                        p = package.max_adult ? package.max_adult : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.min_child')
+                        p = package.min_child ? package.min_child : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.package.max_child')
+                        p = package.max_child ? package.max_child : '-'
                     .media
                       .media-icon
                         i.far.fa-circle

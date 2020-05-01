@@ -5,8 +5,12 @@ id:
       name: Nama
       description: Deskripsi
       price: Harga
-      min_person: Minimal Orang
-      max_person: Maksimal Orang
+      adult_price: Harga Dewasa/pax
+      child_price: Harga Anak/pax
+      min_adult: Minimal Orang Dewasa
+      max_adult: Maksimal Orang Dewasa 
+      min_child: Minimal Anak
+      max_child: Maksimal Anak
       available_date: Tanggal Ketersedian
       action: Aksi
     filter:
@@ -20,11 +24,15 @@ id:
       name: Nama
       description: Deskripsi
       price: Harga
+      adult_price: Harga Dewasa/pax
+      child_price: Harga Anak/pax
       available_date: Tanggal Ketersedian
       down_payment: DP Minimal
       duration_trip: Lama Perjalanan (hari)
-      min_person: Minimal Orang
-      max_person: Maksimal Orang
+      min_adult: Minimal Orang Dewasa
+      max_adult: Maksimal Orang Dewasa 
+      min_child: Minimal Anak
+      max_child: Maksimal Anak
       itinerary: Rencana Perjalanan
       itinerary_saving: Rencana Tabungan
     index:
@@ -47,8 +55,12 @@ id:
       name: Nama
       description: Deskripsi
       price: Harga
-      min_person: Minimal Orang
-      max_person: Maksimal Orang
+      adult_price: Harga Dewasa/pax
+      child_price: Harga Anak/pax
+      min_adult: Minimal Orang Dewasa
+      max_adult: Maksimal Orang Dewasa
+      min_child: Minimal Anak
+      max_child: Maksimal Anak
       package_id: Paket
       day: Hari
       image: Gambar
@@ -74,9 +86,13 @@ id:
         name: Nama
         description: Deskripsi
         price: Harga
+        adult_price: Harga Dewasa/pax
+        child_price: Harga Anak/pax
         down_payment: Pembayaran Minimum (DP)
         duration_trip: Lama Perjalanan (hari)
         available_date: Tanggal Ketersediaan
-        min_person: Minimal Orang
-        max_person: Maksimal Orang
+        min_adult: Minimal Orang Dewasa
+        max_adult: Maksimal Orang Dewasa
+        min_child: Minimal Anak
+        max_child: Maksimal Anak
         itinerary: Rencana Perjalanan
