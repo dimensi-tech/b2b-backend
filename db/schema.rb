@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_042944) do
+ActiveRecord::Schema.define(version: 2020_05_03_050436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2020_05_03_042944) do
     t.integer "booking_type"
     t.integer "saving_package_id"
     t.integer "child_passport_ids", default: [], array: true
+    t.integer "adult_bio_ids", default: [], array: true
+    t.integer "child_bio_ids", default: [], array: true
   end
 
   create_table "categories", force: :cascade do |t|
