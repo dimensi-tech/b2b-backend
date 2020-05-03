@@ -1,12 +1,11 @@
-class CreateBiodatas < ActiveRecord::Migration[6.0]
+class CreateBiodata < ActiveRecord::Migration[6.0]
   def change
-    create_table :biodatas do |t|
+    create_table :biodata do |t|
       t.string :name
       t.string :email
       t.string :phone
 
       t.timestamps
-
     end
   end
 end
