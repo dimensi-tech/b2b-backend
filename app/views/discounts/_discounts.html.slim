@@ -16,9 +16,10 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_discount_path(discount)
                 .bullet
-                = link_to t('buttons.destroy'), discount_path(discount), method: :delete, class: 'text-danger'
-            td = discount.percentage
-            td = "#{discount.start_date} sampai #{discount.end_date}"
+                = link_to t('buttons.destroy'), discount_path(discount), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
+            td = "#{discount.percentage.to_i} %"
+            td = "#{default_datetime(discount.start_date)} sampai #{default_datetime(discount.end_date)}"
             td
               - if discount.status
                 .badge.badge-success = t('.active')

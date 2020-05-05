@@ -25,8 +25,10 @@ en:
       duration_trip: Trip Duration
       min_person: Min. Person
       max_person: Max. Person
-      itinerary: Plan Trip
-      itinerary_saving: Plan Savings
+      itinerary: Trave Plans
+      itinerary_saving: Savings Plan
+      facility: Facilities
+      policy: Policies
     index:
       page_header: Master Data Packages
       body_title: Manage Package
@@ -55,18 +57,25 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Package Successfuly Created.
+      notice: Package was successfully created.
     update:
-      notice: Package Successfuly Updated.
+      notice: Package was successfully updated.
     destroy:
-      notice: Package Successfuly Deleted.
+      notice: Package was successfully deleted.
     package_detail_fields:
       day: Days To
       description: Trip Description
     saving_package_fields:
       sort: Total Installments
-      amount: Monthly Amount (per pax)
-      description: Plan Savings Description
+      adult_amount: Monthly Amount (per pax/adult)
+      child_amount: Monthly Amount (per pax/child)
+      description: Savings Plan Description
+    facility_fields:
+      name: Facility Name
+      description: Facility Description
+    policy_fields:
+      name: Policy Name
+      description: Policy Description
   simple_form:
     labels:
       package:
@@ -79,4 +88,4 @@ en:
         available_date: Available Date
         min_person: Min. Person
         max_person: Max. Person
-        itinerary: Plan Trip
+        itinerary: Trave Plans

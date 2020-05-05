@@ -18,10 +18,12 @@ $(document).on('cocoon:after-insert', function(event){
       return false;
     }
 
-    var row       = $(this).closest('.row');
-    var sort_val  = $(this).val();
-    var price_val = $('.price-field').val();
+    var row             = $(this).closest('.row');
+    var sort_val        = $(this).val();
+    var adult_price_val = $('.adult-price-field').val();
+    var child_price_val = $('.child-price-field').val();
 
-    row.find('.amount-field').val((parseFloat(price_val) / parseFloat(sort_val)).toFixed(1));
+    row.find('.adult-amount-field').val((parseFloat(adult_price_val) / parseFloat(sort_val)).toFixed(1));
+    row.find('.child-amount-field').val((parseFloat(child_price_val) / parseFloat(sort_val)).toFixed(1));
   })
 })

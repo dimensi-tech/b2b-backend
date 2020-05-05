@@ -19,12 +19,13 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_voucher_path(voucher)
                 .bullet
-                = link_to t('buttons.destroy'), voucher_path(voucher), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), voucher_path(voucher), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = voucher.name
-            td = "#{voucher.start_date} sampai #{voucher.end_date}"
-            td = voucher.percentage
-            td = voucher.max_amount
-            td = voucher.max_usage
+            td = "#{default_datetime(voucher.start_date)} sampai #{default_datetime(voucher.end_date)}"
+            td = "#{voucher.percentage.to_i} %"
+            td = default_currency(voucher.max_amount)
+            td = "#{voucher.max_usage}x"
             td
               - if voucher.status
                 .badge.badge-success = t('.active')

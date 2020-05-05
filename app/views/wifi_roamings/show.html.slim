@@ -23,15 +23,15 @@ section.section
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 = t('.description')
-                  p = @wifi_roaming.description
+                  h6 = t('.price')
+                  p = default_currency(@wifi_roaming.price)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 = t('.price')
-                  p = @wifi_roaming.price
+                  h6 = t('.description')
+                  p = @wifi_roaming.description
 
   .buttons
     = link_to t('buttons.edit'), edit_wifi_roaming_path(@wifi_roaming), class: 'btn btn-warning'
-    = link_to t('buttons.back'), wifi_roamings_path(@wifi_roaming), class: 'btn'
+    = link_to t('buttons.back'), wifi_roamings_path, class: 'btn'

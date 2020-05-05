@@ -48,13 +48,13 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Email Template Successfuly Created.
+      notice: Email Template was successfully created.
     update:
-      notice: Email Template Successfuly Updated.
+      notice: Email Template was successfully updated.
     destroy:
-      notice: Email Template Successfuly Deleted.
+      notice: Email Template was successfully deleted.
     preview_template:
-      page_header: Template %{name} 
+      page_header: Template %{name}
   simple_form:
     labels:
       email_template:

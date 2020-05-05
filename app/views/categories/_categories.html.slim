@@ -5,7 +5,6 @@
         tr
           th = t('.name')
           th = t('.code')
-          th = t('.description')
         - @categories.each do |category|
           tr
             td
@@ -15,9 +14,9 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_category_path(category)
                 .bullet
-                = link_to t('buttons.destroy'), category_path(category), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), category_path(category), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = category.code
-            td = category.description
   .card-footer.text-right
     nav.d-inline-block
       = paginate @categories

@@ -4,8 +4,8 @@
       table.table.table-striped
         tr
           th = t('.name')
-          th = t('.description')
           th = t('.price')
+          th = t('.description')
         - @wifi_roamings.each do |wifi_roaming|
           tr
             td
@@ -15,9 +15,11 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_wifi_roaming_path(wifi_roaming)
                 .bullet
-                = link_to t('buttons.destroy'), wifi_roaming_path(wifi_roaming), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), wifi_roaming_path(wifi_roaming),
+                          method: :delete, class: 'text-danger',
+                          data: { confirm: t('buttons.confirm') }
+            td = default_currency(wifi_roaming.price)
             td = wifi_roaming.description
-            td = wifi_roaming.price
   .card-footer.text-right
     nav.d-inline-block
       = paginate @wifi_roamings

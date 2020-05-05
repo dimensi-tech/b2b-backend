@@ -10,18 +10,15 @@
             .row
               .col-md-12
                 .form-group
+                  label class='form-control-label' = t('.package_id')
+                  = f.select :package_id_eq,
+                            options_for_select(Package.order(name: :asc).pluck(:name,:id), @search.package_id_eq),
+                            { include_blank: true }, { class: 'form-control form-control-alternative' }
+            .row
+              .col-md-12
+                .form-group
                   label class='form-control-label' = t('.name')
                   = f.search_field :name_cont, class: 'form-control form-control-alternative'
-            .row
-              .col-md-12
-                .form-group
-                  label class='form-control-label' = t('.package')
-                  = f.search_field :package_name_cont, class: 'form-control form-control-alternative'                  
-            .row
-              .col-md-12
-                .form-group
-                  label class='form-control-label' = t('.package_id')
-                  = f.search_field :package_id_eq, class: 'form-control form-control-alternative'
           .modal-footer
             = link_to 'Reset', facilities_path, class: 'btn btn-danger'
             = f.submit 'Filter', class: 'btn btn-primary'

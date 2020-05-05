@@ -34,11 +34,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Category Successfuly Created.
+      notice: Category was successfully created.
     update:
-      notice: Category Successfuly Updated.
+      notice: Category was successfully updated.
     destroy:
-      notice: Category Successfuly Deleted.
+      notice: Category was successfully deleted.
   simple_form:
     labels:
       category:

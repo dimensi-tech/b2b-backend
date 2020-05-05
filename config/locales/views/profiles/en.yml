@@ -46,11 +46,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Profile Successfuly Created.
+      notice: Profile was successfully created.
     update:
-      notice: Profile Successfuly Updated.
+      notice: Profile was successfully updated.
     destroy:
-      notice: Profile Successfuly Deleted.
+      notice: Profile was successfully deleted.
   simple_form:
     labels:
       profile:

@@ -4,11 +4,11 @@
     i.fa.fa-hand-holding-usd
   .activity-detail
     .row
-      .col-md-5
-        = f.number_field :sort, class: 'form-control sort-field', placeholder: t('.sort')
-      .col-md-5
-        = f.number_field :amount, readonly: :true, class: 'form-control amount-field', placeholder: t('.amount')
-      .col-md-2
+      .col-md-12
+        h4 = f.number_field :sort, class: 'form-control sort-field', placeholder: t('.sort')
+        h4 = f.number_field :adult_amount, readonly: :true, class: 'form-control adult-amount-field', placeholder: t('.adult_amount')
+        h4 = f.number_field :child_amount, readonly: :true, class: 'form-control child-amount-field', placeholder: t('.child_amount')
+      .col
         = link_to_remove_association '<i class="fa fa-trash"></i>'.html_safe, f,
           data: { confirm: t('buttons.confirm') },
           class: 'btn btn-danger'

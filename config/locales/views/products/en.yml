@@ -40,25 +40,33 @@ en:
       package:
         description: Description
         down_payment: Min. Down Payment
-        duration_trip: Trip Duration
+        duration_trip: Trip Duration (days)
         price: Price
-        min_person: Min. Person
-        max_person: Max. Person
+        adult_price: Adult Price (per pax)
+        child_price: Child Price (per pax)
+        min_adult: Min. Adult
+        max_adult: Max. Adult
+        min_child: Min. Child
+        max_child: Max. Child
         package_id: Package
         available_date: Available Date
-        day: Day
+        day: Days
         image: Image
-        itinerary: Plan Trip
+        itinerary: Trave Plans
       saving_package:
+        title: Savings Plan
         description: Description Savings
         sort: Total Installments
-        amount: Monthly Amount (per pax)
+        adult_amount: Monthly Amount (per pax/adult)
+        child_amount: Monthly Amount (per pax/child)
+      facility: Facilities
+      policy: Policies
     create:
-      notice: Product Successfuly Created.
+      notice: Product was successfully created.
     update:
-      notice: Product Successfuly Updated.
+      notice: Product was successfully updated.
     destroy:
-      notice: Product Successfully Deleted.
+      notice: Product was successfully deleted.
   simple_form:
     labels:
       product:

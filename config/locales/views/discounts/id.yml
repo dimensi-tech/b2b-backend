@@ -5,6 +5,8 @@ id:
       percentage: Persentase
       status: Status
       valid_date: Valid Sampai
+      active: Aktif
+      not_active: Tidak Aktif
       action: Aksi
     filter:
       filter_header: Filter
@@ -17,6 +19,7 @@ id:
       percentage: Persentase
       status: Status
       valid_date: Valid Sampai
+      status_description: Ceklis jika diskon aktif
     index:
       page_header: Master Data Diskon
       body_title: Kelola Diskon
@@ -36,6 +39,8 @@ id:
       percentage: Persentase
       status: Status
       valid_date: Valid Sampai
+      active: Aktif
+      not_active: Tidak Aktif
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
     create:

@@ -18,7 +18,7 @@ class MerchantsController < ApplicationController
     @merchant = Merchant.new(merchant_params)
 
     if @merchant.save
-      redirect_to @merchant, notice: 'Merchant was successfully created.'
+      redirect_to @merchant, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class MerchantsController < ApplicationController
 
   def update
     if @merchant.update(merchant_params)
-      redirect_to @merchant, notice: 'Merchant was successfully updated.'
+      redirect_to @merchant, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class MerchantsController < ApplicationController
 
   def destroy
     @merchant.destroy
-    redirect_to merchants_url, notice: 'Merchant was successfully destroyed.'
+    redirect_to merchants_url, notice: t('.notice')
   end
 
   private

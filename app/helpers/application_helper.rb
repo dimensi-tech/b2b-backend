@@ -39,6 +39,13 @@ module ApplicationHelper
             class: 'badge badge-secondary', target: '_blank'
   end
 
+  def to_download_url(url)
+    return if url.nil?
+
+    link_to url.truncate(30), url, title: "#{url}", class: 'badge badge-secondary',
+            target: '_blank'
+  end
+
   def to_download_info(url)
     return if url.nil?
 

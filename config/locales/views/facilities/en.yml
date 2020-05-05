@@ -39,11 +39,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Facility Successfuly Created.
+      notice: Facility was successfully created.
     update:
-      notice: Facility Successfuly Updated.
+      notice: Facility was successfully updated.
     destroy:
-      notice: Facility Successfuly Deleted.
+      notice: Facility was successfully deleted.
   simple_form:
     labels:
       facility:

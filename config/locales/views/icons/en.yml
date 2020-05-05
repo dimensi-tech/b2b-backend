@@ -31,11 +31,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Icon Successfuly Created.
+      notice: Icon was successfully created.
     update:
-      notice: Icon Successfuly Updated.
+      notice: Icon was successfully updated.
     destroy:
-      notice: Icon Successfuly Deleted.
+      notice: Icon was successfully deleted.
   simple_form:
     labels:
       icon:

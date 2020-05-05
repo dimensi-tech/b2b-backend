@@ -10,8 +10,13 @@
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = 'Name'
+                  label class='form-control-label' = t('.name')
                   = f.search_field :name_cont, class: 'form-control form-control-alternative'
+                .form-group
+                  .custom-control.custom-control-alternative.custom-checkbox
+                    = f.check_box :status_true, class: 'custom-control-input'
+                    = f.label :status_true, t('.status'), class: 'custom-control-label form-control-label'
+
           .modal-footer
             = link_to t('buttons.reset'), ads_path, class: 'btn btn-danger'
             = f.submit t('buttons.filter'), class: 'btn btn-primary'

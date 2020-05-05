@@ -14,7 +14,8 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_icon_path(icon)
                 .bullet
-                = link_to t('buttons.destroy'), icon_path(icon), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), icon_path(icon), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = icon.description
   .card-footer.text-right
     nav.d-inline-block

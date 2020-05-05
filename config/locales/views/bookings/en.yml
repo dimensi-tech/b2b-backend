@@ -2,19 +2,19 @@ en:
   bookings:
     bookings:
       number: Number
-      package: Package
-      customer: Customer Email
-      product: Product
+      package_id: Package
+      customer_id: Customer Email
+      product_id: Product
       action: Action
     filter:
       filter_header: Filter
       number: Number
       package_id: Package
-      user: User
+      customer_id: Customer Email
     form:
       number: Number
       package_id: Package
-      user: User
+      customer_id: Customer Email
     index:
       page_header: Master Data Bookings
       body_title: Manage Bookings
@@ -37,17 +37,17 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Booking Successfuly Created.
+      notice: Booking was successfully created.
     update:
-      notice: Booking Successfuly Updated.
+      notice: Booking was successfully updated.
     destroy:
-      notice: Booking Successfuly Deleteds.
+      notice: Booking was successfully deleteds.
     report:
       page_header: Report Booking
       number: Number
-      package: Package
-      customer: Customer Email
-      product: Product
+      package_id: Package
+      customer_id: Customer Email
+      product_id: Product
       export_date: Export Date
       booking_date: Booking Date
       departure_date: Departure Date

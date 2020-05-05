@@ -18,7 +18,7 @@ class TravelDestinationsController < ApplicationController
     @travel_destination = TravelDestination.new(travel_destination_params)
 
     if @travel_destination.save
-      redirect_to @travel_destination, notice: 'Travel destination was successfully created.'
+      redirect_to @travel_destination, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class TravelDestinationsController < ApplicationController
 
   def update
     if @travel_destination.update(travel_destination_params)
-      redirect_to @travel_destination, notice: 'Travel destination was successfully updated.'
+      redirect_to @travel_destination, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class TravelDestinationsController < ApplicationController
 
   def destroy
     @travel_destination.destroy
-    redirect_to travel_destinations_url, notice: 'Travel destination was successfully destroyed.'
+    redirect_to travel_destinations_url, notice: t('.notice')
   end
 
   private

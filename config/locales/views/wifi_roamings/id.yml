@@ -7,6 +7,7 @@ id:
     filter:
       filter_header: Filter
       name: Nama
+      price: Harga
     form:
       name: Nama
       description: Deskripsi

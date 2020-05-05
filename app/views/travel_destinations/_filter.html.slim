@@ -10,17 +10,15 @@
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = t('.name')
-                  = f.search_field :destination_cont, class: 'form-control form-control-alternative'
+                  label class='form-control-label' = t('.country_id')
+                  = f.select :country_id_eq,
+                            options_for_select(Country.all.pluck(:name,:id), @search.country_id_eq),
+                            { include_blank: true }, { class: 'form-control form-control-alternative' }
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = t('.code')
-                  = f.select :country_id_eq,
-                            options_for_select(Country.all.pluck(:name,:id),
-                            @search.country_id_eq),
-                            { include_blank: true },
-                            { class: 'form-control form-control-alternative form-select2' }
+                  label class='form-control-label' = t('.name')
+                  = f.search_field :destination_cont, class: 'form-control form-control-alternative'
           .modal-footer
             = link_to 'Reset', travel_destinations_path, class: 'btn btn-danger'
             = f.submit 'Filter', class: 'btn btn-primary'

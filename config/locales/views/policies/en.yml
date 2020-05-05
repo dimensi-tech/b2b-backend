@@ -1,0 +1,49 @@
+en:
+  policies:
+    policies:
+      package_id: Package
+      name: Name
+      description: Description
+      action: Action
+    filter:
+      filter_header: Filter
+      package_id: Package
+      name: Name
+      description: Description
+    form:
+      filter_header: Filter
+      package_id: Package
+      name: Name
+      description: Description
+    index:
+      page_header: Master Data Policy
+      body_title: Manage Policy
+      create: Add Policy
+    new:
+      page_header: Master Data Policy
+      body_title: Entry New Policy
+      card_header: Input Data Policy
+    edit:
+      page_header: Master Data Policy
+      body_title: Edit Policy
+      card_header: Edit Data Policy
+    show:
+      page_header: Detail Policy
+      details: Details
+      package_id: Package
+      name: Name
+      description: Description
+      created_by: Created By
+      updated_by: Updated By
+    create:
+      notice: Policy was successfully created.
+    update:
+      notice: Policy was successfully updated.
+    destroy:
+      notice: Policy was successfully deleted.
+  simple_form:
+    labels:
+      policy:
+        package_id: Package
+        name: Name
+        description: Description

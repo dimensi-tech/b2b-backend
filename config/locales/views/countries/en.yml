@@ -31,11 +31,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Country Successfuly Created.
+      notice: Country was successfully created.
     update:
-      notice: Country Successfuly Updated.
+      notice: Country was successfully updated.
     destroy:
-      notice: Country Successfuly Deleted.
+      notice: Country was successfully deleted.
   simple_form:
     labels:
       country:

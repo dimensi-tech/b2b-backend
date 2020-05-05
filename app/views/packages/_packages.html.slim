@@ -15,7 +15,8 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_package_path(package)
                 .bullet
-                = link_to t('buttons.destroy'), package_path(package), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), package_path(package), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = package.description
             td = package.price
   .card-footer.text-right

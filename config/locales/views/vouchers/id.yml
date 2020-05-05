@@ -25,6 +25,7 @@ id:
       max_amount: Maksimal Harga
       max_usage: Maksimal Penggunaan
       status: Status
+      status_description: Ceklis jika voucher aktif
     index:
       page_header: Kelola Voucher
       body_title: Daftar Voucher

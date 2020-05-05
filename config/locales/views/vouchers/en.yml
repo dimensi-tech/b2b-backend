@@ -25,6 +25,7 @@ en:
       max_amount: Max. Price
       max_usage: Max. Usage
       status: Status
+      status_description: Check if voucher is active
     index:
       page_header: Master Data Vochers
       body_title: Manage Vouchers
@@ -50,11 +51,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Voucher Successfuly Created.
+      notice: Voucher was successfully created.
     update:
-      notice: Voucher Successfuly Updated.
+      notice: Voucher was successfully updated.
     destroy:
-      notice: Voucher Successfuly Deleted.
+      notice: Voucher was successfully deleted.
   simple_form:
     labels:
       voucher:

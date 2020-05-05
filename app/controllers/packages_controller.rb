@@ -22,17 +22,19 @@ class PackagesController < ApplicationController
     @package.available_date = params.dig(:package, :available_date).split(', ')
 
     if @package.save
-      redirect_to product_path(@package.product_id), notice: 'Package was successfully created.'
+      redirect_to product_path(@package.product_id), notice: t('.notice')
     else
       render :new
     end
+
+    @package.assigned_down_payment
   end
 
   def update
     params[:package][:available_date] = params.dig(:package, :available_date).split(', ')
 
     if @package.update(package_params)
-      redirect_to product_path(@package.product_id), notice: 'Package was successfully updated.'
+      redirect_to product_path(@package.product_id), notice: t('.notice')
     else
       render :edit
     end
@@ -42,7 +44,7 @@ class PackagesController < ApplicationController
 
   def destroy
     @package.destroy
-    redirect_to product_path(params[:product_id]), notice: 'Package was successfully destroyed.'
+    redirect_to product_path(params[:product_id]), notice: t('.notice')
   end
 
   private
@@ -59,8 +61,10 @@ class PackagesController < ApplicationController
     params.require(:package).permit(
       :product_id, :name, :description, :price, :min_adult, :max_adult, :min_child, :max_child, :adult_price, :child_price,
       :down_payment, :duration_trip, available_date: [],
-                                     package_details_attributes: %i[_destroy id package_id day description image],
-                                     saving_packages_attributes: %i[_destroy id package_id sort amount]
+      facilities_attributes: %i[_destroy id package_id name description],
+      policies_attributes: %i[_destroy id package_id name description],
+      package_details_attributes: %i[_destroy id package_id day description image],
+      saving_packages_attributes: %i[_destroy id package_id sort adult_amount child_amount]
     )
   end
 end

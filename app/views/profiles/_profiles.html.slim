@@ -18,7 +18,8 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_profile_path(profile)
                 .bullet
-                = link_to t('buttons.destroy'), profile_path(profile), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), profile_path(profile), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = profile.identity_id
             td = profile.passport_id
             td = profile.avatar

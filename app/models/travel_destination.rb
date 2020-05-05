@@ -1,5 +1,7 @@
 class TravelDestination < ApplicationRecord
-  validates :country_id, :image, presence: true
   mount_uploader :image, ImageUploader
+
   belongs_to :country
+
+  validates :country_id, :image, presence: true
 end

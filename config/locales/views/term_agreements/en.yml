@@ -31,11 +31,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Term & Agreement Successfuly Created.
+      notice: Term & Agreement was successfully created.
     update:
-      notice: Term & Agreement Successfuly Updated.
+      notice: Term & Agreement was successfully updated.
     destroy:
-      notice: Term & Agreement Successfuly Deleted.
+      notice: Term & Agreement was successfully deleted.
   simple_form:
     labels:
       term_agreement:

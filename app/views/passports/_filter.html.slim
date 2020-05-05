@@ -10,13 +10,13 @@
             .row
               .col-md-12
                 .form-group
-                  label class='form-control-label' = t('.name')
+                  label class='form-control-label' = t('.full_name')
                   = f.search_field :full_name_cont, class: 'form-control form-control-alternative'
             .row
               .col-md-12
                 .form-group
                   label class='form-control-label' = t('.number')
-                  = f.search_field :number_cont, class: 'form-control form-control-alternative'            
+                  = f.search_field :number_cont, class: 'form-control form-control-alternative'
           .modal-footer
             = link_to t('buttons.reset'), passports_path, class: 'btn btn-danger'
             = f.submit t('buttons.filter'), class: 'btn btn-primary'
