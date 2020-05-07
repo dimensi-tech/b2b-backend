@@ -12,8 +12,8 @@ en:
       body_title: Manage Voucher Usage
       create: Add Voucher Usage
     create:
-      notice: Voucher Usage Successfuly Created.
+      notice: Voucher Usage was successfully created.
     update:
-      notice: Voucher Usage Successfuly Updated.
+      notice: Voucher Usage was successfully updated.
     destroy:
-      notice: Voucher Usage Successfuly Deleted.
+      notice: Voucher Usage was successfully deleted.

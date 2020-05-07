@@ -14,6 +14,10 @@ en:
     destroy: Delete
     view: Show
     preview_template: Preview Template
+    saving: Make Savings Plan
+    trip: Make Trave Plans
+    facility: Make Facility
+    policy: Make Policy
   search: Search
   last_update: Last updated
   ago: ago

@@ -18,7 +18,7 @@ class PassportsController < ApplicationController
     @passport = Passport.new(passport_params)
 
     if @passport.save
-      redirect_to @passport, notice: 'Passport was successfully created.'
+      redirect_to @passport, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class PassportsController < ApplicationController
 
   def update
     if @passport.update(passport_params)
-      redirect_to @passport, notice: 'Passport was successfully updated.'
+      redirect_to @passport, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class PassportsController < ApplicationController
 
   def destroy
     @passport.destroy
-    redirect_to passports_url, notice: 'Passport was successfully destroyed.'
+    redirect_to passports_url, notice: t('.notice')
   end
 
   private

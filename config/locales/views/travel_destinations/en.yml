@@ -31,11 +31,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Travel Destination Successfuly Created.
+      notice: Travel Destination was successfully created.
     update:
-      notice: Travel Destination Successfuly Updated.
+      notice: Travel Destination was successfully updated.
     destroy:
-      notice: Travel Destination Successfuly Deleted.
+      notice: Travel Destination was successfully deleted.
   simple_form:
     labels:
       travel_destination:

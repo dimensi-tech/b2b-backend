@@ -14,7 +14,8 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_country_path(country)
                 .bullet
-                = link_to t('buttons.destroy'), country_path(country), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), country_path(country), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = country.code
   .card-footer.text-right
     nav.d-inline-block

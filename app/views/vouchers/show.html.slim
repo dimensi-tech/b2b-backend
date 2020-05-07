@@ -3,13 +3,6 @@ section.section
     h1 = t('.page_header')
     = render 'shared/breadcrumb'
   .section-body
-    - if notice
-      .alert.alert-success.alert-dismissible.show.fade
-        .alert-body
-          button.close data-dismiss="alert"
-            span &times;
-          = notice
-
     h2.section-title = @voucher.name
     .row
       .col-12
@@ -35,37 +28,42 @@ section.section
                   i.far.fa-circle
                 .media-body
                   h6 = t('.start_date')
-                  p = @voucher.start_date
+                  p = default_date(@voucher.start_date)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.end_date')
-                  p = @voucher.end_date
+                  p = default_date(@voucher.end_date)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.percentage')
-                  p = @voucher.percentage
+                  p = "#{@voucher.percentage.to_i} %"
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.max_amount')
-                  p = @voucher.max_amount
+                  p = default_currency(@voucher.max_amount)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.max_usage')
-                  p = @voucher.max_usage
+                  p = "#{@voucher.max_usage}x"
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.status')
-                  p = @voucher.status
+                  - if @voucher.status
+                    p
+                      .badge.badge-success = t('.active')
+                  - else
+                    p
+                      .badge.badge-danger = t('.not_active')
 
   .buttons
     = link_to t('buttons.edit'), edit_voucher_path(@voucher), class: 'btn btn-warning'

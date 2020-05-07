@@ -2,8 +2,8 @@ id:
   customers:
     customers:
       email: Email
-      created_at: Di Buat Pada
-      updated_at: Di Update Pada
+      created_at: Registrasi Pada
+      updated_at: Diubah Pada
     index:
       page_header: Kelola Pelanggan
       body_title: Kelola Pelanggan
@@ -12,4 +12,3 @@ id:
       page_header: Detail Pelanggan
       created_at: Registrasi Pada
       email: Email
-      

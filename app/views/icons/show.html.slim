@@ -26,5 +26,5 @@ section.section
                   h6 = t('.description')
                   p = @icon.description
   .buttons
-    = link_to 'Edit', edit_icon_path(@icon), class: 'btn btn-warning'
-    = link_to 'Back', icons_path(@icon), class: 'btn'
+    = link_to t('buttons.edit'), edit_icon_path(@icon), class: 'btn btn-warning'
+    = link_to t('buttons.back'), icons_path, class: 'btn'

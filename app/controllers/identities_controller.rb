@@ -18,7 +18,7 @@ class IdentitiesController < ApplicationController
     @identity = Identity.new(identity_params)
 
     if @identity.save
-      redirect_to @identity, notice: 'Identity was successfully created.'
+      redirect_to @identity, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class IdentitiesController < ApplicationController
 
   def update
     if @identity.update(identity_params)
-      redirect_to @identity, notice: 'Identity was successfully updated.'
+      redirect_to @identity, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class IdentitiesController < ApplicationController
 
   def destroy
     @identity.destroy
-    redirect_to identities_url, notice: 'Identity was successfully destroyed.'
+    redirect_to identities_url, notice: t('.notice')
   end
 
   private

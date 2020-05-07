@@ -1,0 +1,49 @@
+id:
+  policies:
+    policies:
+      package_id: Paket
+      name: Nama
+      description: Deskripsi
+      action: Aksi
+    filter:
+      filter_header: Filter
+      package_id: Paket
+      name: Nama
+      description: Deskripsi
+    form:
+      filter_header: Filter
+      package_id: Paket
+      name: Nama
+      description: Deskripsi
+    index:
+      page_header: Master Data Kebijakan
+      body_title: Kelola Kebijakan
+      create: Tambah Kebijakan
+    new:
+      page_header: Master Data Kebijakan
+      body_title: Entry Kebijakan Baru
+      card_header: Input Data Kebijakan
+    edit:
+      page_header: Master Data Kebijakan
+      body_title: Ubah Kebijakan
+      card_header: Ubah Data Kebijakan
+    show:
+      page_header: Detail Kebijakan
+      details: Detail
+      package_id: Paket
+      name: Nama
+      description: Deskripsi
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Kebijakan baru berhasil dibuat.
+    update:
+      notice: Kebijakan berhasil diubah.
+    destroy:
+      notice: Kebijakan berhasil dihapus.
+  simple_form:
+    labels:
+      policy:
+        package_id: Paket
+        name: Nama
+        description: Deskripsi

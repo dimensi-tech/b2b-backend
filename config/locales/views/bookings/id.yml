@@ -1,20 +1,20 @@
 id:
   bookings:
-    bookings: 
+    bookings:
       number: Nomor
-      package: Paket
-      customer: Email Pelanggan
-      product: Produk
+      package_id: Paket
+      customer_id: Email Pelanggan
+      product_id: Produk
       action: Aksi
-    filter: 
+    filter:
       filter_header: Filter
       number: Nomor
       package_id: Paket
-      user: User
+      customer_id: Email Pelanggan
     form:
       number: Nomor
       package_id: Paket
-      user: User
+      customer_id: Email Pelanggan
     index:
       page_header: Master Data Boking
       body_title: Kelola Boking
@@ -45,9 +45,9 @@ id:
     report:
       page_header: Laporan Booking
       number: Nomor
-      package: Paket
-      customer: Email Pelanggan
-      product: Produk
+      package_id: Paket
+      customer_id: Email Pelanggan
+      product_id: Produk
       export_date: Tanggal Export
       booking_date: Tanggal Boking
       departure_date: Tanggal Keberangkatan

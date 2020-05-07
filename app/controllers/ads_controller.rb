@@ -18,7 +18,7 @@ class AdsController < ApplicationController
     @ad = Ad.new(ad_params)
 
     if @ad.save
-      redirect_to @ad, notice: 'Ad was successfully created.'
+      redirect_to @ad, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class AdsController < ApplicationController
 
   def update
     if @ad.update(ad_params)
-      redirect_to @ad, notice: 'Ad was successfully updated.'
+      redirect_to @ad, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class AdsController < ApplicationController
 
   def destroy
     @ad.destroy
-    redirect_to ads_url, notice: 'Ad was successfully destroyed.'
+    redirect_to ads_url, notice: t('.notice')
   end
 
   private

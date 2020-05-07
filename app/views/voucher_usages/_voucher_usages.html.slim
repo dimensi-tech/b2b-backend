@@ -14,7 +14,9 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_voucher_usage_path(voucher_usage)
                 .bullet
-                = link_to t('buttons.destroy'), voucher_usage_path(voucher_usage), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), voucher_usage_path(voucher_usage),
+                          method: :delete, class: 'text-danger',
+                          data: { confirm: t('buttons.confirm') }
             td = voucher_usage.voucher.code
   .card-footer.text-right
     nav.d-inline-block

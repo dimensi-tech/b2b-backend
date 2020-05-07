@@ -42,21 +42,25 @@ id:
         down_payment: DP Minimal
         duration_trip: Lama Perjalanan (hari)
         price: Harga
-        adult_price: Harga Dewasa/pax
-        child_price: Harga Anak/pax
+        adult_price: Harga Dewasa (per pax)
+        child_price: Harga Anak (per pax)
         min_adult: Minimal Orang Dewasa
         max_adult: Maksimal Orang Dewasa
         min_child: Minimal Anak
-        max_adult: Maksimal Anakj
+        max_child: Maksimal Anak
         package_id: Paket
         available_date: Tanggal Ketersediaan
         day: Hari
         image: Gambar
         itinerary: Rencana Perjalanan
       saving_package:
+        title: Rencana Tabungan
         description: Rencana Tabungan
         sort: Total Angsuran
-        amount: Jumlah Pembayaran Perbulan (per pax)
+        adult_amount: Jumlah Pembayaran Perbulan (per pax/dewasa)
+        child_amount: Jumlah Pembayaran Perbulan (per pax/anak)
+      facility: Fasilitas
+      policy: Kebijakan
     create:
       notice: Produk baru berhasil dibuat.
     update:

@@ -10,7 +10,7 @@
           i.fas.fa-fire
           span = "Dashboard"
 
-      li.dropdown class=("#{active_class([countries_path, facilities_path, icons_path, travel_destinations_path, ads_path, categories_path])}")
+      li.dropdown class=("#{active_class([countries_path, facilities_path, policies_path, icons_path, travel_destinations_path, ads_path, categories_path])}")
         a.nav-link.has-dropdown href="#"
           i.fas.fa-fire
           span Master Data
@@ -19,6 +19,8 @@
             = link_to t('sidebar.countries'), countries_path, class: "nav-link"
           li class=("#{active_class([facilities_path])}")
             = link_to t('sidebar.facilities'), facilities_path, class: "nav-link"
+          li class=("#{active_class([policies_path])}")
+            = link_to t('sidebar.policies'), policies_path, class: "nav-link"
           li class=("#{active_class([icons_path])}")
             = link_to t('sidebar.icons'), icons_path, class: "nav-link"
           li class=("#{active_class([travel_destinations_path])}")
@@ -29,7 +31,7 @@
             = link_to t('sidebar.categories'), categories_path, class: "nav-link"
 
       li.dropdown class=("#{active_class([bookings_path, customers_path, identities_path, merchants_path, passports_path, products_path, profiles_path, discounts_path, vouchers_path, wifi_roamings_path])}")
-        a.nav-link.has-dropdown href="#" 
+        a.nav-link.has-dropdown href="#"
           i.fas.fa-fire
           span Management Data
         ul.dropdown-menu style=("display: none;")
@@ -55,7 +57,7 @@
             = link_to t('sidebar.wifi_roamings'), wifi_roamings_path, class: "nav-link"
 
       li.dropdown class=("#{active_class([term_agreements_path, email_templates_path])}")
-        a.nav-link.has-dropdown href="#" 
+        a.nav-link.has-dropdown href="#"
           i.fas.fa-fire
           span Global Setting
         ul.dropdown-menu style=("display: none;")

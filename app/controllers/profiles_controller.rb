@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
 
     if @profile.save
-      redirect_to @profile, notice: 'Profile was successfully created.'
+      redirect_to @profile, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to @profile, notice: 'Profile was successfully updated.'
+      redirect_to @profile, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile.destroy
-    redirect_to profiles_url, notice: 'Profile was successfully destroyed.'
+    redirect_to profiles_url, notice: t('.notice')
   end
 
   private

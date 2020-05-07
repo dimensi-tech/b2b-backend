@@ -110,5 +110,5 @@ section.section
                   h6 Nationality
                   p = @identity.nationality
   .buttons
-    = link_to 'Edit', edit_identity_path(@identity), class: 'btn btn-warning'
-    = link_to 'Back', identities_path(@identity), class: 'btn'
+    = link_to t('buttons.edit'), edit_identity_path(@identity), class: 'btn btn-warning'
+    = link_to t('buttons.back'), identities_path, class: 'btn'

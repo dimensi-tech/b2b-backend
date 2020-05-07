@@ -55,11 +55,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Passport Successfuly Created.
+      notice: Passport was successfully created.
     update:
-      notice: Passport Successfuly Updated.
+      notice: Passport was successfully updated.
     destroy:
-      notice: Passport Successfuly Deleted.
+      notice: Passport was successfully deleted.
   simple_form:
     labels:
       passport:

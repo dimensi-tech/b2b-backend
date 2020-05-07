@@ -18,7 +18,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new(facility_params)
 
     if @facility.save
-      redirect_to @facility, notice: 'Facility was successfully created.'
+      redirect_to @facility, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class FacilitiesController < ApplicationController
 
   def update
     if @facility.update(facility_params)
-      redirect_to @facility, notice: 'Facility was successfully updated.'
+      redirect_to @facility, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class FacilitiesController < ApplicationController
 
   def destroy
     @facility.destroy
-    redirect_to countries_url, notice: 'Facility was successfully destroyed.'
+    redirect_to countries_url, notice: t('.notice')
   end
 
   private
@@ -44,6 +44,6 @@ class FacilitiesController < ApplicationController
   end
 
   def facility_params
-    params.require(:facility).permit(:package_id, :name, :description)
+    params.require(:facility).permit(:package_id, :name, :icon, :description)
   end
 end

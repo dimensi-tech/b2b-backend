@@ -26,5 +26,5 @@ section.section
                   h6 = t('.description')
                   p = @term_agreement.description
   .buttons
-    = link_to 'Edit', edit_term_agreement_path(@term_agreement), class: 'btn btn-warning'
-    = link_to 'Back', term_agreements_path(@term_agreement), class: 'btn'
+    = link_to t('buttons.edit'), edit_term_agreement_path(@term_agreement), class: 'btn btn-warning'
+    = link_to t('buttons.back'), term_agreements_path, class: 'btn'

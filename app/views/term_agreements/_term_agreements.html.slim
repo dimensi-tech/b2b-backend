@@ -8,13 +8,15 @@
         - @term_agreements.each do |term_agreement|
           tr
             td
-              = link_to term_agreement.name, term_agreement
+              = term_agreement.name
               .table-links
                 = link_to t('buttons.view'), term_agreement_path(term_agreement)
                 .bullet
                 = link_to t('buttons.edit'), edit_term_agreement_path(term_agreement)
                 .bullet
-                = link_to t('buttons.destroy'), term_agreement_path(term_agreement), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), term_agreement_path(term_agreement),
+                          method: :delete, class: 'text-danger',
+                          data: { confirm: t('buttons.confirm') }
             td = term_agreement.description
   .card-footer.text-right
     nav.d-inline-block

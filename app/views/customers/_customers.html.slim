@@ -13,7 +13,8 @@
               .table-links
                 = link_to t('buttons.view'), customer_path(customer)
                 .bullet
-                = link_to t('buttons.destroy'), customer_path(customer), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), customer_path(customer), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = customer.created_at.strftime('%d %B %Y')
             td = customer.updated_at.strftime('%d %B %Y')
 

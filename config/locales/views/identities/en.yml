@@ -86,11 +86,11 @@ en:
       created_by: Created BY
       updated_by: Updated By
     create:
-      notice: Identity Successfuly Created.
+      notice: Identity was successfully created.
     update:
-      notice: Identity Successfuly Updated.
+      notice: Identity was successfully updated.
     destroy:
-      notice: Identity Successfuly Deleted.
+      notice: Identity was successfully deleted.
   simple_form:
     labels:
       identity:

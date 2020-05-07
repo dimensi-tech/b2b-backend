@@ -1,4 +1,4 @@
-.card-body  
+.card-body
   = simple_form_for @profile do |f|
     - if @profile.errors.any?
       .alert.alert-danger.alert-has-icon
@@ -38,4 +38,4 @@
       label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
       .col-sm-12.col-md-7
         = f.submit t('buttons.submit'), class: 'btn btn-primary'
-      = link_to t('buttons.back'), countries_path, class: 'btn btn-secondary'
+      = link_to t('buttons.back'), profiles_path, class: 'btn btn-secondary'

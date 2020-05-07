@@ -31,11 +31,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Merchant Successfuly Created.
+      notice: Merchant was successfully created.
     update:
-      notice: Merchant Successfuly Updated.
+      notice: Merchant was successfully updated.
     destroy:
-      notice: Merchant Successfuly Deleted.
+      notice: Merchant was successfully deleted.
   simple_form:
     labels:
       merchant:

@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(country_params)
 
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to @booking, notice: t('.notice')
     else
       render :new
     end
@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(country_params)
-      redirect_to @booking, notice: 'Booking was successfully updated.'
+      redirect_to @booking, notice: t('.notice')
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to bookings_url, notice: 'Booking was successfully destroyed.'
+    redirect_to bookings_url, notice: t('.notice')
   end
 
   def report

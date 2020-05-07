@@ -18,7 +18,7 @@ class TermAgreementsController < ApplicationController
     @term_agreement = TermAgreement.new(term_agreement_params)
 
     if @term_agreement.save
-      redirect_to @term_agreement, notice: 'Term agreement was successfully created.'
+      redirect_to @term_agreement, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class TermAgreementsController < ApplicationController
 
   def update
     if @term_agreement.update(term_agreement_params)
-      redirect_to @term_agreement, notice: 'Term agreement was successfully updated.'
+      redirect_to @term_agreement, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class TermAgreementsController < ApplicationController
 
   def destroy
     @term_agreement.destroy
-    redirect_to term_agreements_url, notice: 'Term agreement was successfully destroyed.'
+    redirect_to term_agreements_url, notice: t('.notice')
   end
 
   private

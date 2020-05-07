@@ -14,6 +14,10 @@ id:
     destroy: Hapus
     view: Lihat Detail
     preview_template: Preview Template
+    saving: Buat Rencana Tabungan
+    trip: Buat Rencana Perjalanan
+    facility: Buat Fasilitas
+    policy: Buat Kebijakan
   search: Cari
   last_update: Terakhir diupdate
   ago: yang lalu

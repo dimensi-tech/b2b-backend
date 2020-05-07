@@ -4,9 +4,9 @@
       table.table.table-striped
         tr
           th = t('.number')
-          th = t('.product')
-          th = t('.package')
-          th = t('.customer')
+          th = t('.product_id')
+          th = t('.package_id')
+          th = t('.customer_id')
         - @bookings.each do |booking|
           tr
             td
@@ -16,10 +16,11 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_booking_path(booking)
                 .bullet
-                = link_to t('buttons.destroy'), booking_path(booking), data: { confirm: t('buttons.confirm') }, method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), booking_path(booking), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = booking.package.try(:product).try(:name)
             td = booking.package.try(:name)
-            td = booking.customer.try(:name)
+            td = booking.customer.try(:email)
 
   .card-footer.text-right
     nav.d-inline-block

@@ -23,21 +23,26 @@ section.section
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 = t('.image')
-                  p = image_tag @ad.image_url, class: 'img-fluid'
+                  h6 = t('.url')
+                  p = to_download_url(@ad.url)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.status')
-                  p = @ad.status ? t('.active') : t('.non_active')
+                  - if @ad.status
+                    p
+                      .badge.badge-success = t('.active')
+                  - else
+                    p
+                      .badge.badge-danger = t('.not_active')
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 = t('.url')
-                  p = @ad.url
+                  h6 = t('.image')
+                  p = image_tag @ad.image_url, class: 'img-fluid'
 
   .buttons
     = link_to t('buttons.edit'), edit_ad_path(@ad), class: 'btn btn-warning'
-    = link_to t('buttons.back'), ads_path(@ad), class: 'btn'
+    = link_to t('buttons.back'), ads_path, class: 'btn'

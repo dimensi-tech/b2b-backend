@@ -10,7 +10,8 @@ en:
     identities: Identities
     merchants: Merchants
     packages: Packages
-    passports : Passports
+    passports: Passports
+    policies: Policies
     products: Products
     profiles: Profiles
     term_agreements: Terms & Agreements

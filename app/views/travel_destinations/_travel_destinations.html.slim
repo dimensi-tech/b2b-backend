@@ -13,16 +13,15 @@
                   = image_tag travel_destination.image_url, class: 'img-corner img-table mr-3'
                 div
                   = "#{travel_destination.country.name}, #{travel_destination.destination}"
-                  
+
                   .table-links
                     = link_to t('buttons.view'), travel_destination
                     .bullet
                     = link_to t('buttons.edit'), edit_travel_destination_path(travel_destination)
                     .bullet
                     = link_to t('buttons.destroy'), travel_destination_path(travel_destination),
-                      method: :delete,
-                      data: { confirm: t('buttons.confirm') },
-                      class: 'text-danger'
+                              method: :delete, class: 'text-danger',
+                              data: { confirm: t('buttons.confirm') }
             td = default_datetime(travel_destination.updated_at)
 
   .card-footer.text-right

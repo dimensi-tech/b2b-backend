@@ -7,14 +7,15 @@
           th = t('.package')
         - @facilities.each do |facility|
           tr
-            td 
+            td
               = facility.name
               .table-links
                 = link_to t('buttons.view'), facility_path(facility)
                 .bullet
                 = link_to t('buttons.edit'), edit_facility_path(facility)
                 .bullet
-                = link_to t('buttons.destroy'), facility_path(facility), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), facility_path(facility), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = facility.package.name
   .card-footer.text-right
     nav.d-inline-block

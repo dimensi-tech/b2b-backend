@@ -14,7 +14,8 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_merchant_path(merchant)
                 .bullet
-                = link_to t('buttons.destroy'), merchant_path(merchant), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), merchant_path(merchant), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = merchant.description
   .card-footer.text-right
     nav.d-inline-block

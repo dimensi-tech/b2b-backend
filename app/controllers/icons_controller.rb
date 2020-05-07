@@ -18,7 +18,7 @@ class IconsController < ApplicationController
     @icon = Icon.new(icon_params)
 
     if @icon.save
-      redirect_to @icon, notice: 'Icon was successfully created.'
+      redirect_to @icon, notice: t('.notice')
     else
       render :new
     end
@@ -26,7 +26,7 @@ class IconsController < ApplicationController
 
   def update
     if @icon.update(icon_params)
-      redirect_to @icon, notice: 'Icon was successfully updated.'
+      redirect_to @icon, notice: t('.notice')
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class IconsController < ApplicationController
 
   def destroy
     @icon.destroy
-    redirect_to icons_url, notice: 'Icon was successfully destroyed.'
+    redirect_to icons_url, notice: t('.notice')
   end
 
   private

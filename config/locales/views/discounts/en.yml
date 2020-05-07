@@ -5,6 +5,8 @@ en:
       percentage: Percentage
       status: Status
       valid_date: Valid Until
+      active: Active
+      not_active: Not Active
       action: Action
     filter:
       filter_header: Filter
@@ -17,6 +19,7 @@ en:
       percentage: Percentage
       status: Status
       valid_date: Valid Until
+      status_description: Check if discount is active
     index:
       page_header: Master Data Discounts
       body_title: Manage Discounts
@@ -36,14 +39,16 @@ en:
       percentage: Percentage
       status: Status
       valid_date: Valid Until
+      active: Active
+      not_active: Not Active
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Discount Successfuly Created.
+      notice: Discount was successfully created.
     update:
-      notice: Discount Successfuly Updated.
+      notice: Discount was successfully updated.
     destroy:
-      notice: Discount Successfuly Deleted.
+      notice: Discount was successfully deleted.
   simple_form:
     labels:
       discount:

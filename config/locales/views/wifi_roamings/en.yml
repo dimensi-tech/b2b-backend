@@ -7,6 +7,7 @@ en:
     filter:
       filter_header: Filter
       name: Name
+      price: Price
     form:
       name: Name
       description: Description
@@ -32,11 +33,11 @@ en:
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Wifi Roaming Successfuly Created.
+      notice: Wifi Roaming was successfully created.
     update:
-      notice: Wifi Roaming Successfuly Updated.
+      notice: Wifi Roaming was successfully updated.
     destroy:
-      notice: Wifi Roaming Successfuly Deleted.
+      notice: Wifi Roaming was successfully deleted.
   simple_form:
     labels:
       wifi_roaming:

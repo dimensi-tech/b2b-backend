@@ -7,7 +7,7 @@ en:
       status: Status
       active: Active
       action: Action
-      non_active: Non Active
+      not_active: Not Active
       created_at: Created At
     filter:
       filter_header: Filter
@@ -16,7 +16,7 @@ en:
       image: Image
       status: Status
       active: Active
-      non_active: Non Active
+      not_active: Not Active
       created_at: Created At
     form:
       name: Name
@@ -24,8 +24,9 @@ en:
       image: Image
       status: Status
       active: Active
-      non_active: Non Active
+      not_active: Not Active
       created_at: Created At
+      status_description: Check if ad is active
     index:
       page_header: Master Data Ads
       body_title: Manage Ads
@@ -46,16 +47,16 @@ en:
       image: Image
       status: Status
       active: Active
-      non_active: Non Active
+      not_active: Not Active
       created_at: Created At
       created_by: Created By
       updated_by: Updated By
     create:
-      notice: Ad Successfuly Created.
+      notice: Ad was successfully created.
     update:
-      notice: Product Successfuly Updated.
+      notice: Ad was successfully updated.
     destroy:
-      notice: Product Successfuly Deleted.
+      notice: Ad was successfully deleted.
   simple_form:
     labels:
       country:
@@ -64,5 +65,5 @@ en:
         image: Image
         status: Status
         active: Active
-        non_active: Non Active
+        not_active: Not Active
         created_at: Created At

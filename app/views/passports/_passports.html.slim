@@ -20,7 +20,8 @@
                 .bullet
                 = link_to t('buttons.edit'), edit_passport_path(passport)
                 .bullet
-                = link_to t('buttons.destroy'), passport_path(passport), method: :delete, class: 'text-danger'
+                = link_to t('buttons.destroy'), passport_path(passport), method: :delete,
+                          class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = passport.birth_place
             td = passport.mother_name
             td = passport.father_name

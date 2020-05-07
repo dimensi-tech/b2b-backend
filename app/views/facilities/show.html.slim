@@ -18,7 +18,7 @@ section.section
                   i.far.fa-circle
                 .media-body
                   h6 = t('.package_id')
-                  p = @facility.package_id
+                  p = @facility.package.name
               .media
                 .media-icon
                   i.far.fa-circle
@@ -29,14 +29,14 @@ section.section
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 = t('.description')
-                  p = @facility.description
+                  h6 = t('.icon')
+                  p = @facility.icon
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 = t('.icon')
-                  p = @facility.icon
+                  h6 = t('.description')
+                  p = @facility.description
   .buttons
-    = link_to 'Edit', edit_facility_path(@facility), class: 'btn btn-warning'
-    = link_to 'Back', facilities_path(@facility), class: 'btn'
+    = link_to t('buttons.edit'), edit_facility_path(@facility), class: 'btn btn-warning'
+    = link_to t('buttons.back'), facilities_path, class: 'btn'

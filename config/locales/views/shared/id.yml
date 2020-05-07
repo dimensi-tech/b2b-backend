@@ -10,7 +10,8 @@ id:
     identities: Identitas
     merchants: Merchant
     packages: Paket
-    passports : Paspor
+    passports: Paspor
+    policies: Kebijakan
     products: Produk
     profiles: Profil
     term_agreements: Syarat dan Ketentuan

@@ -82,12 +82,6 @@ section.section
                       .media-icon
                         i.far.fa-circle
                       .media-body
-                        h6 = t('.package.duration_trip')
-                        p = package.duration_trip ? package.duration_trip : '-'
-                    .media
-                      .media-icon
-                        i.far.fa-circle
-                      .media-body
                         h6 = t('.package.min_adult')
                         p = package.min_adult ? package.min_adult : '-'
                     .media
@@ -112,6 +106,12 @@ section.section
                       .media-icon
                         i.far.fa-circle
                       .media-body
+                        h6 = t('.package.duration_trip')
+                        p = package.duration_trip ? package.duration_trip : '-'
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
                         h6 = t('.package.available_date')
                         - if package.available_date.present?
                           ul.list-group
@@ -127,19 +127,60 @@ section.section
                       .media-icon
                         i.far.fa-circle
                       .media-body
-                        h6 = t('.saving_package.description')
+                        h6 = t('.saving_package.title')
                         - if package.saving_packages.present?
                           .table-responsive
                             table.table.table-striped.table-md
                               thead
                                 tr
                                   th = t('.saving_package.sort')
-                                  th = t('.saving_package.amount')
+                                  th = t('.saving_package.adult_amount')
+                                  th = t('.saving_package.child_amount')
                               tbody
                                 - package.saving_packages.each do |saving_package|
                                   tr
                                     td = "#{saving_package.sort}x"
-                                    td = default_currency(saving_package.amount)
+                                    td = default_currency(saving_package.adult_amount)
+                                    td = default_currency(saving_package.child_amount)
+                        - else
+                          p -
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.facility')
+                        - if package.facilities.present?
+                          .activities
+                            - package.facilities.each do |facility|
+                              .activity
+                                .activity-icon.bg-primary.text-white.shadow-primary
+                                  i.fa.fa-cocktail
+                                .activity-detail
+                                  .row
+                                    / .col-md-4
+                                      - if facility.icon.present?
+                                        = image_tag facility.icon_url, class: 'img-fluid img-corner'
+                                    .col-md-12
+                                      h4 = facility.name
+                                      p = raw facility.description
+                        - else
+                          p -
+                    .media
+                      .media-icon
+                        i.far.fa-circle
+                      .media-body
+                        h6 = t('.policy')
+                        - if package.policies.present?
+                          .activities
+                            - package.policies.each do |policy|
+                              .activity
+                                .activity-icon.bg-primary.text-white.shadow-primary
+                                  i.fa.fa-handshake
+                                .activity-detail
+                                  .row
+                                    .col-md-12
+                                      h4 = policy.name
+                                      p = raw policy.description
                         - else
                           p -
                     .media

@@ -22,25 +22,30 @@ section.section
                   i.far.fa-circle
                 .media-body
                   h6 = t('.percentage')
-                  p = @discount.percentage
+                  p = "#{@discount.percentage.to_i} %"
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.start_date')
-                  p = @discount.start_date
+                  p = default_datetime(@discount.start_date)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.end_date')
-                  p = @discount.end_date
+                  p = default_datetime(@discount.end_date)
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
                   h6 = t('.status')
-                  p = @discount.status
+                  - if @discount.status
+                    p
+                      .badge.badge-success = t('.active')
+                  - else
+                    p
+                      .badge.badge-danger = t('.not_active')
 
   .buttons
     = link_to t('buttons.edit'), edit_discount_path(@discount), class: 'btn btn-warning'
