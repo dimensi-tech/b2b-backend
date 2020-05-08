@@ -249,7 +249,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_214023) do
     t.integer "status"
     t.integer "midtrans_id"
     t.integer "passport_id"
-    t.string "type"
+    t.string "saving_type"
   end
 
   create_table "policies", force: :cascade do |t|
