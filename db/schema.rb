@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_081231) do
+ActiveRecord::Schema.define(version: 2020_05_08_214023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -248,6 +248,8 @@ ActiveRecord::Schema.define(version: 2020_05_07_081231) do
     t.integer "identity_id"
     t.integer "status"
     t.integer "midtrans_id"
+    t.integer "passport_id"
+    t.string "type"
   end
 
   create_table "policies", force: :cascade do |t|
