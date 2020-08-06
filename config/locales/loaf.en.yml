@@ -4,3 +4,103 @@ en:
       invalid_options: "Invalid option :%{invalid}. Valid options are: %{valid}, make sure these are the ones you are using."
     breadcrumbs:
       home: 'Home'
+      bookings:
+        index: Manage Bookings
+        show: Detail Booking
+        new: Entry New Booking
+        edit: Edit Booking
+      ads:
+        index: Manage Ads
+        show: Detail Ad
+        new: Entry New Ad
+        edit: Edit Ad
+      categories:
+        index: Manage Categories
+        show: Detail Category
+        new: Entry New Category
+        edit: Edit Category
+      countries:
+        index: Manage Countries
+        show: Detail Country
+        new: Entry New Country
+        edit: Edit Country
+      customers:
+        index: Manage Customers
+        show: Detail Customer
+        new: Entry New Customer
+        edit: Edit Customer
+      discounts:
+        index: Manage Discounts
+        show: Detail Discount
+        new: Entry New Discount
+        edit: Edit Discount
+      email_templates:
+        index: Manage Email Templates
+        show: Detail Email Template
+        new: Entry New Email Template
+        edit: Edit Email Template
+      facilities:
+        index: Manage Facilities
+        show: Detail Facility
+        new: Entry New Facility
+        edit: Edit Facility
+      icons:
+        index: Manage Icons
+        show: Detail Icon
+        new: Entry New Icon
+        edit: Edit Icon
+      identities:
+        index: Manage Identities
+        show: Detail Identity
+        new: Entry New Identity
+        edit: Edit Identity
+      merchants:
+        index: Manage Merchants
+        show: Detail Merchant
+        new: Entry New Merchant
+        edit: Edit Merchant
+      packages:
+        index: Manage Packages
+        show: Detail Package
+        new: Entry New Package
+        edit: Edit Package
+      passports:
+        index: Manage Passports
+        show: Detail Passport
+        new: Entry New Passport
+        edit: Edit Passport
+      products:
+        index: Manage Products
+        show: Detail Product
+        new: Entry New Product
+        edit: Edit Product
+      profiles:
+        index: Manage Profiles
+        show: Detail Profile
+        new: Entry New Profile
+        edit: Edit Profile
+      term_agreements:
+        index: Manage Term & Aggrements
+        show: Detail Term & Aggrement
+        new: Entry New Term & Aggrement
+        edit: Edit Term & Aggrement
+      travel_destinations:
+        index: Manage Travel Destinations
+        show: Detail Travel Destination
+        new: Entry New Travel Destination
+        edit: Edit Travel Destination
+      voucher_usages:
+        index: Manage Voucher Usages
+        show: Detail Voucher Usage
+        new: Entry New Voucher Usage
+        edit: Edit Voucher Usage
+      vouchers:
+        index: Manage Vouchers
+        show: Detail Voucher
+        new: Entry New Voucher
+        edit: Edit Voucher
+      wifi_roamings:
+        index: Manage Wifi Roamings
+        show: Detail Wifi Roaming
+        new: Entry New Wifi Roaming
+        edit: Edit Wifi Roaming
