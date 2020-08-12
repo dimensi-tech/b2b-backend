@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
 
   before_action :authenticate_user!
-  # before_action :set_breadcrumbs
+  before_action :set_breadcrumbs
 
   def default_url_options
     { locale: I18n.locale }
   end
-  
+
   protected
 
   def switch_locale(&action)
@@ -21,11 +21,11 @@ class ApplicationController < ActionController::Base
 
     case action_name
     when 'show'
-      breadcrumb "#{controller_name}.show", "/#{controller_path}/#{params[:id]}"
+      breadcrumb "#{controller_name}.show", "/#{params[:locale]}/#{controller_path}/#{params[:id]}"
     when 'new', 'create'
-      breadcrumb "#{controller_name}.new", "/#{controller_path}/new"
+      breadcrumb "#{controller_name}.new", "/#{params[:locale]}/#{controller_path}/new"
     when 'edit', 'update'
-      breadcrumb "#{controller_name}.edit", "/#{controller_path}/#{params[:id]}/edit"
+      breadcrumb "#{controller_name}.edit", "/#{params[:locale]}/#{controller_path}/#{params[:id]}/edit"
     end
   end
 end

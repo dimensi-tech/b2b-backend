@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :merchants
     resources :passports
     resources :wifi_roamings
+    resources :packages
     resources :profiles
     resources :policies
     resources :term_agreements
