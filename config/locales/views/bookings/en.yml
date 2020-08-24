@@ -36,6 +36,60 @@ en:
       code: Code
       created_by: Created By
       updated_by: Updated By
+      order_details:
+        title: Order Details
+        package_name: Package Name
+        package_price: Package Price
+        number_people: Passengers
+        departure_date: Departure Date
+        change_date: (Change Date)
+        duration_trip: Duration Trip
+        days: days
+        travel_plans: Travel Plans
+        detail_plans: See Itinerary in Package Details
+        payment_status:  Payment Status
+        biodatas:
+          title: Biodata
+          name: Name
+          email: Email
+          phone: Phone Number
+          heir_name: Heir Name
+          heir_contact: Heir Contact
+          family_relation: Heir Ralationship
+        identities:
+          title: ID Card
+          nik: NIK
+          name: Name
+          date_birth: Date of Birth
+          gender: Gender
+          address: Address
+          rt_rw: RT/RW
+          vilage_name: Village
+          district_name: District
+          city_name: City
+          province_name: Province
+          religion: Religion
+          martial_status: Martial Status
+          occupation: Job
+        passports:
+          title: Passport
+          number: No Passport
+          full_name: Fullname
+          birth_place: Birth Place
+          birth_date: Birth Date
+          gender: Gender
+          mother_name: Mother Name
+          father_name: Father Name
+          expired_date: Expired Date
+        savings:
+          title: Savings
+          payment_for: Payment For
+          amount: Amount
+          status: Status
+      passengers: Passenger %{counter}
+      adult_passengers: Departure Passengers (Adult)
+      child_passengers: Departure Passengers (Child)
+      selected_product: Selected Product
     create:
       notice: Booking was successfully created.
     update:

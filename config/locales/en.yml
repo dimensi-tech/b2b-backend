@@ -1,6 +1,7 @@
 en:
   empty_messages:
     not_found: Data not found
+    empty: Data not exist / Not filled yet.
     instruction: Sorry we couldn't find any data, to get rid of this message, make at least 1 entry.
     create: Create new data
   buttons:

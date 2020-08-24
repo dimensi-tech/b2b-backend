@@ -12,13 +12,455 @@ section.section
           .card-header
             h4 = t('.details')
           .card-body
-            .list-unstyled.list-unstyled-border.mt-4
-              .media
-                .media-icon
-                  i.far.fa-circle
-                .media-body
-                  h6 = t('.number')
-                  p = @booking.number
+            .tickets.mb-4
+              #ticket-items.ticket-items
+                = image_tag @booking.try(:package).try(:product).try(:image_url), class: 'img-fluid img-corner'
+              .ticket-content
+                .ticket-header
+                  .ticket-detail
+                    .ticket-title.mb-2.d-flex.align-items-center
+                      h4.m-0 = t('.order_details.title')
+                      = link_to edit_booking_path(@booking), class: 'btn btn-icon btn-outline-warning btn-sm text-small ml-2' do
+                        i.fas.fa-pencil-alt
+                        span = t('buttons.edit')
+                    .ticket-info
+                      .font-weight-600 = t('last_update')
+                      .bullet
+                      .text-primary.font-weight-600 = "#{time_ago_in_words(@booking.updated_at)} #{t('ago')}"
+                .ticket-description
+                  .table-responsive
+                    table.table.table-striped.table-md
+                      tbody
+                        tr
+                          td
+                            b = t('.order_details.package_name')
+                          td = link_to @booking.package.name, @booking.package.product,
+                                       target: :_blank
+                        tr
+                          td
+                            b = t('.order_details.package_price')
+                          td = "#{default_currency(@booking.package.price)}/pax"
+                        tr
+                          td
+                            b = t('.order_details.number_people')
+                          td = @booking.package.name
+                        tr
+                          td
+                            b = t('.order_details.departure_date')
+                          td
+                            = "#{@booking.departure_date.strftime('%d-%B-%Y')}"
+                            | &nbsp;
+                            = link_to t('.order_details.change_date'), '#!'
+                        tr
+                          td
+                            b = t('.order_details.duration_trip')
+                          td = "#{@booking.package.duration_trip} #{t('.order_details.days')}"
+                        tr
+                          td
+                            b = t('.order_details.travel_plans')
+                          td = link_to t('.order_details.detail_plans'),
+                                       @booking.package.product, target: :_blank
+                        tr
+                          td
+                            b = t('.order_details.payment_status')
+                          td = "<span class='badge badge-warning'>Menunggu Pembayaran</span>".html_safe
+            / Adult
+            h5 = t('.adult_passengers')
+            - if @booking.adult.to_i > 1
+              ul#adult-passengers.nav.nav-tabs role="tablist"
+                - (1..@booking.adult).each do |adult|
+                  li.nav-item
+                    a.nav-link data-toggle="tab" href="#adult_passenger_#{adult}" class="#{'active' if adult == 1}"
+                      = t('.passengers', counter: adult)
+              #adult-passengers-content.tab-content.tab-bordered
+                - (1..@booking.adult).each do |adult|
+                  .tab-pane.fade id="adult_passenger_#{adult}" class="#{'show active' if adult == 1}"
+                    .mt-4
+                      .media
+                        .media-body
+                          .accordion id="accordion_adult_#{adult}"
+                            .card
+                              #headingOne.card-header
+                                h5.mb-0
+                                  button.btn.btn-info data-toggle="collapse" data-target="#collapse_adult_biodatas_#{adult}" aria-expanded="true" aria-controls="collapse_adult_biodatas_#{adult}"
+                                    i.fa.fa-user.mg-right-3
+                                      | &nbsp;
+                                      = t('.order_details.biodatas.title')
+                              .collapse.show aria-labelledby="headingOne" data-parent="#accordion_adult_#{adult}" id="collapse_adult_biodatas_#{adult}"
+                                .card-body
+                                  - if @adult_biodatas[adult - 1].present?
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.name')
+                                        p = @adult_biodatas[adult - 1].name
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.email')
+                                        p = @adult_biodatas[adult - 1].email
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.phone')
+                                        p = @adult_biodatas[adult - 1].phone
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.heir_name')
+                                        p = @adult_biodatas[adult - 1].heir_name
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.heir_contact')
+                                        p = @adult_biodatas[adult - 1].heir_contact
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.family_relation')
+                                        p = @adult_biodatas[adult - 1].family_relation
+                                  - else
+                                    p = t('empty_messages.empty')
+                            .card
+                              #headingTwo.card-header
+                                h5.mb-0
+                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_adult_identities_#{adult}" aria-expanded="false" aria-controls="collapse_adult_identities_#{adult}"
+                                    i.fa.fa-id-card
+                                      | &nbsp;
+                                      = t('.order_details.identities.title')
+                              .collapse aria-labelledby="headingTwo" data-parent="#accordion_adult_#{adult}" id="collapse_adult_identities_#{adult}"
+                                .card-body
+                                  - if @adult_identities[adult - 1].present?
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.nik')
+                                        p = @adult_identities[adult - 1]['nik']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.name')
+                                        p = @adult_identities[adult - 1]['name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.date_birth')
+                                        p = birth_date_place(@adult_identities[adult - 1]['birth_place'], @adult_identities[adult - 1]['birth_date'])
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.gender')
+                                        p = @adult_identities[adult - 1]['gender']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.address')
+                                        p = @adult_identities[adult - 1]['address']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.rt_rw')
+                                        p = "#{@adult_identities[adult - 1]['rt']} / #{@adult_identities[adult - 1]['rw']}"
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.vilage_name')
+                                        p = @adult_identities[adult - 1]['vilage_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.district_name')
+                                        p = @adult_identities[adult - 1]['district_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.city_name')
+                                        p = @adult_identities[adult - 1]['city_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.province_name')
+                                        p = @adult_identities[adult - 1]['province_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.martial_status')
+                                        p = @adult_identities[adult - 1]['martial_status']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.occupation')
+                                        p = @adult_identities[adult - 1]['occupation']
+                                  - else
+                                    p = t('empty_messages.empty')
+                            .card
+                              #headingThree.card-header
+                                h5.mb-0
+                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_adult_passports_#{adult}" aria-expanded="false" aria-controls="collapse_adult_passports_#{adult}"
+                                    i.fa.fa-id-card
+                                      | &nbsp;
+                                      = t('.order_details.passports.title')
+                              .collapse aria-labelledby="headingThree" data-parent="#accordion_adult_#{adult}" id="collapse_adult_passports_#{adult}"
+                                .card-body
+                                  - if @adult_passports[adult - 1].present?
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.number')
+                                        p = @adult_passports[adult - 1]['number']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.full_name')
+                                        p = @adult_passports[adult - 1]['full_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.birth_place')
+                                        p = @adult_passports[adult - 1]['birth_place']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.birth_date')
+                                        p = default_date(@adult_passports[adult - 1]['birth_date'])
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.gender')
+                                        p = @adult_passports[adult - 1]['gender']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.mother_name')
+                                        p = @adult_passports[adult - 1]['mother_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.father_name')
+                                        p = @adult_passports[adult - 1]['father_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.expired_date')
+                                        p = default_date(@adult_passports[adult - 1]['expired_date'])
+                                  - else
+                                    p = t('empty_messages.empty')
+                            .card
+                              #headingFour.card-header
+                                h5.mb-0
+                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_adult_savings_#{adult}" aria-expanded="false" aria-controls="collapse_adult_savings_#{adult}"
+                                    i.fa.fa-hand-holding-usd
+                                      | &nbsp;
+                                      = t('.order_details.savings.title')
+                              .collapse aria-labelledby="headingFour" data-parent="#accordion_adult_#{adult}" id="collapse_adult_savings_#{adult}"
+                                .card-body
+                                  - if @adult_savings[adult - 1].try(:first).try(:[], 'identity_id').present?
+                                    .table-responsive
+                                      table.table.table-striped.table-md
+                                        thead
+                                          tr
+                                            th = t('.order_details.savings.payment_for')
+                                            th = t('.order_details.savings.amount')
+                                            th = t('.order_details.savings.status')
+                                        tbody
+                                          - @adult_savings[adult - 1].each do |saving|
+                                            tr
+                                              td = saving['payment_for']
+                                              td = default_currency(saving['amount'])
+                                              td = saving['status']
+                                  - else
+                                    p = t('empty_messages.empty')
+                    / .button-actions
+                      = link_to t('buttons.edit'), '#!',
+                        class: 'btn btn-warning'
+                      = link_to t('buttons.destroy'), '#!',
+                        method: :delete, data: { confirm: t('buttons.confirm') },
+                        class: 'btn btn-danger float-right'
+            - else
+              p = t('empty_messages.empty')
+            br
+            / Child
+            h5 = t('.child_passengers')
+            - if @booking.child.to_i > 1
+              ul#child-passengers.nav.nav-tabs role="tablist"
+                - (1..@booking.child).each do |child|
+                  li.nav-item
+                    a.nav-link data-toggle="tab" href="#child_passenger_#{child}" class="#{'active' if child == 1}"
+                      = t('.passengers', counter: child)
+              #child-passengers-content.tab-content.tab-bordered
+                - (1..@booking.child).each do |child|
+                  .tab-pane.fade id="child_passenger_#{child}" class="#{'show active' if child == 1}"
+                    .mt-4
+                      .media
+                        .media-body
+                          .accordion id="accordion_child_#{child}"
+                            .card
+                              #headingOneChild.card-header
+                                h5.mb-0
+                                  button.btn.btn-info data-toggle="collapse" data-target="#collapse_child_biodatas_#{child}" aria-expanded="true" aria-controls="collapse_child_biodatas_#{child}"
+                                    i.fa.fa-user.mg-right-3
+                                      | &nbsp;
+                                      = t('.order_details.biodatas.title')
+                              .collapse.show aria-labelledby="headingOneChild" data-parent="#accordion_child_#{child}" id="collapse_child_biodatas_#{child}"
+                                .card-body
+                                  - if @child_biodatas[child - 1].present?
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.name')
+                                        p = @child_biodatas[child - 1].name
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.email')
+                                        p = @child_biodatas[child - 1].email
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.phone')
+                                        p = @child_biodatas[child - 1].phone
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.heir_name')
+                                        p = @child_biodatas[child - 1].heir_name
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.heir_contact')
+                                        p = @child_biodatas[child - 1].heir_contact
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.biodatas.family_relation')
+                                        p = @child_biodatas[child - 1].family_relation
+                                  - else
+                                    p = t('empty_messages.empty')
+                            .card
+                              #headingTwoChild.card-header
+                                h5.mb-0
+                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_child_passports_#{child}" aria-expanded="false" aria-controls="collapse_child_passports_#{child}"
+                                    i.fa.fa-id-card
+                                      | &nbsp;
+                                      = t('.order_details.passports.title')
+                              .collapse aria-labelledby="headingTwoChild" data-parent="#accordion_child_#{child}" id="collapse_child_passports_#{child}"
+                                .card-body
+                                  - if @child_passports[child - 1].present?
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.number')
+                                        p = @child_passports[child - 1]['number']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.full_name')
+                                        p = @child_passports[child - 1]['full_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.birth_place')
+                                        p = @child_passports[child - 1]['birth_place']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.birth_date')
+                                        p = default_date(@child_passports[child - 1]['birth_date'])
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.gender')
+                                        p = @child_passports[child - 1]['gender']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.mother_name')
+                                        p = @child_passports[child - 1]['mother_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.father_name')
+                                        p = @child_passports[child - 1]['father_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.passports.expired_date')
+                                        p = default_date(@child_passports[child - 1]['expired_date'])
+                                  - else
+                                    p = t('empty_messages.empty')
+                            .card
+                              #headingThreeChild.card-header
+                                h5.mb-0
+                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_child_savings_#{child}" aria-expanded="false" aria-controls="collapse_child_savings_#{child}"
+                                    i.fa.fa-hand-holding-usd
+                                      | &nbsp;
+                                      = t('.order_details.savings.title')
+                              .collapse aria-labelledby="headingThreeChild" data-parent="#accordion_child_#{child}" id="collapse_child_savings_#{child}"
+                                .card-body
+                                  - if @child_savings[child - 1].try(:first).try(:[], 'identity_id').present?
+                                    .table-responsive
+                                      table.table.table-striped.table-md
+                                        thead
+                                          tr
+                                            th = t('.order_details.savings.payment_for')
+                                            th = t('.order_details.savings.amount')
+                                            th = t('.order_details.savings.status')
+                                        tbody
+                                          - @child_savings[child - 1].each do |saving|
+                                            tr
+                                              td = saving['payment_for']
+                                              td = default_currency(saving['amount'])
+                                              td = saving['status']
+                                  - else
+                                    p = t('empty_messages.empty')
+                    / .button-actions
+                      = link_to t('buttons.edit'), '#!',
+                        class: 'btn btn-warning'
+                      = link_to t('buttons.destroy'), '#!',
+                        method: :delete, data: { confirm: t('buttons.confirm') },
+                        class: 'btn btn-danger float-right'
+            - else
+              p = t('empty_messages.empty')
 
   .buttons
     = link_to t('buttons.edit'), edit_booking_path(@booking), class: 'btn btn-warning'

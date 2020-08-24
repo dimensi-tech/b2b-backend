@@ -1,6 +1,7 @@
 id:
   empty_messages:
     not_found: Data tidak ditemukan
+    empty: Data tidak ada / Belum diisi.
     instruction: Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
     create: Buat data baru
   buttons:

@@ -8,7 +8,22 @@ class BookingsController < ApplicationController
     @bookings = @search.result(distinct: true).page(params[:page]).per(10)
   end
 
-  def show; end
+  def show
+    # Adult
+    @adult_biodatas   = Biodatas::PassengerBiodataService.new(biodata_ids: @booking.adult_bio_ids).call
+    @adult_identities = Identities::PassengerIdentityService.new(identity_ids: @booking.identity_ids).call
+    @adult_passports  = Passports::PassengerPassportService.new(identity_ids: @booking.identity_ids).call
+    @adult_savings    = Savings::PassengerSavingService.new(
+      booking_id: @booking.id, source_ids: @booking.identity_ids, source_type: 'adult'
+    ).call
+
+    # Child
+    @child_biodatas  = Biodatas::PassengerBiodataService.new(biodata_ids: @booking.child_bio_ids).call
+    @child_passports = Passports::PassengerPassportService.new(identity_ids: @booking.child_passport_ids).call
+    @child_savings   = Savings::PassengerSavingService.new(
+      booking_id: @booking.id, source_ids: @booking.child_passport_ids, source_type: 'child'
+    ).call
+  end
 
   def new
     @booking = Booking.new

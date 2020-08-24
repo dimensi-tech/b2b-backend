@@ -19,11 +19,15 @@ module ApplicationHelper
   end
 
   def default_date(value)
-    value.strftime('%d %B %Y')
+    value.to_date.strftime('%d %B %Y')
   end
 
   def default_datetime(value)
     value.strftime('%I:%M %p %A, %d %B %Y')
+  end
+
+  def birth_date_place(place, date)
+    "#{place}, #{date.to_date.strftime('%d %B %Y')}"
   end
 
   def check_value?(resource)
