@@ -16,7 +16,10 @@ module Savings
       @source_ids.each do |source_id|
         temp_response = nil
         response      = send_request(source_id)
-        temp_response = JSON.parse(response.body) if response.is_a?(Net::HTTPOK)
+
+        if response.is_a?(Net::HTTPOK) && !JSON.parse(response.body).try(:has_value?, false)
+          temp_response = JSON.parse(response.body)
+        end
 
         @result << temp_response
       end

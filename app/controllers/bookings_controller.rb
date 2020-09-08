@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
-  before_action :set_country, only: %i[show edit update destroy]
+  before_action :set_booking, only: %i[show edit update destroy detail_savings]
 
   def index
     @search   = Booking.ransack(params[:q])
@@ -13,16 +13,21 @@ class BookingsController < ApplicationController
     @adult_biodatas   = Biodatas::PassengerBiodataService.new(biodata_ids: @booking.adult_bio_ids).call
     @adult_identities = Identities::PassengerIdentityService.new(identity_ids: @booking.identity_ids).call
     @adult_passports  = Passports::PassengerPassportService.new(identity_ids: @booking.identity_ids).call
-    @adult_savings    = Savings::PassengerSavingService.new(
-      booking_id: @booking.id, source_ids: @booking.identity_ids, source_type: 'adult'
-    ).call
 
     # Child
     @child_biodatas  = Biodatas::PassengerBiodataService.new(biodata_ids: @booking.child_bio_ids).call
     @child_passports = Passports::PassengerPassportService.new(identity_ids: @booking.child_passport_ids).call
-    @child_savings   = Savings::PassengerSavingService.new(
-      booking_id: @booking.id, source_ids: @booking.child_passport_ids, source_type: 'child'
-    ).call
+  end
+
+  def detail_savings
+    @savings = nil
+    @savings = Savings::PassengerSavingService.new(
+      booking_id: @booking.id, source_ids: [params[:source_ids]], source_type: params[:source_type]
+    ).call if @booking.id.present? && params[:source_ids].present? && params[:source_type].present?
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def new
@@ -32,7 +37,7 @@ class BookingsController < ApplicationController
   def edit; end
 
   def create
-    @booking = Booking.new(country_params)
+    @booking = Booking.new(booking_params)
 
     if @booking.save
       redirect_to @booking, notice: t('.notice')
@@ -42,7 +47,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-    if @booking.update(country_params)
+    if @booking.update(booking_params)
       redirect_to @booking, notice: t('.notice')
     else
       render :edit
@@ -66,7 +71,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_country
+  def set_booking
     @booking = Booking.find(params[:id])
   end
 
@@ -79,7 +84,7 @@ class BookingsController < ApplicationController
     @export_date = Time.now
   end
 
-  def country_params
+  def booking_params
     params.require(:booking).permit(:number, :package_id, :user_id)
   end
 end

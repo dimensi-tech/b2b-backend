@@ -106,6 +106,13 @@ id:
       booking_date: Tanggal Boking
       departure_date: Tanggal Keberangkatan
       email: Email
+    detail_savings:
+      order_details:
+        savings:
+          title: Tabungan
+          payment_for: Pembayaran Ke
+          amount: Jumlah
+          status: Status
   simple_form:
     labels:
       country:
