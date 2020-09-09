@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
     resources :bookings do
       collection do
+        get :detail_savings
         get :report
       end
     end

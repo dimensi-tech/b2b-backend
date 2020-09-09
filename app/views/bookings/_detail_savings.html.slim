@@ -1,0 +1,26 @@
+.modal-dialog.modal-dialog-centered.modal-lg
+  .modal-content
+    .modal-header
+      h5.modal-title = t('.order_details.savings.title')
+      button.close aria-label="Close" data-dismiss="modal" type="button"
+        span aria-hidden="true"  &times;
+    .modal-body
+      .row
+        .col-md-12
+          .table-responsive
+            - if @savings.try(:first).try(:first).try(:[], 'identity_id').present? || @savings.try(:first).try(:first).try(:[], 'passport_id').present?
+              .table-responsive
+                table.table.table-striped.table-md
+                  thead
+                    tr
+                      th = t('.order_details.savings.payment_for')
+                      th = t('.order_details.savings.amount')
+                      th = t('.order_details.savings.status')
+                  tbody
+                    - @savings.first.each do |saving|
+                      tr
+                        td = saving['payment_for']
+                        td = default_currency(saving['amount'])
+                        td = saving['status']
+            - else
+              p = t('empty_messages.empty')

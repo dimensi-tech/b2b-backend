@@ -1,3 +1,4 @@
+/ = render 'detail_savings'
 section.section
   .section-header
     h1 = t('.page_header')
@@ -274,28 +275,13 @@ section.section
                             .card
                               #headingFour.card-header
                                 h5.mb-0
-                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_adult_savings_#{adult}" aria-expanded="false" aria-controls="collapse_adult_savings_#{adult}"
+                                  = link_to detail_savings_bookings_path(id: @booking.id, source_ids: @booking.identity_ids.try(:[], adult - 1), source_type: 'adult'),
+                                    { class: 'btn btn-info collapsed', data: { toggle: 'collapse', target: "#collapse_adult_savings_#{adult}" },
+                                      aria: { expanded: 'false', controls: "collapse_adult_savings_#{adult}"}, remote: true } do
                                     i.fa.fa-hand-holding-usd
                                       | &nbsp;
                                       = t('.order_details.savings.title')
                               .collapse aria-labelledby="headingFour" data-parent="#accordion_adult_#{adult}" id="collapse_adult_savings_#{adult}"
-                                .card-body
-                                  - if @adult_savings[adult - 1].try(:first).try(:[], 'identity_id').present?
-                                    .table-responsive
-                                      table.table.table-striped.table-md
-                                        thead
-                                          tr
-                                            th = t('.order_details.savings.payment_for')
-                                            th = t('.order_details.savings.amount')
-                                            th = t('.order_details.savings.status')
-                                        tbody
-                                          - @adult_savings[adult - 1].each do |saving|
-                                            tr
-                                              td = saving['payment_for']
-                                              td = default_currency(saving['amount'])
-                                              td = saving['status']
-                                  - else
-                                    p = t('empty_messages.empty')
                     / .button-actions
                       = link_to t('buttons.edit'), '#!',
                         class: 'btn btn-warning'
@@ -431,28 +417,13 @@ section.section
                             .card
                               #headingThreeChild.card-header
                                 h5.mb-0
-                                  button.btn.btn-info.collapsed data-toggle="collapse" data-target="#collapse_child_savings_#{child}" aria-expanded="false" aria-controls="collapse_child_savings_#{child}"
+                                  = link_to detail_savings_bookings_path(id: @booking.id, source_ids: @booking.child_passport_ids.try(:[], child - 1), source_type: 'child'),
+                                    { class: 'btn btn-info collapsed', data: { toggle: 'collapse', target: "#collapse_child_savings_#{child}" },
+                                      aria: { expanded: 'false', controls: "collapse_child_savings_#{child}"}, remote: true } do
                                     i.fa.fa-hand-holding-usd
                                       | &nbsp;
                                       = t('.order_details.savings.title')
-                              .collapse aria-labelledby="headingThreeChild" data-parent="#accordion_child_#{child}" id="collapse_child_savings_#{child}"
-                                .card-body
-                                  - if @child_savings[child - 1].try(:first).try(:[], 'identity_id').present?
-                                    .table-responsive
-                                      table.table.table-striped.table-md
-                                        thead
-                                          tr
-                                            th = t('.order_details.savings.payment_for')
-                                            th = t('.order_details.savings.amount')
-                                            th = t('.order_details.savings.status')
-                                        tbody
-                                          - @child_savings[child - 1].each do |saving|
-                                            tr
-                                              td = saving['payment_for']
-                                              td = default_currency(saving['amount'])
-                                              td = saving['status']
-                                  - else
-                                    p = t('empty_messages.empty')
+                              .collapse aria-labelledby="headingFour" data-parent="#accordion_child_#{child}" id="collapse_child_savings_#{child}"          
                     / .button-actions
                       = link_to t('buttons.edit'), '#!',
                         class: 'btn btn-warning'
@@ -465,3 +436,5 @@ section.section
   .buttons
     = link_to t('buttons.edit'), edit_booking_path(@booking), class: 'btn btn-warning'
     = link_to t('buttons.back'), bookings_path, class: 'btn'
+
+#detail_savings.modal
