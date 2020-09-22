@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :travel_partners
   scope "(:locale)", locale: /id|en/ do
     get '/:locale' => 'homes#index'
     root 'homes#index'
