@@ -37,6 +37,26 @@
   /   .col-sm-12.col-md-7
   /     = f.number_field :down_payment, readonly: :true, class: 'form-control down-payment-field'
   .form-group.row.mb-4
+    div class='col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      .custom-control.custom-control-alternative.custom-checkbox
+        = f.check_box :is_saving, class: 'custom-control-input checkbox-saving'
+        = f.label :is_saving, t('.itinerary_saving'), class: 'custom-control-label form-control-label'
+      small = t('.saving_description')
+  .form-group.row.mb-4.down-payment-fields
+    = f.label :child_price, t('.down_payment'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-3
+      = f.input :down_payment_type,
+                collection: Package.down_payment_type.options.sort, label: false,
+                input_html: { class: 'form-control select2 dp-type-select' },
+                prompt: t('.down_payment_description')
+    .col-sm-12.col-md-4
+      = f.number_field :down_payment_flat, class: 'form-control dp-flat-field',
+                       placeholder: t('.dp_flat_description'), type: 'hidden'
+      = f.number_field :down_payment_percentage, class: 'form-control dp-percentage-field',
+                       placeholder: t('.dp_percentage_description'), type: 'hidden'
+
+  .form-group.row.mb-4.itinerary-saving-fields
     = f.label :itinerary, t('.itinerary_saving'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
     .col-sm-12.col-md-7
       #saving_packages.activities.m-0

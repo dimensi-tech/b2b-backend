@@ -59,8 +59,9 @@ class PackagesController < ApplicationController
 
   def package_params
     params.require(:package).permit(
-      :product_id, :name, :description, :price, :min_adult, :max_adult, :min_child, :max_child, :adult_price, :child_price,
-      :down_payment, :duration_trip, available_date: [],
+      :product_id, :name, :description, :price, :min_adult, :max_adult, :min_child,
+      :max_child, :adult_price, :child_price, :down_payment, :duration_trip, :is_saving,
+      :down_payment_flat, :down_payment_percentage, :down_payment_type, available_date: [],
       facilities_attributes: %i[_destroy id package_id name description],
       policies_attributes: %i[_destroy id package_id name description],
       package_details_attributes: %i[_destroy id package_id day description image],

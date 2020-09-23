@@ -1,4 +1,9 @@
 en:
+  enumerize:
+    package:
+      down_payment_type:
+        flat: Flat
+        percentage: Percentage
   packages:
     packages:
       product_id: Product
@@ -29,6 +34,10 @@ en:
       itinerary_saving: Savings Plan
       facility: Facilities
       policy: Policies
+      saving_description: Check if package with savings plan
+      down_payment_description: --Select Type--
+      dp_flat_description: Amount DP
+      dp_percentage_description: Amount (%)
     index:
       page_header: Master Data Packages
       body_title: Manage Package

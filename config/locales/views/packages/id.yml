@@ -1,4 +1,9 @@
 id:
+  enumerize:
+    package:
+      down_payment_type:
+        flat: Tetap
+        percentage: Persentase
   packages:
     packages:
       product_id: Produk
@@ -37,6 +42,10 @@ id:
       itinerary_saving: Rencana Tabungan
       facility: Fasilitas
       policy: Kebijakan
+      saving_description: Ceklis jika paket dengan rencana tabungan
+      down_payment_description: --Pilih Tipe--
+      dp_flat_description: Jumlah DP
+      dp_percentage_description: Jumlah (%) 
     index:
       page_header: Master Data Paket
       body_title: Kelola Paket

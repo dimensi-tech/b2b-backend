@@ -53,6 +53,7 @@ en:
         day: Days
         image: Image
         itinerary: Trave Plans
+        down_payment_description: "%{type} (from total booking)"
       saving_package:
         title: Savings Plan
         description: Description Savings

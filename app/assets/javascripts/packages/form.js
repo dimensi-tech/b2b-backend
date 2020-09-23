@@ -1,5 +1,45 @@
 $(document).ready(function() {
+  $('.down-payment-fields').hide();
+  $('.itinerary-saving-fields').hide();
   $('.product-select').select2()
+
+  if ($('.checkbox-saving').is(':checked')) {
+    $('.down-payment-fields').show();
+    $('.itinerary-saving-fields').show();
+  } else {
+    $('.down-payment-fields').hide();
+    $('.itinerary-saving-fields').hide();
+  }
+
+  if ($('.dp-type-select').val() == 'flat') {
+    $('.dp-flat-field').attr('type', 'number');
+    $('.dp-percentage-field').attr('type', 'hidden');
+  } else if ($('.dp-type-select').val() == 'percentage') {
+    $('.dp-percentage-field').attr('type', 'number');
+    $('.dp-flat-field').attr('type', 'hidden');
+  }
+
+  $('.checkbox-saving').change(function() {
+    if($(this).is(':checked')){
+      $('.down-payment-fields').show();
+      $('.itinerary-saving-fields').show();
+    } else if($(this).is(':not(:checked)')){
+      $('.down-payment-fields').hide();
+      $('.itinerary-saving-fields').hide();
+    }
+  });
+
+  $('.dp-type-select').change(function() {
+    $('.dp-flat-field, .dp-percentage-field').attr('type', 'hidden');
+
+    if (this.value == 'flat') {
+      $('.dp-flat-field').attr('type', 'number');
+      $('.dp-percentage-field').attr('type', 'hidden');
+    } else if (this.value == 'percentage') {
+      $('.dp-percentage-field').attr('type', 'number');
+      $('.dp-flat-field').attr('type', 'hidden');
+    }
+  });
 
   const availableDates = $('#package_available_date').data('dates')
   const datepickerConfig = {

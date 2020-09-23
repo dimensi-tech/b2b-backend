@@ -1,4 +1,6 @@
 class Package < ApplicationRecord
+  extend Enumerize
+
   belongs_to :product
   belongs_to :discount, optional: true
 
@@ -13,6 +15,8 @@ class Package < ApplicationRecord
 
   validates :name, :price, :down_payment, :duration_trip, :min_adult,
             :max_adult, presence: true
+
+  enumerize :down_payment_type, in: %i[flat percentage]
 
   def assigned_down_payment
     if saving_packages.present?
