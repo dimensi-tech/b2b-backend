@@ -1,0 +1,31 @@
+- if @travel_partners.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.name')
+          th = t('.description')
+        - @travel_partners.each do |travel_partner|
+          tr
+            td
+              .d-flex
+                - if travel_partner.logo_url
+                  = image_tag travel_partner.logo_url, class: 'img-corner img-table mr-3'
+                div
+                  = "#{travel_partner.name}"
+
+                  .table-links
+                    = link_to t('buttons.view'), travel_partner
+                    .bullet
+                    = link_to t('buttons.edit'), edit_travel_partner_path(travel_partner)
+                    .bullet
+                    = link_to t('buttons.destroy'), travel_partner_path(travel_partner),
+                              method: :delete, class: 'text-danger',
+                              data: { confirm: t('buttons.confirm') }
+            td = default_datetime(travel_partner.updated_at)
+
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @travel_partners
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_travel_partner_path }
