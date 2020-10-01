@@ -40,7 +40,10 @@ id:
         title: Rincian Pemesanan
         package_name: Nama Paket
         package_price: Harga Paket
+        pax_package_prices: "Dewasa : %{adult}/pax, Anak : %{child}/pax"
+        total_package_price: Total Harga Paket
         number_people: Jumlah Orang
+        number_passengers: "Dewasa : %{adult}, Anak : %{child}"
         departure_date: Tanggal Keberangkatan
         change_date: (Ubah Tanggal)
         duration_trip: Lama Hari

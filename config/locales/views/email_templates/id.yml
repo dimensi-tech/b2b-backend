@@ -4,6 +4,7 @@ id:
       template_type:
         payment_finish: Pembayaran Sukses
         email_confirmation: Konfirmasi Email
+        booking_confirmation: Konfirmasi Booking
   email_templates:
     email_templates:
       name: Nama

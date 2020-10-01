@@ -40,11 +40,11 @@ section.section
                         tr
                           td
                             b = t('.order_details.package_price')
-                          td = "#{default_currency(@booking.package.price)}/pax"
+                          td = t('.order_details.pax_package_prices', adult: default_currency(@booking.package.adult_price), child: default_currency(@booking.package.child_price))
                         tr
                           td
                             b = t('.order_details.number_people')
-                          td = @booking.package.name
+                          td = t('.order_details.number_passengers', adult: @booking.adult, child: @booking.child)
                         tr
                           td
                             b = t('.order_details.departure_date')
@@ -61,6 +61,10 @@ section.section
                             b = t('.order_details.travel_plans')
                           td = link_to t('.order_details.detail_plans'),
                                        @booking.package.product, target: :_blank
+                        tr
+                          td
+                            b = t('.order_details.total_package_price')
+                          td = default_currency(@booking.calculate_total_booking)
                         tr
                           td
                             b = t('.order_details.payment_status')
@@ -423,7 +427,7 @@ section.section
                                     i.fa.fa-hand-holding-usd
                                       | &nbsp;
                                       = t('.order_details.savings.title')
-                              .collapse aria-labelledby="headingFour" data-parent="#accordion_child_#{child}" id="collapse_child_savings_#{child}"          
+                              .collapse aria-labelledby="headingFour" data-parent="#accordion_child_#{child}" id="collapse_child_savings_#{child}"
                     / .button-actions
                       = link_to t('buttons.edit'), '#!',
                         class: 'btn btn-warning'
