@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_042523) do
+ActiveRecord::Schema.define(version: 2020_10_10_035549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,9 @@ ActiveRecord::Schema.define(version: 2020_09_22_042523) do
     t.integer "adult_bio_ids", default: [], array: true
     t.integer "child_bio_ids", default: [], array: true
     t.decimal "down_payment"
+    t.decimal "dp_amount"
+    t.decimal "child_amount_saving"
+    t.decimal "adult_amount_saving"
   end
 
   create_table "categories", force: :cascade do |t|
