@@ -4,6 +4,7 @@ en:
       template_type:
         payment_finish: Payment Completed
         email_confirmation: Email Confirmation
+        booking_confirmation: Booking Confirmation
   email_templates:
     email_templates:
       name: Name

@@ -40,7 +40,10 @@ en:
         title: Order Details
         package_name: Package Name
         package_price: Package Price
+        pax_package_prices: "Adult : %{adult}/pax, Child : %{child}/pax"
+        total_package_price: Total Package Price
         number_people: Passengers
+        number_passengers: "Adult : %{adult}, Child : %{child}"
         departure_date: Departure Date
         change_date: (Change Date)
         duration_trip: Duration Trip
