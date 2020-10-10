@@ -53,6 +53,7 @@ id:
         day: Hari
         image: Gambar
         itinerary: Rencana Perjalanan
+        down_payment_description: "%{type} (dari total booking)"
       saving_package:
         title: Rencana Tabungan
         description: Rencana Tabungan

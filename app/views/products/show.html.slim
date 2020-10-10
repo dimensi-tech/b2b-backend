@@ -72,12 +72,18 @@ section.section
                       .media-body
                         h6 = t('.package.child_price')
                         p = default_currency(package.child_price)
-                    .media
-                      .media-icon
-                        i.far.fa-circle
-                      .media-body
-                        h6 = t('.package.down_payment')
-                        p = package.down_payment ? default_currency(package.down_payment) : '-'
+                    - if package.is_saving?
+                      .media
+                        .media-icon
+                          i.far.fa-circle
+                        .media-body
+                          h6 = t('.package.down_payment')
+                          - if package.down_payment_type.flat?
+                            p = t('.package.down_payment_description', type: default_currency(package.down_payment_flat))
+                          - elsif package.down_payment_type.percentage?
+                            p = t('.package.down_payment_description', type: "#{package.down_payment_percentage} %")
+                          - else
+                            p = '-'
                     .media
                       .media-icon
                         i.far.fa-circle
