@@ -2,9 +2,14 @@ id:
   enumerize:
     email_template:
       template_type:
-        payment_finish: Pembayaran Sukses
+        payment_paid: Pembayaran Lunas
         email_confirmation: Konfirmasi Email
         booking_confirmation: Konfirmasi Booking
+        booking_modified: Perubahan Booking
+        booking_cancelled: Pembatalan Booking
+        booking_completed: Booking Selesai
+        down_payment: Pembayaran DP
+        savings_progress: Pembayaran Tabungan
   email_templates:
     email_templates:
       name: Nama

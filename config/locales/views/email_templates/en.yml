@@ -2,9 +2,14 @@ en:
   enumerize:
     email_template:
       template_type:
-        payment_finish: Payment Completed
+        payment_paid: Payment Pad Off
         email_confirmation: Email Confirmation
         booking_confirmation: Booking Confirmation
+        booking_modified: Booking Modified
+        booking_cancelled: Booking Cancelled
+        booking_completed: Booking Completed
+        down_payment: Down Payment
+        savings_progress: Savings Payment
   email_templates:
     email_templates:
       name: Name
