@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_150607) do
+ActiveRecord::Schema.define(version: 2020_10_30_030014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -221,7 +221,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_150607) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "min_adult"
     t.integer "max_adult"
-    t.string "duration_trip"
+    t.integer "duration_trip"
     t.integer "discount_id"
     t.decimal "down_payment"
     t.string "available_date", default: [], array: true
