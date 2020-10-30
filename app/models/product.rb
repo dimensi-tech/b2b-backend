@@ -3,6 +3,7 @@ class Product < ApplicationRecord
 
   belongs_to :category
   belongs_to :travel_destination
+  belongs_to :travel_partner, required: false
 
   has_many :packages
 

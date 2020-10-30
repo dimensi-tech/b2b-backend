@@ -29,6 +29,8 @@
             = link_to t('sidebar.ads'), ads_path, class: "nav-link"
           li class=("#{active_class([categories_path])}")
             = link_to t('sidebar.categories'), categories_path, class: "nav-link"
+          li class=("#{active_class([travel_partners_path])}")
+            = link_to t('sidebar.travel_partners'), travel_partners_path, class: "nav-link"
 
       li.dropdown class=("#{active_class([bookings_path, customers_path, identities_path, merchants_path, passports_path, products_path, profiles_path, discounts_path, vouchers_path, wifi_roamings_path])}")
         a.nav-link.has-dropdown href="#"

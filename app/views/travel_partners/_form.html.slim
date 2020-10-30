@@ -5,7 +5,7 @@
         .alert-icon
           i.fas.fa-exclamation-triangle
         .alert-body
-          .alert-title = "#{pluralize(@travel_partner.errors.count, "error")} prohibited this travel partners from being saved:"
+          .alert-title = "#{pluralize(@travel_partner.errors.count, "error")} prohibited this Travel Agents from being saved:"
           ul
             - @travel_partner.errors.full_messages.each do |message|
               li = message

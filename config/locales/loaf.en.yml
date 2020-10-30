@@ -54,6 +54,11 @@ en:
         show: Detail Identity
         new: Entry New Identity
         edit: Edit Identity
+      travel_partners:
+        index: Manage Travel Agents
+        show: Detail Travel Agents
+        new: Entry New Travel Agent
+        edit: Edit Travel Agent
       merchants:
         index: Manage Merchants
         show: Detail Merchant
