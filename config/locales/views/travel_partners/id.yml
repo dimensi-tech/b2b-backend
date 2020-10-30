@@ -24,19 +24,19 @@ id:
       logo: Logo
       description: Deskripsi
     index:
-      page_header: Master Data Travel Partner
-      body_title: Kelola Travel Partner
-      create: Tambah Travel Partner
+      page_header: Master Data Travel Agent
+      body_title: Kelola Travel Agent
+      create: Tambah Travel Agent
     new:
-      page_header: Master Data Travel Partner
-      body_title: Entry Travel Partner Baru
-      card_header: Input Data Travel Partner
+      page_header: Master Data Travel Agent
+      body_title: Entry Travel Agent Baru
+      card_header: Input Data Travel Agent
     edit:
-      page_header: Master Data Travel Partner
-      body_title: Ubah Travel Partner
-      card_header: Ubah Data Travel Partner
+      page_header: Master Data Travel Agent
+      body_title: Ubah Travel Agent
+      card_header: Ubah Data Travel Agent
     show:
-      page_header: Detail Travel Partner
+      page_header: Detail Travel Agent
       details: Detail
       country_id: Negara
       destination: Destinasi
@@ -47,11 +47,11 @@ id:
       logo: Logo
       description: Deskripsi
     create:
-      notice: Travel Partner baru berhasil dibuat.
+      notice: Travel Agent baru berhasil dibuat.
     update:
-      notice: Travel Partner berhasil diubah.
+      notice: Travel Agent berhasil diubah.
     destroy:
-      notice: Travel Partner berhasil dihapus.
+      notice: Travel Agent berhasil dihapus.
   simple_form:
     labels:
       travel_partner:

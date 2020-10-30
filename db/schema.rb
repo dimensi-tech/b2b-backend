@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_035549) do
+ActiveRecord::Schema.define(version: 2020_10_29_150607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_035549) do
     t.string "heir_name"
     t.string "heir_contact"
     t.string "family_relation"
-  end
-
-  create_table "biodatas", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -67,10 +59,10 @@ ActiveRecord::Schema.define(version: 2020_10_10_035549) do
     t.integer "child_passport_ids", default: [], array: true
     t.integer "adult_bio_ids", default: [], array: true
     t.integer "child_bio_ids", default: [], array: true
-    t.decimal "down_payment"
     t.decimal "dp_amount"
     t.decimal "child_amount_saving"
     t.decimal "adult_amount_saving"
+    t.decimal "down_payment"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -104,8 +96,6 @@ ActiveRecord::Schema.define(version: 2020_10_10_035549) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "is_confirmed"
-    t.datetime "confirmed_at"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -118,6 +108,8 @@ ActiveRecord::Schema.define(version: 2020_10_10_035549) do
     t.string "confirmation_token"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.boolean "is_confirmed"
+    t.datetime "confirmed_at"
     t.index ["confirmation_token"], name: "index_customers_on_confirmation_token", unique: true
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
@@ -296,6 +288,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_035549) do
     t.string "image"
     t.integer "category_id"
     t.integer "travel_destination_id"
+    t.integer "travel_partner_id"
   end
 
   create_table "profiles", force: :cascade do |t|

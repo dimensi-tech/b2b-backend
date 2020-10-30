@@ -3,9 +3,9 @@ section.section
     h1 = t('.page_header')
     = render 'shared/breadcrumb'
   .section-body
-    h2.section-title = @travel_destination.destination
+    h2.section-title = @travel_partner.name
     p.section-lead
-      = "Data ID : #{@travel_destination.id}"
+      = "Data ID : #{@travel_partner.id}"
     .row
       .col-12
         .card
@@ -14,25 +14,25 @@ section.section
           .card-body
             .tickets.mb-4
               #ticket-items.ticket-items
-                = image_tag @travel_destination.image_url, class: 'img-fluid img-corner'
+                = image_tag @travel_partner.logo_url, class: 'img-fluid img-corner'
               .ticket-content
                 .ticket-header
                   .ticket-detail
                     .ticket-title.mb-2.d-flex.align-items-center
-                      h4.m-0 = @travel_destination.destination
-                      = link_to edit_travel_destination_path(@travel_destination), class: 'btn btn-icon btn-outline-warning btn-sm text-small ml-2' do
+                      h4.m-0 = @travel_partner.name
+                      = link_to edit_travel_partner_path(@travel_partner), class: 'btn btn-icon btn-outline-warning btn-sm text-small ml-2' do
                         i.fas.fa-pencil-alt
                         span = t('buttons.edit')
                     .ticket-info
                       .font-weight-600 = t('last_update')
                       .bullet
-                      .text-primary.font-weight-600 = "#{time_ago_in_words(@travel_destination.updated_at)} #{t('ago')}"
+                      .text-primary.font-weight-600 = "#{time_ago_in_words(@travel_partner.updated_at)} #{t('ago')}"
                 .ticket-description
                   p
-                    = raw @travel_destination.country.name
+                    = raw @travel_partner.address
                   p
-                    = raw @travel_destination.destination
+                    = raw @travel_partner.description
 
   .buttons
-    = link_to t('buttons.edit'), edit_travel_destination_path(@travel_destination), class: 'btn btn-warning'
-    = link_to t('buttons.back'), travel_destinations_path, class: 'btn'
+    = link_to t('buttons.edit'), edit_travel_partner_path(@travel_partner), class: 'btn btn-warning'
+    = link_to t('buttons.back'), travel_partners_path, class: 'btn'

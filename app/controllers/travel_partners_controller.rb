@@ -4,8 +4,8 @@ class TravelPartnersController < ApplicationController
   # GET /travel_partners
   # GET /travel_partners.json
   def index
-    @search              = TravelPartner.ransack(params[:q])
-    @travel_destinations = @search.result(distinct: true).page(params[:page]).per(15)
+    @search          = TravelPartner.ransack(params[:q])
+    @travel_partners = @search.result(distinct: true).page(params[:page]).per(15)
   end
 
   # GET /travel_partners/1
@@ -29,7 +29,7 @@ class TravelPartnersController < ApplicationController
 
     respond_to do |format|
       if @travel_partner.save
-        format.html { redirect_to @travel_partner, notice: 'Travel partner was successfully created.' }
+        format.html { redirect_to @travel_partner, notice: 'Travel Agent was successfully created.' }
         format.json { render :show, status: :created, location: @travel_partner }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class TravelPartnersController < ApplicationController
   def update
     respond_to do |format|
       if @travel_partner.update(travel_partner_params)
-        format.html { redirect_to @travel_partner, notice: 'Travel partner was successfully updated.' }
+        format.html { redirect_to @travel_partner, notice: 'Travel Agent was successfully updated.' }
         format.json { render :show, status: :ok, location: @travel_partner }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class TravelPartnersController < ApplicationController
   def destroy
     @travel_partner.destroy
     respond_to do |format|
-      format.html { redirect_to travel_partners_url, notice: 'Travel partner was successfully destroyed.' }
+      format.html { redirect_to travel_partners_url, notice: 'Travel Agent was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

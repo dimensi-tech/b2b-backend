@@ -15,6 +15,7 @@ id:
       description: Deskripsi
       image: Gambar
       category: Kategori
+      travel_agent: Agent Travel
       travel_destination: Tujuan Destinasi
     index:
       page_header: Master Data Produk

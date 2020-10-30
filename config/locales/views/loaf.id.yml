@@ -54,6 +54,11 @@ id:
         show: Detail Identitas
         new: Entry Identitas Baru
         edit: Ubah Identitas
+      travel_partners:
+        index: Kelola Agent Travel
+        show: Detail Agent Travel
+        new: Entry Agent Travel Baru
+        edit: Ubah Agent Travel
       merchants:
         index: Kelola Merchant
         show: Detail Merchant
