@@ -13,8 +13,8 @@ class Booking < ApplicationRecord
   enumerize :booking_status, in: { booked: 1, modified: 2, cancelled: 3 }
 
   def calculate_total_booking
-    total_adult_price = adult * package.adult_price
-    total_child_price = child * package.child_price
+    total_adult_price = adult.to_i * package.adult_price.to_i
+    total_child_price = child.to_i * package.child_price.to_i
     total_adult_price + total_child_price
   end
 end
