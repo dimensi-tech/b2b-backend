@@ -68,7 +68,7 @@ section.section
                         tr
                           td
                             b = t('.order_details.payment_status')
-                          td = "<span class='badge badge-warning'>Menunggu Pembayaran</span>".html_safe
+                          td = "<span class='badge badge-warning'>#{@booking.booking_status_text}</span>".html_safe
             / Adult
             h5 = t('.adult_passengers')
             - if @booking.adult.to_i > 1
