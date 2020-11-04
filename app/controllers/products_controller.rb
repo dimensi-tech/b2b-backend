@@ -2,8 +2,14 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @search   = Product.order(name: :asc).ransack(params[:q])
-    @products = @search.result(distinct: true).page(params[:page])
+    if current_user.role.name == 'Travel Agent'
+      @search   = Product.where(travel_partner_id: current_user.travel_partner_id)
+                         .order(name: :asc).ransack(params[:q])
+      @products = @search.result(distinct: true).page(params[:page])
+    elsif current_user.role.name == 'Admin'
+      @search   = Product.order(name: :asc).ransack(params[:q])
+      @products = @search.result(distinct: true).page(params[:page])
+    end
   end
 
   def show

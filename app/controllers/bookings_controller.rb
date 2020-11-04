@@ -5,8 +5,14 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy detail_savings]
 
   def index
-    @search   = Booking.ransack(params[:q])
-    @bookings = @search.result(distinct: true).page(params[:page]).per(10)
+    if current_user.role.name == 'Travel Agent'
+      @search   = Booking.where(travel_partner_id: current_user.travel_partner_id)
+                         .ransack(params[:q])
+      @bookings = @search.result(distinct: true).page(params[:page])
+    elsif current_user.role.name == 'Admin'
+      @search   = Booking.ransack(params[:q])
+      @bookings = @search.result(distinct: true).page(params[:page])
+    end
   end
 
   def show

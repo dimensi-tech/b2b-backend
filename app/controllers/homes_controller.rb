@@ -1,6 +1,12 @@
 class HomesController < ApplicationController
   def index
-    @search   = Booking.order('created_at desc').limit(10).ransack(params[:q])
-    @bookings = @search.result(distinct: true).page(params[:page]).per(15)
+    if current_user.role.name == 'Travel Agent'
+      @search   = Booking.where(travel_partner_id: current_user.travel_partner_id)
+                         .ransack(params[:q])
+      @bookings = @search.result(distinct: true).page(params[:page])
+    elsif current_user.role.name == 'Admin'
+      @search   = Booking.ransack(params[:q])
+      @bookings = @search.result(distinct: true).page(params[:page])
+    end
   end
 end

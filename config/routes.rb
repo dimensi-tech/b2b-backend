@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :ads
+    resources :roles
     resources :categories
     resources :countries
     resources :customers
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     resources :policies
     resources :term_agreements
     resources :travel_destinations
+    resources :user_managements
     resources :vouchers
     resources :voucher_usages
 

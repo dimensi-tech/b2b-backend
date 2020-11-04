@@ -1,0 +1,36 @@
+= simple_form_for @user do |f|
+  - if @user.errors.any?
+    .alert.alert-danger.alert-has-icon
+        .alert-icon
+          i.fas.fa-exclamation-triangle
+        .alert-body
+          .alert-title = "#{pluralize(@user.errors.count, "error")} prohibited this country from being saved:"
+          ul
+            - @user.errors.full_messages.each do |message|
+              li = message
+
+  .form-group.row.mb-4
+    = f.label :name, 'Nama', class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.text_field :name, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :email, 'E-mail', class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.text_field :email, class: 'form-control'
+  .form-group.row.mb-4
+    = f.label :password, 'Password', class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+    .col-sm-12.col-md-7
+      = f.text_field :password, class: 'form-control'
+  .form-group.row.mb-4
+      = f.label :description, t('.travel_agent'), class: 'col-form-label text-md-right col-12 col-md-3 col-lg-3'
+      .col-sm-12.col-md-7
+        = f.input :travel_partner_id,
+                collection: TravelPartner.pluck(:name, :id), label: false,
+                input_html: { class: 'form-control product-select' }
+  
+  
+  .form-group.row.mb-4
+    label.col-form-label.text-md-right.col-12.col-md-3.col-lg-3
+    .col-sm-12.col-md-7
+      = f.submit t('buttons.submit'), class: 'btn btn-primary'
+    = link_to t('buttons.back'), user_managements_path, class: 'btn btn-secondary'

@@ -1,0 +1,38 @@
+section.section
+  .section-header
+    h1 Detail Data
+    = render 'shared/breadcrumb'
+  .section-body
+    h2.section-title = @user.name
+    p.section-lead
+      = "Nama User : #{@user.name}"
+    .row
+      .col-12
+        .card
+          .card-header
+            h4 Details
+          .card-body
+            .list-unstyled.list-unstyled-border.mt-4
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Nama
+                  p = @user.name
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Email
+                  p = @user.email
+              .media
+                .media-icon
+                  i.far.fa-circle
+                .media-body
+                  h6 Password
+                  p = @user.password
+        
+             
+  .buttons
+    = link_to t('buttons.edit'), edit_user_management_path(@user), class: 'btn btn-warning'
+    = link_to t('buttons.back'), user_managements_path, class: 'btn btn-danger'
