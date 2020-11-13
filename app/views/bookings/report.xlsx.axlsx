@@ -225,7 +225,7 @@ wb.add_worksheet(name: @file_name) do |sheet|
         child_passenger << '-'
         child_passenger << '-'
 
-        if adult_passports[child - 1].present?
+        if child_passports[child - 1].present?
           child_passenger << child_passports[child - 1]['number']
           child_passenger << child_passports[child - 1]['full_name']
           child_passenger << child_passports[child - 1]['birth_place']
