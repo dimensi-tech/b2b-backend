@@ -77,7 +77,7 @@ gem 'dotenv-rails', '2.7.4' # dotenv hiding secrets key
 gem 'enumerize', '2.3.1' # Enumerated attributes
 gem 'groupdate'
 gem 'jquery-ui-rails' # jquery ui
-gem 'kaminari', '1.1.1' # Pagination
+gem 'kaminari', '1.2.1' # Pagination
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'loaf', '~> 0.8.1' # breadcrumb
 gem 'mini_magick', '4.9.5' # image file uploader
