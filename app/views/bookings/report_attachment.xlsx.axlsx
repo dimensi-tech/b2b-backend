@@ -226,8 +226,8 @@ Axlsx::Package.new do |pkg|
           child_passenger << '-'
           child_passenger << '-'
 
-          if child_passenger[child - 1].present?
-            child_passenger << child_passenger[child - 1]['number']
+          if child_passports[child - 1].present?
+            child_passenger << child_passports[child - 1]['number']
             child_passenger << child_passports[child - 1]['full_name']
             child_passenger << child_passports[child - 1]['birth_place']
             child_passenger << default_date(child_passports[child - 1]['birth_date'])
