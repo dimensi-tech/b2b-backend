@@ -1,6 +1,6 @@
 id:
   empty_messages:
-    not_found: Data tidak ditemukan
+    not_found: Data tidak ditemukan.
     empty: Data tidak ada / Belum diisi.
     instruction: Maaf kami tidak dapat menemukan data apa pun, untuk menyingkirkan pesan ini, buat setidaknya 1 entri.
     create: Buat data baru
@@ -19,6 +19,9 @@ id:
     trip: Buat Rencana Perjalanan
     facility: Buat Fasilitas
     policy: Buat Kebijakan
+    print: Print
+    export:
+      excel: Export Excel
   search: Cari
   last_update: Terakhir diupdate
   ago: yang lalu

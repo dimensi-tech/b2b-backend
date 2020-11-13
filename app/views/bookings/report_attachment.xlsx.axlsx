@@ -1,0 +1,256 @@
+Axlsx::Package.new do |pkg|
+  wb = pkg.workbook
+
+  header_style = wb.styles.add_style sz: 10, b: true, font_name: 'Calibri', widths: [:ignore, :auto, 100],
+                                     bg_color: 'b2bec3', border: { style: :thin, color: '000000' },
+                                     alignment: { horizontal: :center,
+                                                  vertical: :center,
+                                                  wrap_text: true }
+
+  bold_style = wb.styles.add_style sz: 12, b: true, font_name: 'Calibri',
+                                   alignment: { horizontal: :left,
+                                                vertical: :center,
+                                                wrap_text: true }
+
+  item_style = wb.styles.add_style sz: 10, font_name: 'Calibri', widths: [:ignore, :auto, 100],
+                                   border: { style: :thin, color: '000000' },
+                                   alignment: { horizontal: :left,
+                                                vertical: :center,
+                                                wrap_text: true }
+
+  item_style_kbad = wb.styles.add_style sz: 10, font_name: 'Calibri', bg_color: '1dd1a2',
+                                   border: { :style => :thin, :color => "000000" },
+                                   alignment: { horizontal: :left,
+                                                vertical: :center,
+                                                wrap_text: true }
+
+  center_item_style = wb.styles.add_style sz: 10, font_name: 'Calibri',
+                                          border: { style: :thin, color: '000000' },
+                                          alignment: { horizontal: :center,
+                                                       vertical: :center,
+                                                       wrap_text: true }
+
+  img = File.expand_path("#{Rails.root}/app/assets/images/logo.png", __FILE__)
+
+  wb.add_worksheet(name: @file_name) do |sheet|
+    sheet.add_image(image_src: img, noSelect: true, noMove: true) do |image|
+      image.width = 132
+      image.height = 62
+      image.start_at 0, 0
+    end
+
+    sheet.add_row ['', t('bookings.report.page_header')], style: bold_style
+    sheet.add_row ['', "#{t('bookings.report.export_date')} : #{default_datetime(Time.now)}"]
+    sheet.merge_cells('B1:C1')
+    sheet.merge_cells('B2:C2')
+    sheet.add_row ['']
+    sheet.add_row ['']
+
+    sheet.add_row [
+      t('bookings.report.number'),
+      t('bookings.report.package_id'),
+      t('bookings.report.package_price'),
+      t('bookings.report.booking_date'),
+      t('bookings.report.departure_date'),
+      t('bookings.report.duration_trip'),
+      t('bookings.report.total_package_price'),
+      t('bookings.report.payment_status'),
+      t('bookings.report.customer_email'),
+      t('bookings.report.passenger_to'),
+      t('bookings.report.passenger_type'),
+      t('bookings.report.biodatas.name'),
+      t('bookings.report.biodatas.email'),
+      t('bookings.report.biodatas.phone'),
+      t('bookings.report.biodatas.heir_name'),
+      t('bookings.report.biodatas.heir_contact'),
+      t('bookings.report.biodatas.family_relation'),
+      t('bookings.report.identities.nik'),
+      t('bookings.report.identities.name'),
+      t('bookings.report.identities.date_birth'),
+      t('bookings.report.identities.gender'),
+      t('bookings.report.identities.address'),
+      t('bookings.report.identities.rt_rw'),
+      t('bookings.report.identities.vilage_name'),
+      t('bookings.report.identities.district_name'),
+      t('bookings.report.identities.city_name'),
+      t('bookings.report.identities.province_name'),
+      t('bookings.report.identities.religion'),
+      t('bookings.report.identities.martial_status'),
+      t('bookings.report.identities.occupation'),
+      t('bookings.report.passports.number'),
+      t('bookings.report.passports.full_name'),
+      t('bookings.report.passports.birth_place'),
+      t('bookings.report.passports.birth_date'),
+      t('bookings.report.passports.gender'),
+      t('bookings.report.passports.mother_name'),
+      t('bookings.report.passports.father_name'),
+      t('bookings.report.passports.expired_date'),
+    ], style: header_style
+
+    @bookings.each do |booking|
+      adult_biodatas   = Biodatas::PassengerBiodataService.new(biodata_ids: booking.adult_bio_ids).call
+      adult_identities = Identities::PassengerIdentityService.new(identity_ids: booking.identity_ids).call
+      adult_passports  = Passports::PassengerPassportService.new(identity_ids: booking.identity_ids).call
+      child_biodatas   = Biodatas::PassengerBiodataService.new(biodata_ids: booking.child_bio_ids).call
+      child_passports  = Passports::PassengerPassportService.new(identity_ids: booking.child_passport_ids).call
+
+      if booking.adult.to_i > 1
+        (1..booking.adult).each do |adult|
+          adult_passenger = []
+
+          adult_passenger << booking.number
+          adult_passenger << "#{booking.package.product.name} - #{booking.package.name}"
+          adult_passenger << default_currency(booking.package.adult_price)
+          adult_passenger << "#{booking.created_at.strftime('%d-%B-%Y')}"
+          adult_passenger << "#{booking.departure_date.strftime('%d-%B-%Y')}"
+          adult_passenger << "#{booking.package.duration_trip} #{t('bookings.show.order_details.days')}"
+          adult_passenger << default_currency(booking.calculate_total_booking)
+          adult_passenger << booking.booking_status_text
+          adult_passenger << booking.customer.email
+          adult_passenger << adult
+          adult_passenger << t('bookings.report.adult_passengers')
+
+          if adult_biodatas[adult - 1].present?
+            adult_passenger << adult_biodatas[adult - 1].name
+            adult_passenger << adult_biodatas[adult - 1].email
+            adult_passenger << "'#{adult_biodatas[adult - 1].phone}"
+            adult_passenger << adult_biodatas[adult - 1].heir_name
+            adult_passenger << "'#{adult_biodatas[adult - 1].heir_contact}"
+            adult_passenger << adult_biodatas[adult - 1].family_relation
+          else
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+          end
+
+          if adult_identities[adult - 1].present?
+            adult_passenger << adult_identities[adult - 1]['nik']
+            adult_passenger << adult_identities[adult - 1]['name']
+            adult_passenger << birth_date_place(adult_identities[adult - 1]['birth_place'], adult_identities[adult - 1]['birth_date'])
+            adult_passenger << adult_identities[adult - 1]['gender']
+            adult_passenger << adult_identities[adult - 1]['address']
+            adult_passenger << "#{adult_identities[adult - 1]['rt']} / #{adult_identities[adult - 1]['rw']}"
+            adult_passenger << adult_identities[adult - 1]['vilage_name']
+            adult_passenger << adult_identities[adult - 1]['district_name']
+            adult_passenger << adult_identities[adult - 1]['city_name']
+            adult_passenger << adult_identities[adult - 1]['province_name']
+            adult_passenger << adult_identities[adult - 1]['religion']
+            adult_passenger << adult_identities[adult - 1]['martial_status']
+            adult_passenger << adult_identities[adult - 1]['occupation']
+          else
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+          end
+
+          if adult_passports[adult - 1].present?
+            adult_passenger << adult_passports[adult - 1]['number']
+            adult_passenger << adult_passports[adult - 1]['full_name']
+            adult_passenger << adult_passports[adult - 1]['birth_place']
+            adult_passenger << default_date(adult_passports[adult - 1]['birth_date'])
+            adult_passenger << adult_passports[adult - 1]['gender']
+            adult_passenger << adult_passports[adult - 1]['mother_name']
+            adult_passenger << adult_passports[adult - 1]['father_name']
+            adult_passenger << default_date(adult_passports[adult - 1]['expired_date'])
+          else
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+            adult_passenger << '-'
+          end
+
+          sheet.add_row adult_passenger, style: item_style
+        end
+      end
+
+      if booking.child.to_i > 1
+        (1..booking.child).each do |child|
+          child_passenger = []
+
+          child_passenger << booking.number
+          child_passenger << "#{booking.package.product.name} - #{booking.package.name}"
+          child_passenger << default_currency(booking.package.child_price)
+          child_passenger << "#{booking.created_at.strftime('%d-%B-%Y')}"
+          child_passenger << "#{booking.departure_date.strftime('%d-%B-%Y')}"
+          child_passenger << "#{booking.package.duration_trip} #{t('bookings.show.order_details.days')}"
+          child_passenger << default_currency(booking.calculate_total_booking)
+          child_passenger << booking.booking_status_text
+          child_passenger << booking.customer.email
+          child_passenger << child
+          child_passenger << t('bookings.report.child_passengers')
+
+          if child_biodatas[child - 1].present?
+            child_passenger << child_biodatas[child - 1].name
+            child_passenger << child_biodatas[child - 1].email
+            child_passenger << "'#{child_biodatas[child - 1].phone}"
+            child_passenger << child_biodatas[child - 1].heir_name
+            child_passenger << "'#{child_biodatas[child - 1].heir_contact}"
+            child_passenger << child_biodatas[child - 1].family_relation
+          else
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+          end
+
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+          child_passenger << '-'
+
+          if adult_passports[child - 1].present?
+            child_passenger << child_passports[child - 1]['number']
+            child_passenger << child_passports[child - 1]['full_name']
+            child_passenger << child_passports[child - 1]['birth_place']
+            child_passenger << default_date(child_passports[child - 1]['birth_date'])
+            child_passenger << child_passports[child - 1]['gender']
+            child_passenger << child_passports[child - 1]['mother_name']
+            child_passenger << child_passports[child - 1]['father_name']
+            child_passenger << default_date(child_passports[child - 1]['expired_date'])
+          else
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+            child_passenger << '-'
+          end
+
+          sheet.add_row child_passenger, style: item_style
+        end
+      end
+    end
+  end
+
+  pkg.serialize(Rails.root.join('public/reports', "#{I18n.t('bookings.report.page_header')} - #{Date.today}.xlsx"))
+end

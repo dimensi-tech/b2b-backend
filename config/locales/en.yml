@@ -1,6 +1,6 @@
 en:
   empty_messages:
-    not_found: Data not found
+    not_found: Data not found.
     empty: Data not exist / Not filled yet.
     instruction: Sorry we couldn't find any data, to get rid of this message, make at least 1 entry.
     create: Create new data
@@ -19,6 +19,9 @@ en:
     trip: Make Trave Plans
     facility: Make Facility
     policy: Make Policy
+    print: Print
+    export:
+      excel: Export Excel
   search: Search
   last_update: Last updated
   ago: ago
