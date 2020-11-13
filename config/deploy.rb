@@ -7,7 +7,7 @@ set :deploy_to, '/home/deploy/apps/b2b_backend'
 set :branch, 'master'
 set :use_sudo, false
 append :linked_files, 'config/database.yml', 'config/secrets.yml', '.env'
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads', 'public/reports'
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
