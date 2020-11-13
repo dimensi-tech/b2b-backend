@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[report]
   before_action :set_booking, only: %i[show edit update destroy detail_savings]
 
   def index
@@ -60,12 +61,19 @@ class BookingsController < ApplicationController
   end
 
   def report
-    resource_filename(params)
-    respond_to do |format|
-      format.xlsx do
-        response.headers['Content-Disposition'] =
-          "attachment;filename=#{@filename}.xlsx"
-      end
+    @search   = Booking.ransack(params[:q])
+    @bookings = @search.result(distinct: true)
+    @filters  = params[:q]
+
+    # Check total records bookings will exported
+    total_identities = @bookings.pluck(:identity_ids).map {|identity_ids| identity_ids.compact.length}.sum
+    total_passports  = @bookings.pluck(:child_passport_ids).map {|passport_ids| passport_ids.compact.length}.sum
+
+    if (total_identities + total_passports) > 30 && params[:attachment].nil?
+      ExportReportJob.perform_later(params.to_unsafe_h)
+      redirect_to bookings_path, notice: t('.notice')
+    else
+      respond_to_format
     end
   end
 
@@ -75,13 +83,19 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def resource_filename(params)
-    @search      = Booking.all
-    @search      = @search.ransack(params[:q])
-    @bookings    = @search.result(distinct: true)
-    @filename    = "Laporan Booking - #{Date.today}"
-    @filters     = params[:q]
-    @export_date = Time.now
+  def respond_to_format
+    @file_name = I18n.t('bookings.report.page_header')
+
+    respond_to do |format|
+      format.html
+      format.xlsx do
+        if params[:attachment]
+          render filename: "#{@file_name} - #{Date.today}.xlsx", template: "bookings/report_attachment"
+        else
+          response.headers['Content-Disposition'] = "attachment;filename=#{@file_name} - #{Date.today}.xls"
+        end
+      end
+    end
   end
 
   def booking_params

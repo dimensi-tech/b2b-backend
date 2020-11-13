@@ -35,8 +35,8 @@ section.section
                         tr
                           td
                             b = t('.order_details.package_name')
-                          td = link_to @booking.package.name, @booking.package.product,
-                                       target: :_blank
+                          td = link_to "#{@booking.package.product.name} - #{@booking.package.name}",
+                                       @booking.package.product, target: :_blank
                         tr
                           td
                             b = t('.order_details.package_price')
@@ -45,6 +45,11 @@ section.section
                           td
                             b = t('.order_details.number_people')
                           td = t('.order_details.number_passengers', adult: @booking.adult, child: @booking.child)
+                        tr
+                          td
+                            b = t('.order_details.booking_date')
+                          td
+                            = "#{@booking.created_at.strftime('%d-%B-%Y')}"
                         tr
                           td
                             b = t('.order_details.departure_date')
@@ -202,6 +207,12 @@ section.section
                                       .media-body
                                         h6 = t('.order_details.identities.province_name')
                                         p = @adult_identities[adult - 1]['province_name']
+                                    .media
+                                      .media-icon
+                                        i.far.fa-circle
+                                      .media-body
+                                        h6 = t('.order_details.identities.religion')
+                                        p = @adult_identities[adult - 1]['religion']
                                     .media
                                       .media-icon
                                         i.far.fa-circle

@@ -13,10 +13,16 @@ module Passports
 
       @identity_ids.each do |identity_id|
         temp_response = nil
-        response      = send_request(identity_id)
-        temp_response = JSON.parse(response.body) if response.is_a?(Net::HTTPOK)
 
-        @result << temp_response
+        if identity_id.nil?
+          @result << temp_response
+          next
+        else
+          response      = send_request(identity_id)
+          temp_response = JSON.parse(response.body) if response.is_a?(Net::HTTPOK)
+
+          @result << temp_response
+        end
       end
 
       @result
