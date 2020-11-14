@@ -114,3 +114,8 @@ id:
         show: Detail Role
         new: Entry Role Baru
         edit: Ubah Role
+      user_managements:
+        index: Kelola Akun Travel Agent
+        show: Detail Akun Travel Agent
+        new: Entry Travel Agent Baru
+        edit: Ubah Travel Agent Baru

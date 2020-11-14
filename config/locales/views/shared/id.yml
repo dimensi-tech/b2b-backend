@@ -21,3 +21,5 @@ id:
     wifi_roamings: Wifi Roaming
     email_templates: Template Email
     travel_partners: Agent Travel
+    roles: Role
+    user_managements: Akun Travel Agent
