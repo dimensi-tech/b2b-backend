@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_07_080711) do
+ActiveRecord::Schema.define(version: 2020_11_14_064126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_11_07_080711) do
     t.decimal "adult_amount_saving"
     t.decimal "down_payment"
     t.integer "travel_partner_id"
+    t.boolean "data_valid", default: false
   end
 
   create_table "categories", force: :cascade do |t|
