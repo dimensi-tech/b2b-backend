@@ -13,7 +13,7 @@ class Package < ApplicationRecord
   accepts_nested_attributes_for :package_details, allow_destroy: true
   accepts_nested_attributes_for :saving_packages, allow_destroy: true
 
-  validates :name, :price, :down_payment, :duration_trip, :min_adult,
+  validates :name, :duration_trip, :min_adult,
             :max_adult, presence: true
 
   enumerize :down_payment_type, in: %i[flat percentage]

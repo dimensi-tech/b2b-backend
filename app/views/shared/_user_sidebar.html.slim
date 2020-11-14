@@ -1,0 +1,10 @@
+
+li.dropdown class=("#{active_class([bookings_path, customers_path, identities_path, merchants_path, passports_path, products_path, profiles_path, discounts_path, vouchers_path, wifi_roamings_path])}")
+  a.nav-link.has-dropdown href="#"
+    i.fas.fa-fire
+    span Management Data
+  ul.dropdown-menu style=("display: none;")
+    li class=("#{active_class([bookings_path])}")
+      = link_to t('sidebar.bookings'), bookings_path, class: "nav-link"
+    li class=("#{active_class([products_path])}")
+      = link_to t('sidebar.products'), products_path, class: "nav-link"

@@ -109,3 +109,8 @@ id:
         show: Detail Wifi Roaming
         new: Entry Wifi Roaming Baru
         edit: Ubah Wifi Roaming
+      roles:
+        index: Kelola Role
+        show: Detail Role
+        new: Entry Role Baru
+        edit: Ubah Role

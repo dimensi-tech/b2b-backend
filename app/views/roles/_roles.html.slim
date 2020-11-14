@@ -1,0 +1,28 @@
+- if @roles.present?
+  .card-body.p-0
+    .table-responsive
+      table.table.table-striped
+        tr
+          th = t('.name')
+          th = t('.created_at')
+        - @roles.each do |role|
+          tr
+            td
+              .d-flex
+                div
+                  = "#{role.name}"
+
+                  .table-links
+                    .bullet
+                    = link_to t('buttons.edit'), edit_role_path(role)
+                    .bullet
+                    = link_to t('buttons.destroy'), role_path(role),
+                              method: :delete, class: 'text-danger',
+                              data: { confirm: t('buttons.confirm') }
+            td = default_datetime(role.updated_at)
+
+  .card-footer.text-right
+    nav.d-inline-block
+      = paginate @roles
+- else
+  = render partial: 'shared/empty_message', locals: { path: new_role_path }

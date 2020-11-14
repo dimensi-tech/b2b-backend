@@ -10,7 +10,10 @@ section.section
             .col-md-12.mg-bottom-25
               .d-flex.justify-content-between.align-items-center
                 h3 = t('.bookings.chart_title')
-          = column_chart Booking.group_by_month(:created_at, format: "%b %Y").count
+          - if current_user.role.name == 'Admin'
+            = column_chart Booking.group_by_month(:created_at, format: "%b %Y").count
+          - elsif current_user.role.name == 'Travel Agent'
+            = column_chart Booking.where(travel_partner_id: current_user.travel_partner_id).group_by_month(:created_at, format: "%b %Y").count
         .card
           .card-header.d-flex.justify-content-between
             .col-md-12.mg-bottom-25
