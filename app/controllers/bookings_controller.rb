@@ -2,7 +2,7 @@
 
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[report]
-  before_action :set_booking, only: %i[show edit update destroy detail_savings]
+  before_action :set_booking, only: %i[show edit update destroy detail_savings data_is_valid]
 
   def index
     if current_user.role.name == 'Travel Agent'
@@ -28,9 +28,11 @@ class BookingsController < ApplicationController
 
   def detail_savings
     @savings = nil
-    @savings = Savings::PassengerSavingService.new(
-      booking_id: @booking.id, source_ids: [params[:source_ids]], source_type: params[:source_type]
-    ).call if @booking.id.present? && params[:source_ids].present? && params[:source_type].present?
+    if @booking.id.present? && params[:source_ids].present? && params[:source_type].present?
+      @savings = Savings::PassengerSavingService.new(
+        booking_id: @booking.id, source_ids: [params[:source_ids]], source_type: params[:source_type]
+      ).call
+    end
 
     respond_to do |format|
       format.js
@@ -72,8 +74,8 @@ class BookingsController < ApplicationController
     @filters  = params[:q]
 
     # Check total records bookings will exported
-    total_identities = @bookings.pluck(:identity_ids).map {|identity_ids| identity_ids.compact.length}.sum
-    total_passports  = @bookings.pluck(:child_passport_ids).map {|passport_ids| passport_ids.compact.length}.sum
+    total_identities = @bookings.pluck(:identity_ids).map { |identity_ids| identity_ids.compact.length }.sum
+    total_passports  = @bookings.pluck(:child_passport_ids).map { |passport_ids| passport_ids.compact.length }.sum
 
     if (total_identities + total_passports) > 30 && params[:attachment].nil?
       ExportReportJob.perform_later(params.to_unsafe_h)
@@ -81,6 +83,14 @@ class BookingsController < ApplicationController
     else
       respond_to_format
     end
+  end
+
+  def data_is_valid
+
+    puts "======="
+    # if @booking.update(data_valid: true)
+    #   redirect_to @booking, notice: 'Data KYC Valid'
+    # end
   end
 
   private
@@ -96,7 +106,7 @@ class BookingsController < ApplicationController
       format.html
       format.xlsx do
         if params[:attachment]
-          render filename: "#{@file_name} - #{Date.today}.xlsx", template: "bookings/report_attachment"
+          render filename: "#{@file_name} - #{Date.today}.xlsx", template: 'bookings/report_attachment'
         else
           response.headers['Content-Disposition'] = "attachment;filename=#{@file_name} - #{Date.today}.xls"
         end
@@ -105,6 +115,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:number, :package_id, :user_id)
+    params.require(:booking).permit(:number, :package_id, :user_id, :data_valid)
   end
 end

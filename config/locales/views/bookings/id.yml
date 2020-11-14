@@ -49,6 +49,7 @@ id:
         change_date: (Ubah Tanggal)
         duration_trip: Lama Hari
         days: hari
+        data_valid: Status Data KYC
         travel_plans: Rencana Perjalanan
         detail_plans: Lihat Rencana Perjalanan di Detail Paket
         payment_status: Status Pembayaran
@@ -97,7 +98,7 @@ id:
     create:
       notice: Boking baru berhasil dibuat.
     update:
-      notice: Boking berhasil diubah.
+      notice: Boking berhasil di Update.
     destroy:
       notice: Boking berhasil dihapus.
     report:

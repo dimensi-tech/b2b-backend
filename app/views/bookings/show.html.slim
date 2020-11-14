@@ -74,6 +74,16 @@ section.section
                           td
                             b = t('.order_details.payment_status')
                           td = "<span class='badge badge-warning'>#{@booking.booking_status_text}</span>".html_safe
+                        - if @booking.data_valid == true
+                          tr 
+                            td 
+                              b = t('.order_details.data_valid') 
+                            td = 'Data KYC Terverifikasi'
+                        - else
+                          tr
+                            td
+                              b = t('.order_details.data_valid')
+                            td = link_to 'Update Data KYC Valid', booking_path(@booking, booking: {data_valid: true}), method: :put
             / Adult
             h5 = t('.adult_passengers')
             - if @booking.adult.to_i > 1
