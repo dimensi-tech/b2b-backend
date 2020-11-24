@@ -5,6 +5,7 @@ id:
         payment_paid: Pembayaran Lunas
         email_confirmation: Konfirmasi Email
         booking_confirmation: Konfirmasi Booking
+        booking_partner_confirmation: Konfirmasi Booking (Partner)
         booking_modified: Perubahan Booking
         booking_cancelled: Pembatalan Booking
         booking_completed: Booking Selesai

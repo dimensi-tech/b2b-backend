@@ -5,6 +5,7 @@ en:
         payment_paid: Payment Pad Off
         email_confirmation: Email Confirmation
         booking_confirmation: Booking Confirmation
+        booking_partner_confirmation: Booking Confirmation (Partner)
         booking_modified: Booking Modified
         booking_cancelled: Booking Cancelled
         booking_completed: Booking Completed
