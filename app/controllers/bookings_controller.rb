@@ -77,8 +77,8 @@ class BookingsController < ApplicationController
     total_identities = @bookings.pluck(:identity_ids).map { |identity_ids| identity_ids.compact.length }.sum
     total_passports  = @bookings.pluck(:child_passport_ids).map { |passport_ids| passport_ids.compact.length }.sum
 
-    if (total_identities + total_passports) > 30 && params[:attachment].nil?
-      ExportReportJob.perform_later(params.to_unsafe_h)
+    if (total_identities + total_passports) > 100 && params[:attachment].nil?
+      ExportReportJob.perform_later(current_user.id, params.to_unsafe_h)
       redirect_to bookings_path, notice: t('.notice')
     else
       respond_to_format
@@ -86,7 +86,6 @@ class BookingsController < ApplicationController
   end
 
   def data_is_valid
-
     puts "======="
     # if @booking.update(data_valid: true)
     #   redirect_to @booking, notice: 'Data KYC Valid'

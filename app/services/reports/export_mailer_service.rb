@@ -1,7 +1,8 @@
 module Reports
   class ExportMailerService
-    def initialize(params:)
-      @params = params
+    def initialize(user_id:, params:)
+      @user_id = user_id
+      @params  = params
     end
 
     def generate
@@ -23,7 +24,7 @@ module Reports
 
       return puts I18n.t('empty_messages.not_found') if file_path == I18n.t('empty_messages.not_found')
 
-      ReportMailer.export_bookings(file_path).deliver
+      ReportMailer.export_bookings(@user_id, file_path).deliver
     end
 
     def check_file
