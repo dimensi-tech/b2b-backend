@@ -14,8 +14,8 @@
                 / = link_to t('buttons.view'), user_management_path(user_management)
                 .bullet
                 = link_to t('buttons.edit'), edit_user_management_path(user_management)
-                .bullet
-                = link_to t('buttons.destroy'), user_management_path(user_management), method: :delete,
+                / .bullet
+                / = link_to t('buttons.destroy'), user_management_path(user_management), method: :delete,
                           class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = user_management.email
             td = user_management.travel_partner.name
