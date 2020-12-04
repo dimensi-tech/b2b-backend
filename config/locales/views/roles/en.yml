@@ -1,0 +1,33 @@
+en:
+  roles:
+    roles:
+      name: Name
+    filter:
+      name: Name
+    form:
+      name: Name
+    index:
+      page_header: Master Data Roles
+      body_title: Manage Role
+      create: Add Role
+    new:
+      page_header: Master Data Roles
+      body_title: Entry New Role
+      card_header: Input Data Role
+    edit:
+      page_header: Master Data Roles
+      body_title: Edit Role
+      card_header: Edit Data Role
+    show:
+      page_header: Detail Role
+      name: Name
+    create:
+      notice: Role was successfully created.
+    update:
+      notice: Role was successfully updated.
+    destroy:
+      notice: Role was successfully deleted.
+  simple_form:
+    labels:
+      travel_partner:
+        name: Name

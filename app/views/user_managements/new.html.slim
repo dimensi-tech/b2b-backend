@@ -1,11 +1,12 @@
 section.section
   .section-header
-    h1 = 'Entry Akun Travel Agent'
+    h1 = t('.page_header')
     = render 'shared/breadcrumb'
   .section-body
-    h2.section-title = 'Entry Data'
+    h2.section-title = t('.body_title')
     .row
       .col
         .card
           .card-header
+            h4 = t('.card_header')
           == render 'form'

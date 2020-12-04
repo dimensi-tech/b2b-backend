@@ -1,28 +1,11 @@
 id:
   roles:
     roles:
-      country_id: Lokasi Tujuan
-      destination: Destinasi
-      action: Aksi
       name: Nama
-      address: Alamat
-      logo: Logo
-      description: Deskripsi
     filter:
-      filter_header: Filter
-      country_id: Negara
-      destination: Destinasi
       name: Nama
-      address: Alamat
-      logo: Logo
-      description: Deskripsi
     form:
-      country_id: Negara
-      destination: Destinasi
       name: Nama
-      address: Alamat
-      logo: Logo
-      description: Deskripsi
     index:
       page_header: Master Data Role
       body_title: Kelola Role
@@ -37,15 +20,7 @@ id:
       card_header: Ubah Data Role
     show:
       page_header: Detail Role
-      details: Detail
-      country_id: Negara
-      destination: Destinasi
-      created_by: Dibuat Oleh
-      updated_by: Diubah Oleh
       name: Nama
-      address: Alamat
-      logo: Logo
-      description: Deskripsi
     create:
       notice: Role baru berhasil dibuat.
     update:
@@ -56,6 +31,3 @@ id:
     labels:
       travel_partner:
         name: Nama
-        address: Alamat
-        logo: Logo
-        description: Deskripsi

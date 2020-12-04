@@ -1,0 +1,53 @@
+en:
+  user_managements:
+    user_managements:
+      name: Name
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+      action: Action
+    filter:
+      filter_header: Filter
+      name: Name
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+    form:
+      name: Name
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+    index:
+      page_header: Master Data Travel Agent Accounts
+      body_title: Manage Travel Agent Account
+      create: Add Travel Agent Account
+    new:
+      page_header: Master Data Travel Agent Accounts
+      body_title: Entry New Travel Agent Account
+      card_header: Input Data Travel Agent Account
+    edit:
+      page_header: Master Data Travel Agent Accounts
+      body_title: Edit Travel Agent Account
+      card_header: Edit Data Travel Agent Account
+    show:
+      page_header: Detail Travel Agent Account
+      details: Detail
+      name: Name
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Travel Agent Account was successfully created.
+    update:
+      notice: Travel Agent Account was successfully updated.
+    destroy:
+      notice: Travel Agent Account was successfully deleted.
+  simple_form:
+    labels:
+      user_management:
+        name: Name
+        email: Email
+        password: Password
+        travel_partner_id: Travel

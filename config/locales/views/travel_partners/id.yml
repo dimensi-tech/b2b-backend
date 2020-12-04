@@ -1,8 +1,6 @@
 id:
   travel_partners:
     travel_partners:
-      country_id: Lokasi Tujuan
-      destination: Destinasi
       action: Aksi
       name: Nama
       address: Alamat
@@ -10,15 +8,11 @@ id:
       description: Deskripsi
     filter:
       filter_header: Filter
-      country_id: Negara
-      destination: Destinasi
       name: Nama
       address: Alamat
       logo: Logo
       description: Deskripsi
     form:
-      country_id: Negara
-      destination: Destinasi
       name: Nama
       address: Alamat
       logo: Logo
@@ -38,8 +32,6 @@ id:
     show:
       page_header: Detail Travel Agent
       details: Detail
-      country_id: Negara
-      destination: Destinasi
       created_by: Dibuat Oleh
       updated_by: Diubah Oleh
       name: Nama

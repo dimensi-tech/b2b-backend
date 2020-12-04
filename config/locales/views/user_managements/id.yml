@@ -1,0 +1,53 @@
+id:
+  user_managements:
+    user_managements:
+      name: Nama
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+      action: Aksi
+    filter:
+      filter_header: Filter
+      name: Nama
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+    form:
+      name: Nama
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+    index:
+      page_header: Master Data Akun Travel Agent
+      body_title: Kelola Akun Travel Agent
+      create: Tambah Akun Travel Agent
+    new:
+      page_header: Master Data Akun Travel Agent
+      body_title: Entry Akun Travel Agent Baru
+      card_header: Input Data Akun Travel Agent
+    edit:
+      page_header: Master Data Akun Travel Agent
+      body_title: Ubah Akun Travel Agent
+      card_header: Ubah Data Akun Travel Agent
+    show:
+      page_header: Detail Akun Travel Agent
+      details: Detail
+      name: Nama
+      email: Email
+      password: Password
+      travel_partner_id: Travel
+      created_by: Dibuat Oleh
+      updated_by: Diubah Oleh
+    create:
+      notice: Akun Travel Agent baru berhasil dibuat.
+    update:
+      notice: Akun Travel Agent berhasil diubah.
+    destroy:
+      notice: Akun Travel Agent berhasil dihapus.
+  simple_form:
+    labels:
+      user_management:
+        name: Nama
+        email: Email
+        password: Password
+        travel_partner_id: Travel

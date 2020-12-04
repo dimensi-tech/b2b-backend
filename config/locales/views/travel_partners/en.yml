@@ -1,0 +1,53 @@
+en:
+  travel_partners:
+    travel_partners:
+      action: Action
+      name: Name
+      address: Address
+      logo: Logo
+      description: Description
+    filter:
+      filter_header: Filter
+      name: Name
+      address: Address
+      logo: Logo
+      description: Description
+    form:
+      name: Name
+      address: Address
+      logo: Logo
+      description: Description
+    index:
+      page_header: Master Data Travel Agents
+      body_title: Manage Travel Agent
+      create: Add Travel Agent
+    new:
+      page_header: Master Data Travel Agents
+      body_title: Entry New Travel Agent
+      card_header: Input Data Travel Agent
+    edit:
+      page_header: Master Data Travel Agents
+      body_title: Edit Travel Agent
+      card_header: Edit Data Travel Agent
+    show:
+      page_header: Detail Travel Agent
+      details: Detail
+      created_by: Created By
+      updated_by: Updated By
+      name: Name
+      address: Address
+      logo: Logo
+      description: Description
+    create:
+      notice: Travel was successfully created.
+    update:
+      notice: Travel was successfully updated.
+    destroy:
+      notice: Travel was successfully deleted.
+  simple_form:
+    labels:
+      travel_partner:
+        name: Name
+        address: Address
+        logo: Logo
+        description: Description

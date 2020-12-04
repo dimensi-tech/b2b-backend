@@ -1,38 +1,36 @@
 section.section
   .section-header
-    h1 Detail Data
+    h1 = t('.page_header')
     = render 'shared/breadcrumb'
   .section-body
     h2.section-title = @user.name
     p.section-lead
-      = "Nama User : #{@user.name}"
+      = "Data ID : #{@user.id}"
     .row
       .col-12
         .card
           .card-header
-            h4 Details
+            h4 = t('.details')
           .card-body
             .list-unstyled.list-unstyled-border.mt-4
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Nama
+                  h6 = t('.name')
                   p = @user.name
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Email
+                  h6 = t('.email')
                   p = @user.email
               .media
                 .media-icon
                   i.far.fa-circle
                 .media-body
-                  h6 Password
-                  p = @user.password
-        
-             
+                  h6 = t('.travel_partner_id')
+                  p = @user.travel_partner.name
   .buttons
     = link_to t('buttons.edit'), edit_user_management_path(@user), class: 'btn btn-warning'
-    = link_to t('buttons.back'), user_managements_path, class: 'btn btn-danger'
+    = link_to t('buttons.back'), user_managements_path, class: 'btn'

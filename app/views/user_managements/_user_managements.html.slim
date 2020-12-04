@@ -3,21 +3,22 @@
     .table-responsive
       table.table.table-striped
         tr
-          th = 'Nama Lengkap'
-          th = 'E-mail'
-
+          th = t('.name')
+          th = t('.email')
+          th = t('.travel_partner_id')
         - @user_managements.each do |user_management|
           tr
             td
               = user_management.name
               .table-links
-                = link_to t('buttons.view'), user_management_path(user_management)
+                / = link_to t('buttons.view'), user_management_path(user_management)
                 .bullet
                 = link_to t('buttons.edit'), edit_user_management_path(user_management)
                 .bullet
                 = link_to t('buttons.destroy'), user_management_path(user_management), method: :delete,
                           class: 'text-danger', data: { confirm: t('buttons.confirm') }
             td = user_management.email
+            td = user_management.travel_partner.name
 
   .card-footer.text-right
     nav.d-inline-block
